@@ -19,13 +19,17 @@ export function SetsPage({ userId }: Props) {
   const oxford5000 = systemSets.filter(s => s.source === 'oxford5000')
 
   return (
-    <div className="flex flex-col gap-4 p-4 pb-2">
+    <div className="flex flex-col gap-5 p-4 pb-4" style={{ animation: 'fadeInUp 0.4s ease-out' }}>
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>Sets</h1>
+        <h1 className="text-2xl font-bold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>Sets</h1>
         <button
           onClick={() => navigate('/sets/new')}
-          className="text-sm font-semibold transition-opacity active:opacity-60"
-          style={{ color: 'var(--app-accent)' }}
+          className="text-sm font-bold px-4 py-2 rounded-xl transition-all duration-200 active:scale-95"
+          style={{
+            color: '#ffffff',
+            background: 'var(--app-gradient)',
+            boxShadow: '0 2px 8px rgba(255,107,53,0.2)',
+          }}
         >
           + New Set
         </button>
@@ -60,8 +64,8 @@ export function SetsPage({ userId }: Props) {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-2">
-      <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--app-text-secondary)' }}>
+    <div className="flex flex-col gap-2.5">
+      <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--app-text-secondary)', fontFamily: "'Outfit', sans-serif" }}>
         {title}
       </h2>
       {children}

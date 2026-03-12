@@ -33,19 +33,20 @@ export function ToastProvider() {
       aria-live="polite"
       style={{
         position: 'fixed',
-        bottom: '32px',
+        bottom: 'calc(88px + env(safe-area-inset-bottom, 0px))',
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 10000,
         padding: '12px 24px',
-        borderRadius: '12px',
-        background: 'var(--app-text)',
-        color: 'var(--app-bg)',
+        borderRadius: '16px',
+        background: 'var(--app-gradient)',
+        color: '#ffffff',
         fontSize: '14px',
-        fontWeight: 500,
+        fontWeight: 600,
         whiteSpace: 'nowrap',
         animation: 'toast-fade 2.8s ease-in-out forwards',
         pointerEvents: 'none',
+        boxShadow: '0 4px 16px rgba(255,107,53,0.25)',
       }}
     >
       {message}

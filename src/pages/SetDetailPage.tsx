@@ -53,16 +53,19 @@ export function SetDetailPage({ userId }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-4 p-4 pb-2">
+    <div className="flex flex-col gap-4 p-4 pb-6" style={{ animation: 'fadeInUp 0.4s ease-out' }}>
       {/* Header */}
       <div className="flex items-start gap-3">
         {set.cefr_level && (
-          <div className={`${cefrColor(set.cefr_level)} text-white text-sm font-bold rounded-xl w-12 h-12 flex items-center justify-center shrink-0`}>
+          <div
+            className="text-white text-sm font-bold rounded-xl w-12 h-12 flex items-center justify-center shrink-0"
+            style={cefrColor(set.cefr_level)}
+          >
             {set.cefr_level}
           </div>
         )}
         <div>
-          <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>{set.name}</h1>
+          <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>{set.name}</h1>
           <p className="text-sm" style={{ color: 'var(--app-text-secondary)' }}>{pluralCards(set.card_count)}</p>
           {set.description && (
             <p className="text-sm mt-1" style={{ color: 'var(--app-text-secondary)' }}>{set.description}</p>
@@ -76,14 +79,14 @@ export function SetDetailPage({ userId }: Props) {
           <>
             <button
               onClick={() => navigate(`/study/${set.id}`)}
-              className="flex-1 py-3 rounded-xl font-semibold transition-opacity active:opacity-70"
-              style={{ background: 'var(--app-accent)', color: 'var(--app-bg)' }}
+              className="flex-1 py-3 rounded-2xl font-semibold text-white transition-all duration-200 active:scale-[0.97]"
+              style={{ background: 'var(--app-gradient)', boxShadow: '0 4px 16px rgba(255,107,53,0.25)' }}
             >
               Study
             </button>
             <button
               onClick={handleUnsubscribe}
-              className="px-4 py-3 rounded-xl font-semibold transition-opacity active:opacity-70"
+              className="px-4 py-3 rounded-2xl font-semibold transition-all duration-200 active:scale-[0.97]"
               style={{
                 background: 'var(--app-error-bg)',
                 color: 'var(--app-error)',
@@ -95,8 +98,8 @@ export function SetDetailPage({ userId }: Props) {
         ) : (
           <button
             onClick={handleSubscribe}
-            className="flex-1 py-3 rounded-xl font-semibold transition-opacity active:opacity-70"
-            style={{ background: 'var(--app-accent)', color: 'var(--app-bg)' }}
+            className="flex-1 py-3 rounded-2xl font-semibold text-white transition-all duration-200 active:scale-[0.97]"
+            style={{ background: 'var(--app-gradient)', boxShadow: '0 4px 16px rgba(255,107,53,0.25)' }}
           >
             Start Studying
           </button>
@@ -106,25 +109,25 @@ export function SetDetailPage({ userId }: Props) {
       {isOwner && (
         <button
           onClick={() => navigate(`/sets/${set.id}/add`)}
-          className="text-sm font-semibold transition-opacity active:opacity-60"
-          style={{ color: 'var(--app-accent)' }}
+          className="text-sm font-bold transition-opacity active:opacity-60 gradient-text"
         >
           + Add Card
         </button>
       )}
 
       {/* Card list */}
-      <div className="flex flex-col gap-1">
-        <h2 className="text-sm font-semibold uppercase tracking-wide mb-1" style={{ color: 'var(--app-text-secondary)' }}>
+      <div className="flex flex-col gap-1.5">
+        <h2 className="text-sm font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--app-text-secondary)', fontFamily: "'Outfit', sans-serif" }}>
           Cards
         </h2>
         {cards.map(card => (
           <div
             key={card.id}
-            className="rounded-xl px-4 py-3 flex items-center justify-between"
+            className="rounded-2xl px-4 py-3 flex items-center justify-between"
             style={{
               background: 'var(--app-bg-elevated)',
               border: '1px solid var(--app-border)',
+              boxShadow: 'var(--app-shadow)',
             }}
           >
             <div>

@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { LiquidGlassCard } from './LiquidGlassCard';
 import { isTelegram } from '../lib/telegram';
-import './TopNav.css';
+import './BottomNav.css';
 
 const HomeIcon = ({ className }: { className?: string }) => (
   <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -31,18 +31,18 @@ const tabs = [
   { path: '/settings', label: 'Settings', Icon: SettingsIcon },
 ] as const;
 
-export function TopNav() {
+export function BottomNav() {
   const location = useLocation();
   const pathname = location.pathname;
   const isTelegramEnv = isTelegram();
 
   return (
     <nav
-      className={`top-nav ${isTelegramEnv ? 'top-nav--telegram' : ''}`}
+      className={`bottom-nav ${isTelegramEnv ? 'bottom-nav--telegram' : ''}`}
       role="navigation"
       data-telegram={isTelegramEnv}
     >
-      <LiquidGlassCard className="top-nav__container">
+      <LiquidGlassCard className="bottom-nav__container">
         {tabs.map(({ path, label, Icon }) => {
           const isActive = path === '/'
             ? pathname === '/'
@@ -51,13 +51,13 @@ export function TopNav() {
             <NavLink
               key={path}
               to={path}
-              className={() => `top-nav__item ${isActive ? 'top-nav__item--active' : ''}`}
+              className={() => `bottom-nav__item ${isActive ? 'bottom-nav__item--active' : ''}`}
               end={path === '/'}
             >
-              <span className="top-nav__icon">
+              <span className="bottom-nav__icon">
                 <Icon />
               </span>
-              <span className="top-nav__label">{label}</span>
+              <span className="bottom-nav__label">{label}</span>
             </NavLink>
           );
         })}

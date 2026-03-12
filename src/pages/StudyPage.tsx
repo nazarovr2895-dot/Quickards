@@ -57,10 +57,10 @@ export function StudyPage({ userId }: Props) {
   }
 
   return (
-    <div className="flex flex-col h-full p-4 gap-4">
+    <div className="flex flex-col h-full p-4 gap-4" style={{ animation: 'fadeIn 0.3s ease-out' }}>
       <ProgressBar current={reviewed} total={totalCards} />
 
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center px-1">
         <FlashCardReset
           card={currentCard}
           onReveal={() => setRevealed(true)}
@@ -68,14 +68,20 @@ export function StudyPage({ userId }: Props) {
         />
       </div>
 
-      <div className="pb-2">
+      <div className="pb-4">
         <RatingButtons
           intervals={intervals}
           onRate={handleRate}
           visible={revealed}
         />
         {!revealed && (
-          <p className="text-center text-sm mt-4" style={{ color: 'var(--app-text-secondary)' }}>
+          <p
+            className="text-center text-sm mt-4 font-medium"
+            style={{
+              color: 'var(--app-text-secondary)',
+              animation: 'pulse-subtle 2s ease-in-out infinite',
+            }}
+          >
             Tap the card to see the answer
           </p>
         )}

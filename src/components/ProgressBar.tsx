@@ -8,17 +8,21 @@ export function ProgressBar({ current, total }: Props) {
 
   return (
     <div className="w-full">
-      <div className="flex justify-between text-xs mb-1" style={{ color: 'var(--app-text-secondary)' }}>
-        <span>{current} / {total}</span>
-        <span>{Math.round(pct)}%</span>
+      <div className="flex justify-between text-xs mb-1.5" style={{ color: 'var(--app-text-secondary)' }}>
+        <span className="font-medium">{current} / {total}</span>
+        <span className="font-bold" style={{ fontFamily: "'Outfit', sans-serif", color: 'var(--app-accent)' }}>{Math.round(pct)}%</span>
       </div>
       <div
-        className="h-1.5 rounded-full overflow-hidden"
-        style={{ background: 'var(--app-border)' }}
+        className="h-2.5 rounded-full overflow-hidden"
+        style={{ background: 'var(--app-surface)' }}
       >
         <div
-          className="h-full rounded-full transition-all duration-300"
-          style={{ width: `${pct}%`, background: 'var(--app-accent)' }}
+          className="h-full rounded-full transition-all duration-500 ease-out"
+          style={{
+            width: `${pct}%`,
+            background: 'var(--app-gradient)',
+            boxShadow: pct > 0 ? '0 0 12px rgba(255,107,53,0.35)' : 'none',
+          }}
         />
       </div>
     </div>

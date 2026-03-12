@@ -33,39 +33,38 @@ export function CreateSetPage({ userId }: Props) {
     return showMainButton('Save Set', handleSave)
   }, [name, description, userId, navigate])
 
-  return (
-    <div className="flex flex-col gap-4 p-4">
-      <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>New Set</h1>
+  const inputStyle = {
+    background: 'var(--app-bg-elevated)',
+    border: '1px solid var(--app-border)',
+    color: 'var(--app-text)',
+    boxShadow: 'var(--app-shadow)',
+  }
 
-      <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>Name</span>
+  return (
+    <div className="flex flex-col gap-5 p-4" style={{ animation: 'fadeInUp 0.4s ease-out' }}>
+      <h1 className="text-2xl font-bold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>New Set</h1>
+
+      <label className="flex flex-col gap-1.5">
+        <span className="text-sm font-semibold" style={{ color: 'var(--app-text-secondary)' }}>Name</span>
         <input
           value={name}
           onChange={e => setName(e.target.value)}
           placeholder="e.g. Business English"
-          className="rounded-xl px-4 py-3 outline-none transition-shadow"
-          style={{
-            background: 'var(--app-bg-elevated)',
-            border: '1px solid var(--app-border)',
-            color: 'var(--app-text)',
-          }}
+          className="rounded-2xl px-4 py-3.5 outline-none transition-all duration-200 focus:border-[var(--app-accent)]"
+          style={inputStyle}
           autoFocus
         />
       </label>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>Description (optional)</span>
+      <label className="flex flex-col gap-1.5">
+        <span className="text-sm font-semibold" style={{ color: 'var(--app-text-secondary)' }}>Description (optional)</span>
         <textarea
           value={description}
           onChange={e => setDescription(e.target.value)}
           placeholder="What's this set about?"
           rows={3}
-          className="rounded-xl px-4 py-3 outline-none resize-none transition-shadow"
-          style={{
-            background: 'var(--app-bg-elevated)',
-            border: '1px solid var(--app-border)',
-            color: 'var(--app-text)',
-          }}
+          className="rounded-2xl px-4 py-3.5 outline-none resize-none transition-all duration-200 focus:border-[var(--app-accent)]"
+          style={inputStyle}
         />
       </label>
     </div>

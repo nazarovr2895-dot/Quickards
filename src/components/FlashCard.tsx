@@ -19,8 +19,8 @@ export function FlashCard({ card, onReveal }: Props) {
 
   return (
     <div
-      className="w-full max-w-sm mx-auto cursor-pointer"
-      style={{ perspective: '1000px', minHeight: '280px' }}
+      className="w-full mx-auto cursor-pointer"
+      style={{ perspective: '1000px', minHeight: '320px', animation: 'scaleIn 0.3s ease-out' }}
       onClick={handleFlip}
     >
       <div
@@ -28,7 +28,7 @@ export function FlashCard({ card, onReveal }: Props) {
         style={{
           transformStyle: 'preserve-3d',
           transform: flipped ? 'rotateY(180deg)' : 'rotateY(0)',
-          minHeight: '280px',
+          minHeight: '320px',
         }}
       >
         {/* Front */}
@@ -38,9 +38,11 @@ export function FlashCard({ card, onReveal }: Props) {
             backfaceVisibility: 'hidden',
             background: 'var(--app-bg-elevated)',
             border: '1px solid var(--app-border)',
+            boxShadow: 'var(--app-shadow-lg)',
+            borderTop: '3px solid var(--app-accent)',
           }}
         >
-          <span className="text-3xl font-bold text-center" style={{ color: 'var(--app-text)' }}>
+          <span className="text-3xl font-bold text-center" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>
             {card.card.front}
           </span>
           {card.card.phonetics && (
@@ -55,16 +57,21 @@ export function FlashCard({ card, onReveal }: Props) {
           )}
           {card.isNew && (
             <span
-              className="absolute top-4 right-4 text-xs font-semibold px-2 py-0.5 rounded-full"
+              className="absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded-full text-white"
               style={{
-                color: 'var(--app-accent)',
-                background: 'var(--app-accent-muted)',
+                background: 'var(--app-gradient)',
               }}
             >
               NEW
             </span>
           )}
-          <span className="mt-6 text-sm" style={{ color: 'var(--app-text-secondary)' }}>
+          <span
+            className="mt-6 text-sm font-medium"
+            style={{
+              color: 'var(--app-text-secondary)',
+              animation: 'pulse-subtle 2s ease-in-out infinite',
+            }}
+          >
             Tap to reveal
           </span>
         </div>
@@ -77,13 +84,15 @@ export function FlashCard({ card, onReveal }: Props) {
             transform: 'rotateY(180deg)',
             background: 'var(--app-bg-elevated)',
             border: '1px solid var(--app-border)',
+            boxShadow: 'var(--app-shadow-lg)',
+            borderTop: '3px solid var(--app-accent-secondary)',
           }}
         >
           <span className="text-sm mb-2" style={{ color: 'var(--app-text-secondary)' }}>
             {card.card.front}
             {card.card.phonetics ? ` ${card.card.phonetics}` : ''}
           </span>
-          <span className="text-2xl font-bold text-center" style={{ color: 'var(--app-text)' }}>
+          <span className="text-2xl font-bold text-center" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>
             {card.card.back}
           </span>
           {card.card.part_of_speech && (

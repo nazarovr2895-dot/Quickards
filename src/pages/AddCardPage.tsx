@@ -35,42 +35,43 @@ export function AddCardPage() {
     background: 'var(--app-bg-elevated)',
     border: '1px solid var(--app-border)',
     color: 'var(--app-text)',
+    boxShadow: 'var(--app-shadow)',
   }
 
   return (
-    <div className="flex flex-col gap-4 p-4">
-      <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>Add Card</h1>
+    <div className="flex flex-col gap-5 p-4" style={{ animation: 'fadeInUp 0.4s ease-out' }}>
+      <h1 className="text-2xl font-bold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>Add Card</h1>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>English word</span>
+      <label className="flex flex-col gap-1.5">
+        <span className="text-sm font-semibold" style={{ color: 'var(--app-text-secondary)' }}>English word</span>
         <input
           value={front}
           onChange={e => setFront(e.target.value)}
           placeholder="e.g. accomplish"
-          className="rounded-xl px-4 py-3 outline-none transition-shadow"
+          className="rounded-2xl px-4 py-3.5 outline-none transition-all duration-200 focus:border-[var(--app-accent)]"
           style={inputStyle}
           autoFocus
         />
       </label>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>Russian translation</span>
+      <label className="flex flex-col gap-1.5">
+        <span className="text-sm font-semibold" style={{ color: 'var(--app-text-secondary)' }}>Russian translation</span>
         <input
           value={back}
           onChange={e => setBack(e.target.value)}
           placeholder="e.g. выполнять, достигать"
-          className="rounded-xl px-4 py-3 outline-none transition-shadow"
+          className="rounded-2xl px-4 py-3.5 outline-none transition-all duration-200 focus:border-[var(--app-accent)]"
           style={inputStyle}
         />
       </label>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>Part of speech (optional)</span>
+      <label className="flex flex-col gap-1.5">
+        <span className="text-sm font-semibold" style={{ color: 'var(--app-text-secondary)' }}>Part of speech (optional)</span>
         <input
           value={pos}
           onChange={e => setPos(e.target.value)}
           placeholder="e.g. verb, noun, adjective"
-          className="rounded-xl px-4 py-3 outline-none transition-shadow"
+          className="rounded-2xl px-4 py-3.5 outline-none transition-all duration-200 focus:border-[var(--app-accent)]"
           style={inputStyle}
         />
       </label>

@@ -1,0 +1,131 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 8px 16px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  pointer-events: none;
+}
+
+.bottom-nav__container {
+  max-width: 100%;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4px;
+  pointer-events: auto;
+}
+
+.bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 8px 16px;
+  min-width: 56px;
+  flex: 1;
+  color: var(--app-text-secondary);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-radius: 16px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom-nav__item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--app-accent-muted);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 16px;
+}
+
+.bottom-nav__item:hover::before {
+  opacity: 0.5;
+}
+
+.bottom-nav__item--active {
+  color: var(--app-accent);
+  font-weight: 600;
+}
+
+.bottom-nav__item--active::before {
+  opacity: 1;
+}
+
+/* Active indicator dot */
+.bottom-nav__item--active::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--app-accent);
+}
+
+.bottom-nav__item:active {
+  transform: scale(0.92);
+}
+
+.bottom-nav__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: inherit;
+  transition: color 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-nav__label {
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+/* ══════════════════════════════════════
+   Telegram mode — icons only, compact
+   ══════════════════════════════════════ */
+.bottom-nav--telegram .bottom-nav__label,
+[data-telegram="true"] .bottom-nav__label {
+  display: none;
+}
+
+.bottom-nav--telegram .bottom-nav__item,
+[data-telegram="true"] .bottom-nav__item {
+  gap: 0;
+  padding: 10px;
+  min-width: 48px;
+}
+
+.bottom-nav--telegram .bottom-nav__icon,
+[data-telegram="true"] .bottom-nav__icon {
+  width: 26px;
+  height: 26px;
+}
+
+.bottom-nav--telegram,
+[data-telegram="true"] {
+  padding: 8px 16px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+}
+
+.bottom-nav--telegram .bottom-nav__container,
+[data-telegram="true"] .bottom-nav__container {
+  padding: 6px;
+}

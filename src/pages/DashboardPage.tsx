@@ -8,9 +8,10 @@ import { useStats } from '../hooks/useStats'
 
 interface Props {
   userId: number | undefined
+  userName?: string
 }
 
-export function DashboardPage({ userId }: Props) {
+export function DashboardPage({ userId, userName }: Props) {
   const { stats, loading: statsLoading } = useStats(userId)
   const { userSets, loading: setsLoading } = useSubscribedSets(userId)
   const navigate = useNavigate()
@@ -21,29 +22,37 @@ export function DashboardPage({ userId }: Props) {
   const subscribedSets = userSets.filter(us => us.sets).map(us => us.sets!)
 
   return (
-    <div className="flex flex-col gap-4 p-4 pb-2">
-      <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>Quickards</h1>
+    <div className="flex flex-col gap-5 p-4 pb-4" style={{ animation: 'fadeInUp 0.4s ease-out' }}>
+      <h1 className="text-2xl font-bold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>
+        {userName ? `Hello, ${userName}` : 'Quickards'}
+      </h1>
 
       <StatsBar stats={stats} />
 
       <button
         onClick={() => navigate('/study')}
-        className="w-full py-4 rounded-2xl font-bold text-lg transition-opacity active:opacity-70"
+        className="w-full py-4 rounded-2xl font-bold text-lg transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2"
         style={hasDue ? {
-          background: 'var(--app-accent)',
-          color: 'var(--app-bg)',
+          background: 'var(--app-gradient)',
+          color: '#ffffff',
+          boxShadow: '0 4px 20px rgba(255,107,53,0.3)',
         } : {
-          background: 'var(--app-bg-elevated)',
-          color: 'var(--app-text)',
-          border: '1px solid var(--app-border)',
+          background: 'transparent',
+          color: 'var(--app-accent)',
+          border: '2px solid var(--app-accent)',
         }}
       >
+        {hasDue && (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        )}
         {hasDue ? `Study Now (${stats.dueToday} due)` : 'Start Learning'}
       </button>
 
       {subscribedSets.length > 0 ? (
-        <div className="flex flex-col gap-2">
-          <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--app-text-secondary)' }}>
+        <div className="flex flex-col gap-2.5">
+          <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--app-text-secondary)', fontFamily: "'Outfit', sans-serif" }}>
             My Sets
           </h2>
           {subscribedSets.map(set => (
