@@ -29,7 +29,7 @@ function parseBulkText(text: string, separator: string): { front: string; back: 
     .filter(Boolean) as { front: string; back: string }[]
 }
 
-export function ManageCardsPage({ userId }: Props) {
+export function ManageCardsPage({ userId: _userId }: Props) {
   const { setId } = useParams()
   const navigate = useNavigate()
   const frontRef = useRef<HTMLInputElement>(null)
