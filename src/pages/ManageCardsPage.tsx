@@ -42,7 +42,14 @@ export function ManageCardsPage({ userId: _userId }: Props) {
   const [front, setFront] = useState('')
   const [back, setBack] = useState('')
   const [pos, setPos] = useState('')
+  const [phonetics, setPhonetics] = useState('')
   const [saving, setSaving] = useState(false)
+
+  // Dictionary lookup
+  const [lookupState, setLookupState] = useState<'idle' | 'loading' | 'valid' | 'invalid'>('idle')
+  const lookupAbort = useRef<AbortController | null>(null)
+  const backTouched = useRef(false)
+  const posTouched = useRef(false)
 
   // Mode
   const [mode, setMode] = useState<'single' | 'bulk'>('single')
@@ -77,6 +84,52 @@ export function ManageCardsPage({ userId: _userId }: Props) {
 
   useEffect(() => { loadData() }, [loadData])
 
+  // Debounced dictionary lookup
+  useEffect(() => {
+    const word = front.trim()
+    if (!word || word.length < 2) {
+      setLookupState('idle')
+      return
+    }
+
+    setLookupState('loading')
+    const timer = setTimeout(async () => {
+      lookupAbort.current?.abort()
+      const controller = new AbortController()
+      lookupAbort.current = controller
+
+      try {
+        const data = await apiGet<{
+          valid: boolean
+          phonetics?: string
+          part_of_speech?: string
+          example?: string
+          translation?: string
+        }>(`/api/dictionary/lookup?word=${encodeURIComponent(word)}`)
+
+        if (controller.signal.aborted) return
+
+        if (data?.valid) {
+          setLookupState('valid')
+          if (data.phonetics) setPhonetics(data.phonetics)
+          if (data.translation && !backTouched.current) setBack(data.translation)
+          if (data.part_of_speech && !posTouched.current) setPos(data.part_of_speech)
+          hapticFeedback('light')
+        } else {
+          setLookupState('invalid')
+          setPhonetics('')
+        }
+      } catch {
+        if (!controller.signal.aborted) setLookupState('idle')
+      }
+    }, 500)
+
+    return () => {
+      clearTimeout(timer)
+      lookupAbort.current?.abort()
+    }
+  }, [front])
+
   // Single add
   const handleAdd = async () => {
     if (!front.trim() || !back.trim() || !setId || saving) return
@@ -87,11 +140,16 @@ export function ManageCardsPage({ userId: _userId }: Props) {
         front: front.trim(),
         back: back.trim(),
         part_of_speech: pos.trim() || null,
+        phonetics: phonetics.trim() || null,
       })
       setCards(prev => [card, ...prev])
       setFront('')
       setBack('')
       setPos('')
+      setPhonetics('')
+      setLookupState('idle')
+      backTouched.current = false
+      posTouched.current = false
       hapticNotification('success')
       showToast('Card added')
       frontRef.current?.focus()
@@ -212,22 +270,49 @@ export function ManageCardsPage({ userId: _userId }: Props) {
         <div className="manage-cards__form">
           <label className="form-field">
             <span className="form-field__label">English word</span>
-            <input
-              ref={frontRef}
-              value={front}
-              onChange={e => setFront(e.target.value)}
-              placeholder="e.g. accomplish"
-              className="form-field__input"
-              autoFocus
-              onKeyDown={e => e.key === 'Enter' && handleAdd()}
-            />
+            <div className="form-field__input-wrap">
+              <input
+                ref={frontRef}
+                value={front}
+                onChange={e => {
+                  setFront(e.target.value)
+                  backTouched.current = false
+                  posTouched.current = false
+                }}
+                placeholder="e.g. accomplish"
+                className="form-field__input form-field__input--with-icon"
+                autoFocus
+                onKeyDown={e => e.key === 'Enter' && handleAdd()}
+              />
+              {lookupState === 'loading' && (
+                <span className="form-field__lookup form-field__lookup--loading" />
+              )}
+              {lookupState === 'valid' && (
+                <svg className="form-field__lookup form-field__lookup--valid" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              )}
+              {lookupState === 'invalid' && (
+                <svg className="form-field__lookup form-field__lookup--invalid" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              )}
+            </div>
+            {lookupState === 'invalid' && (
+              <span className="form-field__hint form-field__hint--warning">Word not found in dictionary</span>
+            )}
+            {lookupState === 'valid' && phonetics && (
+              <span className="form-field__hint form-field__hint--info">{phonetics}</span>
+            )}
           </label>
 
           <label className="form-field">
             <span className="form-field__label">Russian translation</span>
             <input
               value={back}
-              onChange={e => setBack(e.target.value)}
+              onChange={e => { setBack(e.target.value); backTouched.current = true }}
               placeholder="e.g. выполнять, достигать"
               className="form-field__input"
               onKeyDown={e => e.key === 'Enter' && handleAdd()}
@@ -238,7 +323,7 @@ export function ManageCardsPage({ userId: _userId }: Props) {
             <span className="form-field__label">Part of speech (optional)</span>
             <input
               value={pos}
-              onChange={e => setPos(e.target.value)}
+              onChange={e => { setPos(e.target.value); posTouched.current = true }}
               placeholder="e.g. verb, noun, adjective"
               className="form-field__input"
               onKeyDown={e => e.key === 'Enter' && handleAdd()}

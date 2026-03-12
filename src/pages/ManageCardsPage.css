@@ -89,6 +89,55 @@
   transform: none;
 }
 
+/* Input with lookup indicator */
+.form-field__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-field__input--with-icon {
+  padding-right: 36px !important;
+}
+
+.form-field__lookup {
+  position: absolute;
+  right: 12px;
+  flex-shrink: 0;
+}
+
+.form-field__lookup--loading {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--app-border);
+  border-top-color: var(--app-accent);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+.form-field__lookup--valid {
+  animation: scaleIn 0.2s ease-out;
+}
+
+.form-field__lookup--invalid {
+  animation: scaleIn 0.2s ease-out;
+}
+
+.form-field__hint {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.form-field__hint--warning {
+  color: #ef4444;
+}
+
+.form-field__hint--info {
+  color: var(--app-text-secondary);
+  font-style: italic;
+}
+
 /* Bulk import */
 .manage-cards__separator-row {
   display: flex;

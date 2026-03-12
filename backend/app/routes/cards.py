@@ -1,3 +1,6 @@
+import asyncio
+
+import httpx
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel
 
@@ -5,6 +8,13 @@ from ..database import get_conn
 from ..telegram_auth import get_current_user_id
 
 router = APIRouter(tags=["cards"])
+
+DICT_API = "https://api.dictionaryapi.dev/api/v2/entries/en"
+LINGVA_INSTANCES = [
+    "https://lingva.ml",
+    "https://lingva.lunar.icu",
+    "https://translate.plausibility.cloud",
+]
 
 
 async def verify_set_ownership(pool, set_id: str, user_id: int):
@@ -18,6 +28,7 @@ class CreateCardBody(BaseModel):
     front: str
     back: str
     part_of_speech: str | None = None
+    phonetics: str | None = None
 
 
 class BatchCardItem(BaseModel):
@@ -37,6 +48,72 @@ class UpdateCardBody(BaseModel):
     part_of_speech: str | None = None
 
 
+@router.get("/dictionary/lookup")
+async def dictionary_lookup(word: str = Query(..., min_length=1)):
+    word = word.strip().lower()
+
+    async def fetch_dictionary():
+        try:
+            async with httpx.AsyncClient(timeout=5) as client:
+                resp = await client.get(f"{DICT_API}/{word}")
+                if resp.status_code != 200:
+                    return None
+                data = resp.json()
+                if not data or not isinstance(data, list):
+                    return None
+                entry = data[0]
+                phonetics = ""
+                for p in entry.get("phonetics", []):
+                    if p.get("text"):
+                        phonetics = p["text"]
+                        break
+                pos = ""
+                example = ""
+                for m in entry.get("meanings", []):
+                    if not pos and m.get("partOfSpeech"):
+                        pos = m["partOfSpeech"]
+                    for d in m.get("definitions", []):
+                        if not example and d.get("example"):
+                            example = d["example"]
+                            break
+                    if pos and example:
+                        break
+                return {"phonetics": phonetics, "part_of_speech": pos, "example": example}
+        except Exception:
+            return None
+
+    async def fetch_translation():
+        for instance in LINGVA_INSTANCES:
+            try:
+                url = f"{instance}/api/v1/en/ru/{word}"
+                async with httpx.AsyncClient(timeout=5) as client:
+                    resp = await client.get(url)
+                    if resp.status_code != 200:
+                        continue
+                    data = resp.json()
+                    translation = data.get("translation", "")
+                    if translation and translation.lower() != word and len(translation) < 100:
+                        return translation.lower()
+            except Exception:
+                continue
+        return ""
+
+    dict_result, translation = await asyncio.gather(
+        fetch_dictionary(), fetch_translation()
+    )
+
+    if dict_result is None:
+        return {"valid": False}
+
+    return {
+        "valid": True,
+        "phonetics": dict_result.get("phonetics", ""),
+        "part_of_speech": dict_result.get("part_of_speech", ""),
+        "example": dict_result.get("example", ""),
+        "translation": translation,
+    }
+
+
 @router.post("/cards")
 async def create_card(
     body: CreateCardBody,
@@ -46,11 +123,11 @@ async def create_card(
     await verify_set_ownership(pool, body.set_id, user_id)
     row = await pool.fetchrow(
         """
-        INSERT INTO cards (set_id, front, back, part_of_speech)
-        VALUES ($1, $2, $3, $4)
+        INSERT INTO cards (set_id, front, back, part_of_speech, phonetics)
+        VALUES ($1, $2, $3, $4, $5)
         RETURNING *
         """,
-        body.set_id, body.front, body.back, body.part_of_speech,
+        body.set_id, body.front, body.back, body.part_of_speech, body.phonetics,
     )
     # Update card count
     count = await pool.fetchval(
