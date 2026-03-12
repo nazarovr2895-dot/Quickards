@@ -28,6 +28,24 @@
   animation: pulse-subtle 2s ease-in-out infinite;
 }
 
+.study-page__swipe-hint {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.study-page__swipe-hint-left {
+  color: #ef4444;
+}
+
+.study-page__swipe-hint-right {
+  color: #22c55e;
+}
+
 @media (min-width: 768px) {
   .study-page {
     max-width: 600px;

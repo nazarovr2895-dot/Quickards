@@ -8,6 +8,7 @@ import { LoadingSpinner } from '../components/LoadingSpinner'
 import { EmptyState } from '../components/EmptyState'
 import { useStudySession } from '../hooks/useStudySession'
 import { showBackButton } from '../lib/telegram'
+import { Rating } from '../lib/fsrs'
 import type { Grade } from '../lib/fsrs'
 import './StudyPage.css'
 
@@ -42,6 +43,12 @@ export function StudyPage({ userId }: Props) {
     rate(rating)
   }
 
+  const handleSwipe = (direction: 'left' | 'right') => {
+    const rating = direction === 'right' ? Rating.Good : Rating.Again
+    setRevealed(false)
+    rate(rating)
+  }
+
   if (loading) return <LoadingSpinner />
 
   if (finished && reviewed > 0) {
@@ -66,11 +73,18 @@ export function StudyPage({ userId }: Props) {
         <FlashCardReset
           card={currentCard}
           onReveal={() => setRevealed(true)}
+          onSwipe={revealed ? handleSwipe : undefined}
           index={currentIndex}
         />
       </div>
 
       <div className="study-page__actions">
+        {revealed && (
+          <p className="study-page__swipe-hint">
+            <span className="study-page__swipe-hint-left">&larr; Again</span>
+            <span className="study-page__swipe-hint-right">Know &rarr;</span>
+          </p>
+        )}
         <RatingButtons
           intervals={intervals}
           onRate={handleRate}
