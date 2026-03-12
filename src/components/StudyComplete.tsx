@@ -17,22 +17,26 @@ export function StudyComplete({ reviewed, newLearned }: Props) {
   return (
     <div className="flex flex-col items-center justify-center h-full gap-6 px-6 text-center">
       <div className="text-6xl">&#127881;</div>
-      <h2 className="text-2xl font-bold text-tg-text">Session Complete!</h2>
+      <h2 className="text-2xl font-bold" style={{ color: 'var(--app-text)' }}>Session Complete!</h2>
       <div className="flex gap-6">
         <div className="flex flex-col items-center">
-          <span className="text-3xl font-bold text-tg-accent">{reviewed}</span>
-          <span className="text-sm text-tg-hint">reviewed</span>
+          <span className="text-3xl font-bold" style={{ color: 'var(--app-accent)' }}>{reviewed}</span>
+          <span className="text-sm" style={{ color: 'var(--app-text-secondary)' }}>reviewed</span>
         </div>
         {newLearned > 0 && (
           <div className="flex flex-col items-center">
-            <span className="text-3xl font-bold text-green-500">{newLearned}</span>
-            <span className="text-sm text-tg-hint">new learned</span>
+            <span className="text-3xl font-bold" style={{ color: '#22c55e' }}>{newLearned}</span>
+            <span className="text-sm" style={{ color: 'var(--app-text-secondary)' }}>new learned</span>
           </div>
         )}
       </div>
       <button
         onClick={() => navigate('/')}
-        className="mt-4 px-6 py-3 bg-tg-button text-tg-button-text rounded-xl font-semibold text-base"
+        className="mt-4 px-6 py-3 rounded-xl font-semibold text-base transition-opacity active:opacity-70"
+        style={{
+          background: 'var(--app-accent)',
+          color: 'var(--app-bg)',
+        }}
       >
         Back to Home
       </button>

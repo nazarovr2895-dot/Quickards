@@ -1,25 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --tg-theme-bg-color: #ffffff;
-  --tg-theme-text-color: #000000;
-  --tg-theme-hint-color: #999999;
-  --tg-theme-link-color: #2481cc;
-  --tg-theme-button-color: #2481cc;
-  --tg-theme-button-text-color: #ffffff;
-  --tg-theme-secondary-bg-color: #f0f0f0;
-  --tg-theme-header-bg-color: #ffffff;
-  --tg-theme-section-bg-color: #ffffff;
-  --tg-theme-accent-text-color: #2481cc;
-  --tg-theme-section-separator-color: #e0e0e0;
-  --tg-theme-subtitle-text-color: #999999;
-  --tg-theme-destructive-text-color: #ff3b30;
+/* ===== Light theme (default) ===== */
+:root,
+:root[data-theme="light"] {
+  --app-bg: #ffffff;
+  --app-bg-elevated: #f5f5f5;
+  --app-text: #000000;
+  --app-text-secondary: #666666;
+  --app-accent: #000000;
+  --app-accent-muted: rgba(0, 0, 0, 0.1);
+  --app-border: rgba(0, 0, 0, 0.1);
+  --app-surface: rgba(0, 0, 0, 0.05);
+  --app-error: #d32f2f;
+  --app-error-bg: rgba(211, 47, 47, 0.1);
 }
 
-* {
+/* ===== Dark theme ===== */
+:root[data-theme="dark"] {
+  --app-bg: #1a1a1a;
+  --app-bg-elevated: #2a2a2a;
+  --app-text: #ffffff;
+  --app-text-secondary: #999999;
+  --app-accent: #ffffff;
+  --app-accent-muted: rgba(255, 255, 255, 0.1);
+  --app-border: rgba(255, 255, 255, 0.1);
+  --app-surface: rgba(255, 255, 255, 0.05);
+  --app-error: #ff5252;
+  --app-error-bg: rgba(255, 82, 82, 0.15);
+}
+
+/* Telegram theme variables → mapped to app vars */
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"] {
+  --tg-theme-bg-color: var(--app-bg);
+  --tg-theme-text-color: var(--app-text);
+  --tg-theme-hint-color: var(--app-text-secondary);
+  --tg-theme-link-color: var(--app-accent);
+  --tg-theme-button-color: var(--app-accent);
+  --tg-theme-button-text-color: var(--app-bg);
+  --tg-theme-secondary-bg-color: var(--app-bg-elevated);
+}
+
+/* ===== Tailwind theme inline ===== */
+@theme inline {
+  --color-app-bg: var(--app-bg);
+  --color-app-bg-elevated: var(--app-bg-elevated);
+  --color-app-text: var(--app-text);
+  --color-app-text-secondary: var(--app-text-secondary);
+  --color-app-accent: var(--app-accent);
+  --color-app-accent-muted: var(--app-accent-muted);
+  --color-app-border: var(--app-border);
+  --color-app-surface: var(--app-surface);
+  --color-app-error: var(--app-error);
+  --color-app-error-bg: var(--app-error-bg);
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -29,24 +76,100 @@ html, body, #root {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--tg-theme-secondary-bg-color);
-  color: var(--tg-theme-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--app-bg);
+  color: var(--app-text);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: contain;
 }
 
-@theme inline {
-  --color-tg-bg: var(--tg-theme-bg-color);
-  --color-tg-text: var(--tg-theme-text-color);
-  --color-tg-hint: var(--tg-theme-hint-color);
-  --color-tg-link: var(--tg-theme-link-color);
-  --color-tg-button: var(--tg-theme-button-color);
-  --color-tg-button-text: var(--tg-theme-button-text-color);
-  --color-tg-secondary-bg: var(--tg-theme-secondary-bg-color);
-  --color-tg-header-bg: var(--tg-theme-header-bg-color);
-  --color-tg-section-bg: var(--tg-theme-section-bg-color);
-  --color-tg-accent: var(--tg-theme-accent-text-color);
-  --color-tg-separator: var(--tg-theme-section-separator-color);
-  --color-tg-subtitle: var(--tg-theme-subtitle-text-color);
-  --color-tg-destructive: var(--tg-theme-destructive-text-color);
+/* ===== Telegram fullscreen safe area ===== */
+body.tg-fullscreen {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body.tg-fullscreen::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: max(env(safe-area-inset-top, 0px), var(--tg-header-offset, 0px));
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  z-index: 10001;
+  pointer-events: none;
+}
+
+:root[data-theme="dark"] body.tg-fullscreen::before {
+  background: rgba(26, 26, 26, 0.6);
+}
+
+/* ===== Scroll lock for modals ===== */
+html.scroll-locked,
+html.scroll-locked body {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--app-accent);
+  color: var(--app-bg);
+}
+
+/* ===== Focus ===== */
+:focus-visible {
+  outline: 2px solid var(--app-accent);
+  outline-offset: 2px;
+}
+
+/* ===== Scrollbar: hidden on mobile, visible on desktop ===== */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--app-border);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--app-text-secondary);
+  }
+}
+
+/* ===== Element resets ===== */
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--app-accent);
+  text-decoration: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ===== Toast animation ===== */
+@keyframes toast-fade {
+  0% { opacity: 0; transform: translate(-50%, 10px); }
+  8% { opacity: 1; transform: translate(-50%, 0); }
+  82% { opacity: 1; }
+  100% { opacity: 0; }
 }

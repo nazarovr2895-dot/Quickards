@@ -22,24 +22,28 @@ export function DashboardPage({ userId }: Props) {
 
   return (
     <div className="flex flex-col gap-4 p-4 pb-2">
-      <h1 className="text-xl font-bold text-tg-text">Quickards</h1>
+      <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>Quickards</h1>
 
       <StatsBar stats={stats} />
 
       <button
         onClick={() => navigate('/study')}
-        className={`w-full py-4 rounded-2xl font-bold text-lg transition-colors ${
-          hasDue
-            ? 'bg-tg-button text-tg-button-text active:opacity-80'
-            : 'bg-tg-section-bg text-tg-text active:opacity-80'
-        }`}
+        className="w-full py-4 rounded-2xl font-bold text-lg transition-opacity active:opacity-70"
+        style={hasDue ? {
+          background: 'var(--app-accent)',
+          color: 'var(--app-bg)',
+        } : {
+          background: 'var(--app-bg-elevated)',
+          color: 'var(--app-text)',
+          border: '1px solid var(--app-border)',
+        }}
       >
         {hasDue ? `Study Now (${stats.dueToday} due)` : 'Start Learning'}
       </button>
 
       {subscribedSets.length > 0 ? (
         <div className="flex flex-col gap-2">
-          <h2 className="text-sm font-semibold text-tg-hint uppercase tracking-wide">
+          <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--app-text-secondary)' }}>
             My Sets
           </h2>
           {subscribedSets.map(set => (

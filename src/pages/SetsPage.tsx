@@ -21,10 +21,11 @@ export function SetsPage({ userId }: Props) {
   return (
     <div className="flex flex-col gap-4 p-4 pb-2">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold text-tg-text">Sets</h1>
+        <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>Sets</h1>
         <button
           onClick={() => navigate('/sets/new')}
-          className="text-sm font-semibold text-tg-accent active:opacity-60"
+          className="text-sm font-semibold transition-opacity active:opacity-60"
+          style={{ color: 'var(--app-accent)' }}
         >
           + New Set
         </button>
@@ -60,7 +61,7 @@ export function SetsPage({ userId }: Props) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="text-sm font-semibold text-tg-hint uppercase tracking-wide">
+      <h2 className="text-sm font-semibold uppercase tracking-wide" style={{ color: 'var(--app-text-secondary)' }}>
         {title}
       </h2>
       {children}

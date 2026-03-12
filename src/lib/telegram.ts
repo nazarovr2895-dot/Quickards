@@ -1,9 +1,39 @@
 import WebApp from '@twa-dev/sdk'
 import type { TelegramUser } from './types'
 
+export function isTelegram(): boolean {
+  return !!WebApp.initData
+}
+
 export function initTelegram() {
   WebApp.ready()
   WebApp.expand()
+
+  try {
+    WebApp.setHeaderColor('secondary_bg_color')
+  } catch {}
+
+  try {
+    WebApp.disableVerticalSwipes()
+  } catch {}
+
+  try {
+    WebApp.requestFullscreen()
+    document.body.classList.add('tg-fullscreen')
+  } catch {}
+
+  applyTelegramSafeArea()
+}
+
+function applyTelegramSafeArea() {
+  try {
+    const top = (WebApp as any).safeAreaInset?.top ?? 0
+    const contentTop = (WebApp as any).contentSafeAreaInset?.top ?? 0
+    const offset = Math.max(top, contentTop)
+    if (offset > 0) {
+      document.documentElement.style.setProperty('--tg-header-offset', `${offset}px`)
+    }
+  } catch {}
 }
 
 export function getTelegramUser(): TelegramUser | null {
@@ -23,11 +53,15 @@ export function getInitData(): string {
 }
 
 export function hapticFeedback(type: 'light' | 'medium' | 'heavy' = 'light') {
-  WebApp.HapticFeedback.impactOccurred(type)
+  try {
+    WebApp.HapticFeedback.impactOccurred(type)
+  } catch {}
 }
 
 export function hapticNotification(type: 'success' | 'warning' | 'error') {
-  WebApp.HapticFeedback.notificationOccurred(type)
+  try {
+    WebApp.HapticFeedback.notificationOccurred(type)
+  } catch {}
 }
 
 export function showBackButton(onClick: () => void) {
@@ -54,6 +88,22 @@ export function setMainButtonLoading(loading: boolean) {
     WebApp.MainButton.showProgress()
   } else {
     WebApp.MainButton.hideProgress()
+  }
+}
+
+export function showAlert(message: string) {
+  if (isTelegram()) {
+    WebApp.showAlert(message)
+  } else {
+    alert(message)
+  }
+}
+
+export function showConfirm(message: string, callback: (ok: boolean) => void) {
+  if (isTelegram()) {
+    WebApp.showConfirm(message, callback)
+  } else {
+    callback(window.confirm(message))
   }
 }
 

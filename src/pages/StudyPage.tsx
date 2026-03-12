@@ -75,7 +75,7 @@ export function StudyPage({ userId }: Props) {
           visible={revealed}
         />
         {!revealed && (
-          <p className="text-center text-sm text-tg-hint mt-4">
+          <p className="text-center text-sm mt-4" style={{ color: 'var(--app-text-secondary)' }}>
             Tap the card to see the answer
           </p>
         )}

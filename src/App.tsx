@@ -3,6 +3,7 @@ import { useTelegram } from './hooks/useTelegram'
 import { useUser } from './hooks/useUser'
 import { BottomNav } from './components/BottomNav'
 import { LoadingSpinner } from './components/LoadingSpinner'
+import { ToastProvider } from './components/Toast'
 import { DashboardPage } from './pages/DashboardPage'
 import { StudyPage } from './pages/StudyPage'
 import { SetsPage } from './pages/SetsPage'
@@ -35,6 +36,7 @@ export default function App() {
           </Routes>
         </div>
         <BottomNav />
+        <ToastProvider />
       </div>
     </HashRouter>
   )

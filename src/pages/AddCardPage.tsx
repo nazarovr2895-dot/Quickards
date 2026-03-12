@@ -24,7 +24,6 @@ export function AddCardPage() {
         back: back.trim(),
         part_of_speech: pos.trim() || null,
       })
-      // Update card count
       const { count } = await supabase
         .from('cards')
         .select('id', { count: 'exact', head: true })
@@ -37,38 +36,47 @@ export function AddCardPage() {
     return showMainButton('Add Card', handleSave)
   }, [front, back, pos, setId, navigate])
 
+  const inputStyle = {
+    background: 'var(--app-bg-elevated)',
+    border: '1px solid var(--app-border)',
+    color: 'var(--app-text)',
+  }
+
   return (
     <div className="flex flex-col gap-4 p-4">
-      <h1 className="text-xl font-bold text-tg-text">Add Card</h1>
+      <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>Add Card</h1>
 
       <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium text-tg-hint">English word</span>
+        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>English word</span>
         <input
           value={front}
           onChange={e => setFront(e.target.value)}
           placeholder="e.g. accomplish"
-          className="bg-tg-section-bg rounded-xl px-4 py-3 text-tg-text outline-none placeholder:text-tg-hint/50"
+          className="rounded-xl px-4 py-3 outline-none transition-shadow"
+          style={inputStyle}
           autoFocus
         />
       </label>
 
       <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium text-tg-hint">Russian translation</span>
+        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>Russian translation</span>
         <input
           value={back}
           onChange={e => setBack(e.target.value)}
           placeholder="e.g. выполнять, достигать"
-          className="bg-tg-section-bg rounded-xl px-4 py-3 text-tg-text outline-none placeholder:text-tg-hint/50"
+          className="rounded-xl px-4 py-3 outline-none transition-shadow"
+          style={inputStyle}
         />
       </label>
 
       <label className="flex flex-col gap-1">
-        <span className="text-sm font-medium text-tg-hint">Part of speech (optional)</span>
+        <span className="text-sm font-medium" style={{ color: 'var(--app-text-secondary)' }}>Part of speech (optional)</span>
         <input
           value={pos}
           onChange={e => setPos(e.target.value)}
           placeholder="e.g. verb, noun, adjective"
-          className="bg-tg-section-bg rounded-xl px-4 py-3 text-tg-text outline-none placeholder:text-tg-hint/50"
+          className="rounded-xl px-4 py-3 outline-none transition-shadow"
+          style={inputStyle}
         />
       </label>
     </div>

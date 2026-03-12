@@ -5,6 +5,7 @@ import { cefrColor, pluralCards } from '../lib/utils'
 import { showBackButton } from '../lib/telegram'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 import { useSubscribedSets } from '../hooks/useSets'
+import { showToast } from '../components/Toast'
 import type { DBSet, DBCard } from '../lib/types'
 
 interface Props {
@@ -41,6 +42,16 @@ export function SetDetailPage({ userId }: Props) {
   const subscribed = isSubscribed(set.id)
   const isOwner = set.owner_id === userId
 
+  const handleSubscribe = async () => {
+    await subscribe(set.id)
+    showToast('Added to your sets')
+  }
+
+  const handleUnsubscribe = async () => {
+    await unsubscribe(set.id)
+    showToast('Removed from your sets')
+  }
+
   return (
     <div className="flex flex-col gap-4 p-4 pb-2">
       {/* Header */}
@@ -51,10 +62,10 @@ export function SetDetailPage({ userId }: Props) {
           </div>
         )}
         <div>
-          <h1 className="text-xl font-bold text-tg-text">{set.name}</h1>
-          <p className="text-sm text-tg-hint">{pluralCards(set.card_count)}</p>
+          <h1 className="text-xl font-bold" style={{ color: 'var(--app-text)' }}>{set.name}</h1>
+          <p className="text-sm" style={{ color: 'var(--app-text-secondary)' }}>{pluralCards(set.card_count)}</p>
           {set.description && (
-            <p className="text-sm text-tg-subtitle mt-1">{set.description}</p>
+            <p className="text-sm mt-1" style={{ color: 'var(--app-text-secondary)' }}>{set.description}</p>
           )}
         </div>
       </div>
@@ -65,21 +76,27 @@ export function SetDetailPage({ userId }: Props) {
           <>
             <button
               onClick={() => navigate(`/study/${set.id}`)}
-              className="flex-1 py-3 bg-tg-button text-tg-button-text rounded-xl font-semibold active:opacity-80"
+              className="flex-1 py-3 rounded-xl font-semibold transition-opacity active:opacity-70"
+              style={{ background: 'var(--app-accent)', color: 'var(--app-bg)' }}
             >
               Study
             </button>
             <button
-              onClick={() => unsubscribe(set.id)}
-              className="px-4 py-3 bg-tg-section-bg text-tg-destructive rounded-xl font-semibold active:opacity-80"
+              onClick={handleUnsubscribe}
+              className="px-4 py-3 rounded-xl font-semibold transition-opacity active:opacity-70"
+              style={{
+                background: 'var(--app-error-bg)',
+                color: 'var(--app-error)',
+              }}
             >
               Remove
             </button>
           </>
         ) : (
           <button
-            onClick={() => subscribe(set.id)}
-            className="flex-1 py-3 bg-tg-button text-tg-button-text rounded-xl font-semibold active:opacity-80"
+            onClick={handleSubscribe}
+            className="flex-1 py-3 rounded-xl font-semibold transition-opacity active:opacity-70"
+            style={{ background: 'var(--app-accent)', color: 'var(--app-bg)' }}
           >
             Start Studying
           </button>
@@ -89,7 +106,8 @@ export function SetDetailPage({ userId }: Props) {
       {isOwner && (
         <button
           onClick={() => navigate(`/sets/${set.id}/add`)}
-          className="text-sm font-semibold text-tg-accent active:opacity-60"
+          className="text-sm font-semibold transition-opacity active:opacity-60"
+          style={{ color: 'var(--app-accent)' }}
         >
           + Add Card
         </button>
@@ -97,25 +115,29 @@ export function SetDetailPage({ userId }: Props) {
 
       {/* Card list */}
       <div className="flex flex-col gap-1">
-        <h2 className="text-sm font-semibold text-tg-hint uppercase tracking-wide mb-1">
+        <h2 className="text-sm font-semibold uppercase tracking-wide mb-1" style={{ color: 'var(--app-text-secondary)' }}>
           Cards
         </h2>
         {cards.map(card => (
           <div
             key={card.id}
-            className="bg-tg-section-bg rounded-xl px-4 py-3 flex items-center justify-between"
+            className="rounded-xl px-4 py-3 flex items-center justify-between"
+            style={{
+              background: 'var(--app-bg-elevated)',
+              border: '1px solid var(--app-border)',
+            }}
           >
             <div>
-              <span className="font-medium text-tg-text">{card.front}</span>
+              <span className="font-medium" style={{ color: 'var(--app-text)' }}>{card.front}</span>
               {card.part_of_speech && (
-                <span className="text-xs text-tg-hint ml-1 italic">{card.part_of_speech}</span>
+                <span className="text-xs ml-1 italic" style={{ color: 'var(--app-text-secondary)' }}>{card.part_of_speech}</span>
               )}
             </div>
-            <span className="text-sm text-tg-subtitle">{card.back}</span>
+            <span className="text-sm" style={{ color: 'var(--app-text-secondary)' }}>{card.back}</span>
           </div>
         ))}
         {cards.length >= 100 && (
-          <p className="text-center text-xs text-tg-hint py-2">
+          <p className="text-center text-xs py-2" style={{ color: 'var(--app-text-secondary)' }}>
             Showing first 100 cards
           </p>
         )}
