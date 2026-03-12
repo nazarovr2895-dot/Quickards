@@ -82,6 +82,23 @@ export interface StudyCard {
   isNew: boolean
 }
 
+export interface CardWithProgress extends DBCard {
+  user_state: number | null
+  stability: number | null
+  due: string | null
+  reps: number | null
+  lapses: number | null
+}
+
+export interface SetCardsResponse {
+  cards: CardWithProgress[]
+  total: number
+  breakdown: { new: number; learning: number; review: number; mastered: number }
+  dueCount: number
+}
+
+export type CardStatusFilter = 'all' | 'new' | 'learning' | 'review' | 'mastered'
+
 export interface StudyStats {
   dueToday: number
   newAvailable: number

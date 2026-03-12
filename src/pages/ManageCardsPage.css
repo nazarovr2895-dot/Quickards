@@ -1,0 +1,295 @@
+.manage-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  padding-bottom: 24px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.manage-cards__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.manage-cards__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.manage-cards__count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-accent);
+  background: var(--app-accent-muted);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Mode tabs */
+.manage-cards__tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--app-surface);
+  border-radius: 14px;
+  padding: 4px;
+}
+
+.manage-cards__tab {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  color: var(--app-text-secondary);
+  background: transparent;
+}
+
+.manage-cards__tab--active {
+  background: var(--app-gradient);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+}
+
+/* Form */
+.manage-cards__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.manage-cards__add-btn {
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  color: #ffffff;
+  background: var(--app-gradient);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.manage-cards__add-btn:active {
+  transform: scale(0.97);
+}
+
+.manage-cards__add-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+}
+
+/* Bulk import */
+.manage-cards__separator-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.manage-cards__separator-options {
+  display: flex;
+  gap: 6px;
+}
+
+.manage-cards__sep-btn {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--app-border);
+  background: var(--app-bg-elevated);
+  color: var(--app-text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.manage-cards__sep-btn--active {
+  background: var(--app-accent-muted);
+  color: var(--app-accent);
+  border-color: var(--app-accent);
+}
+
+.manage-cards__bulk-textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.manage-cards__bulk-info {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-accent);
+}
+
+.manage-cards__bulk-info--empty {
+  color: var(--app-text-secondary);
+  font-weight: 400;
+}
+
+/* Card list */
+.manage-cards__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.manage-cards__list-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--app-text-secondary);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: 4px;
+}
+
+.manage-cards__card-item {
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.manage-cards__card-item--editing {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.manage-cards__card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.manage-cards__card-front {
+  font-weight: 500;
+  color: var(--app-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.manage-cards__card-pos {
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 4px;
+  color: var(--app-text-secondary);
+}
+
+.manage-cards__card-back {
+  font-size: 14px;
+  color: var(--app-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card actions */
+.manage-cards__card-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.manage-cards__action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  background: var(--app-surface);
+  color: var(--app-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.manage-cards__action-btn:active {
+  transform: scale(0.9);
+}
+
+.manage-cards__action-btn--danger:active {
+  color: var(--app-error);
+  background: var(--app-error-bg);
+}
+
+/* Inline edit */
+.manage-cards__edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.manage-cards__edit-input {
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+  border-radius: 12px !important;
+}
+
+.manage-cards__edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.manage-cards__edit-save {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  color: #ffffff;
+  background: var(--app-gradient);
+}
+
+.manage-cards__edit-save:disabled {
+  opacity: 0.5;
+}
+
+.manage-cards__edit-cancel {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--app-border);
+  background: var(--app-bg-elevated);
+  color: var(--app-text-secondary);
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Empty state */
+.manage-cards__empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--app-text-secondary);
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .manage-cards {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 32px;
+  }
+}

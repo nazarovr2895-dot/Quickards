@@ -3,14 +3,24 @@
   flex-direction: column;
   gap: 16px;
   padding: 16px;
-  padding-bottom: 24px;
+  padding-bottom: 32px;
   animation: fadeInUp 0.4s ease-out;
 }
 
-.set-detail__header {
+/* Hero */
+.set-detail__hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.set-detail__hero-info {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  flex: 1;
+  min-width: 0;
 }
 
 .set-detail__level {
@@ -44,39 +54,106 @@
   color: var(--app-text-secondary);
 }
 
-.set-detail__actions {
+/* Progress ring */
+.set-detail__ring {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
   display: flex;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
-.set-detail__btn {
-  padding: 12px;
+.set-detail__ring-progress {
+  transition: stroke-dashoffset 0.6s ease-out;
+}
+
+.set-detail__ring-text {
+  position: absolute;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--app-text);
+}
+
+/* Stats pills */
+.set-detail__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  animation: fadeInUp 0.4s ease-out 0.05s both;
+}
+
+.set-detail__stat {
+  border-radius: 14px;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.set-detail__stat-value {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.set-detail__stat-label {
+  display: block;
+  font-size: 10px;
+  margin-top: 1px;
+  font-weight: 500;
+  color: var(--app-text-secondary);
+}
+
+/* CTA button */
+.set-detail__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
   border-radius: 16px;
   font-weight: 600;
+  font-size: 16px;
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: transform 0.2s ease;
-}
-
-.set-detail__btn:active {
-  transform: scale(0.97);
-}
-
-.set-detail__btn--primary {
-  flex: 1;
   color: #ffffff;
   background: var(--app-gradient);
   box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
+  transition: transform 0.2s ease;
+  animation: fadeInUp 0.4s ease-out 0.1s both;
 }
 
-.set-detail__btn--danger {
-  padding: 12px 16px;
-  background: var(--app-error-bg);
-  color: var(--app-error);
+.set-detail__cta:active {
+  transform: scale(0.97);
 }
 
-.set-detail__add-link {
+.set-detail__cta--muted {
+  background: var(--app-surface);
+  color: var(--app-text-secondary);
+  box-shadow: none;
+  cursor: default;
+}
+
+.set-detail__cta--muted:active {
+  transform: none;
+}
+
+/* Footer */
+.set-detail__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--app-border);
+  margin-top: 8px;
+}
+
+.set-detail__footer-link {
   font-size: 14px;
   font-weight: 700;
   border: none;
@@ -84,61 +161,17 @@
   cursor: pointer;
   font-family: inherit;
   transition: opacity 0.2s ease;
+  padding: 8px;
 }
 
-.set-detail__add-link:active {
+.set-detail__footer-link:active {
   opacity: 0.6;
 }
 
-.set-detail__cards {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.set-detail__cards-title {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--app-text-secondary);
-  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  margin-bottom: 4px;
-}
-
-.set-detail__card-item {
-  border-radius: 16px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--app-bg-elevated);
-  border: 1px solid var(--app-border);
-  box-shadow: var(--app-shadow);
-}
-
-.set-detail__card-front {
+.set-detail__footer-link--danger {
+  color: var(--app-error);
   font-weight: 500;
-  color: var(--app-text);
-}
-
-.set-detail__card-pos {
-  font-size: 12px;
-  font-style: italic;
-  margin-left: 4px;
-  color: var(--app-text-secondary);
-}
-
-.set-detail__card-back {
-  font-size: 14px;
-  color: var(--app-text-secondary);
-}
-
-.set-detail__card-limit {
-  text-align: center;
-  font-size: 12px;
-  padding: 8px 0;
-  color: var(--app-text-secondary);
+  font-size: 13px;
 }
 
 @media (min-width: 768px) {

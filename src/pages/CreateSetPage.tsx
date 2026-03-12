@@ -27,7 +27,7 @@ export function CreateSetPage({ userId }: Props) {
       })
       setMainButtonLoading(false)
       if (data?.id) {
-        navigate(`/sets/${data.id}`, { replace: true })
+        navigate(`/sets/${data.id}/manage`, { replace: true })
       }
     }
 

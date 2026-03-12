@@ -1,0 +1,234 @@
+.card-browser {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Search */
+.card-browser__search-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 4px 0;
+  background: var(--app-bg);
+}
+
+.card-browser__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+.card-browser__search-icon {
+  flex-shrink: 0;
+  color: var(--app-text-secondary);
+}
+
+.card-browser__search-input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--app-text);
+  min-width: 0;
+}
+
+.card-browser__search-input::placeholder {
+  color: var(--app-text-secondary);
+  opacity: 0.7;
+}
+
+.card-browser__search-clear {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: var(--app-surface);
+  color: var(--app-text-secondary);
+  cursor: pointer;
+}
+
+/* Filter chips */
+.card-browser__filters {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+
+.card-browser__filters::-webkit-scrollbar {
+  display: none;
+}
+
+.card-browser__chip {
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  color: var(--app-text-secondary);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.card-browser__chip--active {
+  background: var(--app-gradient);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+}
+
+/* Card list */
+.card-browser__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-browser__item {
+  width: 100%;
+  text-align: left;
+  border-radius: 14px;
+  padding: 0;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease;
+}
+
+.card-browser__item:active {
+  background: var(--app-surface);
+}
+
+.card-browser__item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  min-height: 44px;
+}
+
+.card-browser__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.card-browser__item-front {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.card-browser__word {
+  font-weight: 500;
+  color: var(--app-text);
+  font-size: 15px;
+}
+
+.card-browser__pos {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--app-text-secondary);
+  flex-shrink: 0;
+}
+
+.card-browser__item-back {
+  font-size: 14px;
+  color: var(--app-text-secondary);
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* Expanded detail */
+.card-browser__item-detail {
+  padding: 0 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid var(--app-border);
+  margin: 0 10px;
+  padding-top: 8px;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.card-browser__phonetics {
+  font-size: 13px;
+  color: var(--app-text-secondary);
+  font-style: italic;
+}
+
+.card-browser__example {
+  font-size: 13px;
+  color: var(--app-text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.card-browser__due {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Footer */
+.card-browser__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.card-browser__count {
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}
+
+.card-browser__load-more {
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--app-border);
+  background: var(--app-bg-elevated);
+  color: var(--app-text);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.card-browser__load-more:active {
+  transform: scale(0.97);
+}
+
+.card-browser__load-more:disabled {
+  opacity: 0.5;
+}
+
+.card-browser__empty {
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 14px;
+  color: var(--app-text-secondary);
+}

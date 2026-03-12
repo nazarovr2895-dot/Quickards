@@ -10,7 +10,7 @@ import { StudyPage } from './pages/StudyPage'
 import { SetsPage } from './pages/SetsPage'
 import { SetDetailPage } from './pages/SetDetailPage'
 import { CreateSetPage } from './pages/CreateSetPage'
-import { AddCardPage } from './pages/AddCardPage'
+import { ManageCardsPage } from './pages/ManageCardsPage'
 import { SettingsPage } from './pages/SettingsPage'
 
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
@@ -61,7 +61,7 @@ function AppLayout({ userId, userName }: { userId?: number; userName?: string })
           <Route path="/sets" element={<SetsPage userId={userId} />} />
           <Route path="/sets/new" element={<CreateSetPage userId={userId} />} />
           <Route path="/sets/:setId" element={<SetDetailPage userId={userId} />} />
-          <Route path="/sets/:setId/add" element={<AddCardPage />} />
+          <Route path="/sets/:setId/manage" element={<ManageCardsPage userId={userId} />} />
           <Route path="/settings" element={<SettingsPage userId={userId} />} />
         </Routes>
       </main>

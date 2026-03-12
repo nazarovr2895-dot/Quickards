@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from pydantic import BaseModel
 
 from ..database import get_conn
@@ -48,6 +48,98 @@ async def get_set_cards(set_id: str, limit: int = 100):
         set_id, limit,
     )
     return [dict(r) for r in rows]
+
+
+@router.get("/sets/{set_id}/cards-with-progress")
+async def get_set_cards_with_progress(
+    set_id: str,
+    user_id: int = Depends(get_current_user_id),
+    search: str | None = Query(None),
+    status: str | None = Query(None),
+    offset: int = Query(0, ge=0),
+    limit: int = Query(50, ge=1, le=100),
+):
+    pool = await get_conn()
+
+    # Build status filter clause
+    status_clause = ""
+    if status == "new":
+        status_clause = "AND uc.id IS NULL"
+    elif status == "learning":
+        status_clause = "AND uc.state IN (0, 1, 3)"
+    elif status == "review":
+        status_clause = "AND uc.state = 2 AND uc.stability < 21"
+    elif status == "mastered":
+        status_clause = "AND uc.state = 2 AND uc.stability >= 21"
+
+    search_clause = ""
+    params: list = [user_id, set_id]
+    param_idx = 3
+
+    if search:
+        search_clause = (
+            f"AND (c.front ILIKE '%' || ${param_idx} || '%' "
+            f"OR c.back ILIKE '%' || ${param_idx} || '%')"
+        )
+        params.append(search)
+        param_idx += 1
+
+    # Fetch cards with progress
+    cards_query = f"""
+        SELECT c.*, uc.state as user_state, uc.stability, uc.due, uc.reps, uc.lapses
+        FROM cards c
+        LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = $1
+        WHERE c.set_id = $2
+        {search_clause}
+        {status_clause}
+        ORDER BY c.front
+        LIMIT ${param_idx} OFFSET ${param_idx + 1}
+    """
+    params.extend([limit, offset])
+
+    cards_rows = await pool.fetch(cards_query, *params)
+
+    # Count total (with same filters) + breakdown + dueCount
+    count_params: list = [user_id, set_id]
+    count_search = ""
+    if search:
+        count_search = "AND (c.front ILIKE '%' || $3 || '%' OR c.back ILIKE '%' || $3 || '%')"
+        count_params.append(search)
+
+    # Filtered total
+    total_query = f"""
+        SELECT count(*) as total
+        FROM cards c
+        LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = $1
+        WHERE c.set_id = $2 {count_search} {status_clause}
+    """
+    total_row = await pool.fetchrow(total_query, *count_params)
+
+    # Breakdown (always unfiltered by status, but respects search)
+    breakdown_query = f"""
+        SELECT
+            count(*) FILTER (WHERE uc.id IS NULL) as new_count,
+            count(*) FILTER (WHERE uc.state IN (0, 1, 3)) as learning_count,
+            count(*) FILTER (WHERE uc.state = 2 AND uc.stability < 21) as review_count,
+            count(*) FILTER (WHERE uc.state = 2 AND uc.stability >= 21) as mastered_count,
+            count(*) FILTER (WHERE uc.due <= now()) as due_count
+        FROM cards c
+        LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = $1
+        WHERE c.set_id = $2 {count_search}
+    """
+    breakdown_row = await pool.fetchrow(breakdown_query, *count_params)
+
+    return {
+        "cards": [dict(r) for r in cards_rows],
+        "total": total_row["total"],
+        "breakdown": {
+            "new": breakdown_row["new_count"],
+            "learning": breakdown_row["learning_count"],
+            "review": breakdown_row["review_count"],
+            "mastered": breakdown_row["mastered_count"],
+        },
+        "dueCount": breakdown_row["due_count"],
+    }
 
 
 @router.post("/sets")
