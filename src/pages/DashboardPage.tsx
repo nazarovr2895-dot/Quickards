@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { StatsBar } from '../components/StatsBar'
+import { DailyGoal } from '../components/DailyGoal'
 import { SetCard } from '../components/SetCard'
 import { EmptyState } from '../components/EmptyState'
 import { LoadingSpinner } from '../components/LoadingSpinner'
@@ -20,13 +21,15 @@ export function DashboardPage({ userId, userName }: Props) {
   if (statsLoading || setsLoading) return <LoadingSpinner />
 
   const hasDue = stats.dueToday > 0
-  const subscribedSets = userSets.filter(us => us.sets).map(us => us.sets!)
+  const subscribedWithProgress = userSets.filter(us => us.sets)
 
   return (
     <div className="dashboard">
       <h1 className="dashboard__title">
         {userName ? `Hello, ${userName}` : 'Quickards'}
       </h1>
+
+      <DailyGoal reviewed={stats.reviewedToday} goal={stats.dailyGoal} />
 
       <StatsBar stats={stats} />
 
@@ -42,11 +45,11 @@ export function DashboardPage({ userId, userName }: Props) {
         {hasDue ? `Study Now (${stats.dueToday} due)` : 'Start Learning'}
       </button>
 
-      {subscribedSets.length > 0 ? (
+      {subscribedWithProgress.length > 0 ? (
         <div className="dashboard__section">
           <h2 className="dashboard__section-title">My Sets</h2>
-          {subscribedSets.map(set => (
-            <SetCard key={set.id} set={set} subscribed />
+          {subscribedWithProgress.map(us => (
+            <SetCard key={us.sets!.id} set={us.sets!} subscribed learnedCount={us.learned_count} />
           ))}
         </div>
       ) : (

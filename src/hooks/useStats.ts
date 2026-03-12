@@ -8,6 +8,9 @@ export function useStats(userId: number | undefined) {
     newAvailable: 0,
     totalReviewed: 0,
     streak: 0,
+    dailyGoal: 20,
+    reviewedToday: 0,
+    streakFreezes: 1,
   })
   const [loading, setLoading] = useState(true)
 

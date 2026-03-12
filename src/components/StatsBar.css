@@ -1,23 +1,40 @@
 .stats-bar {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 .stats-bar__item {
   border-radius: 16px;
-  padding: 12px;
+  padding: 10px 6px;
   text-align: center;
 }
 
+.stats-bar__item--streak {
+  background: rgba(128, 128, 128, 0.08);
+}
+
+.stats-bar__item--streak-active {
+  background: rgba(255, 107, 53, 0.08);
+}
+
+.stats-bar__streak-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 .stats-bar__value {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
 }
 
+.stats-bar__value--streak {
+  color: #FF6B35;
+}
+
 .stats-bar__label {
-  font-size: 12px;
+  font-size: 11px;
   margin-top: 2px;
   font-weight: 500;
   color: var(--app-text-secondary);

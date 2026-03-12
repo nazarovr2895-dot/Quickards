@@ -1,0 +1,55 @@
+.daily-goal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: scaleIn 0.4s ease-out;
+}
+
+.daily-goal__ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.daily-goal__progress {
+  transition: stroke-dashoffset 0.6s ease-out;
+}
+
+.daily-goal__count {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.daily-goal__current {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.daily-goal__separator {
+  font-size: 0.85rem;
+  color: var(--app-text-secondary);
+}
+
+.daily-goal__target {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--app-text-secondary);
+}
+
+.daily-goal__label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--app-text-secondary);
+}
+
+.daily-goal--done .daily-goal__label {
+  color: #22c55e;
+}

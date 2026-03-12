@@ -87,4 +87,7 @@ export interface StudyStats {
   newAvailable: number
   totalReviewed: number
   streak: number
+  dailyGoal: number
+  reviewedToday: number
+  streakFreezes: number
 }

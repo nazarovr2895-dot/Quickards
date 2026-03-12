@@ -1,4 +1,8 @@
+import { useState, useEffect } from 'react'
 import { useTheme } from '../hooks/useTheme'
+import { useStats } from '../hooks/useStats'
+import { apiPut } from '../lib/api'
+import { showToast } from '../components/Toast'
 import './SettingsPage.css'
 
 const MoonIcon = () => (
@@ -26,8 +30,26 @@ const StarIcon = () => (
   </svg>
 )
 
-export function SettingsPage() {
+const GOAL_OPTIONS = [10, 20, 30, 50]
+
+const TargetIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
+  </svg>
+)
+
+interface Props {
+  userId?: number
+}
+
+export function SettingsPage({ userId }: Props) {
   const { theme, toggleTheme } = useTheme()
+  const { stats } = useStats(userId)
+  const [activeGoal, setActiveGoal] = useState(20)
+
+  useEffect(() => {
+    if (stats.dailyGoal) setActiveGoal(stats.dailyGoal)
+  }, [stats.dailyGoal])
 
   return (
     <div className="settings">
@@ -51,6 +73,34 @@ export function SettingsPage() {
           >
             <div className={`toggle-switch__knob ${theme === 'dark' ? 'toggle-switch__knob--on' : ''}`} />
           </button>
+        </div>
+      </div>
+
+      {/* Daily goal */}
+      <div className="settings-card">
+        <div className="settings-card__header settings-card__header--with-body">
+          <div className="settings-card__icon-wrap">
+            <TargetIcon />
+          </div>
+          <div className="settings-card__info">
+            <h3 className="settings-card__title">Daily Goal</h3>
+            <p className="settings-card__subtitle">Cards to review per day</p>
+          </div>
+        </div>
+        <div className="settings-card__goal-options">
+          {GOAL_OPTIONS.map(opt => (
+            <button
+              key={opt}
+              className={`settings-card__goal-btn ${activeGoal === opt ? 'settings-card__goal-btn--active' : ''}`}
+              onClick={async () => {
+                setActiveGoal(opt)
+                await apiPut('/api/users/daily-goal', { daily_goal: opt })
+                showToast(`Daily goal set to ${opt} cards`)
+              }}
+            >
+              {opt}
+            </button>
+          ))}
         </div>
       </div>
 

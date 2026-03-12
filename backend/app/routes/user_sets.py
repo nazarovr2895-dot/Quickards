@@ -1,3 +1,5 @@
+import json
+
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 
@@ -16,7 +18,11 @@ async def get_user_sets(user_id: int = Depends(get_current_user_id)):
     pool = await get_conn()
     rows = await pool.fetch(
         """
-        SELECT us.*, row_to_json(s.*) as sets
+        SELECT us.*, row_to_json(s.*) as sets,
+            (SELECT count(*) FROM user_cards uc
+             JOIN cards c ON c.id = uc.card_id
+             WHERE uc.user_id = us.user_id AND c.set_id = us.set_id AND uc.reps > 0
+            ) AS learned_count
         FROM user_sets us
         JOIN sets s ON s.id = us.set_id
         WHERE us.user_id = $1
@@ -25,7 +31,6 @@ async def get_user_sets(user_id: int = Depends(get_current_user_id)):
     )
     result = []
     for r in rows:
-        import json
         d = dict(r)
         d["sets"] = json.loads(d["sets"]) if isinstance(d["sets"], str) else d["sets"]
         result.append(d)

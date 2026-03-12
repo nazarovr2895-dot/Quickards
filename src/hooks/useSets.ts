@@ -7,6 +7,7 @@ interface UserSetRow {
   set_id: string
   added_at: string
   sets: DBSet
+  learned_count: number
 }
 
 export function useSystemSets() {

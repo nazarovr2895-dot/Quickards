@@ -20,6 +20,12 @@ interface ReviewResult {
 
 type GradeIntervals = Record<number, string>
 
+export interface SessionAccuracy {
+  correct: number
+  incorrect: number
+  hardWords: string[]
+}
+
 export function useStudySession(userId: number | undefined, setId?: string) {
   const [queue, setQueue] = useState<StudyCard[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -30,6 +36,7 @@ export function useStudySession(userId: number | undefined, setId?: string) {
   const [finished, setFinished] = useState(false)
   const writeQueue = useRef<ReviewResult[]>([])
   const flushTimer = useRef<ReturnType<typeof setInterval>>(undefined)
+  const accuracyRef = useRef<SessionAccuracy>({ correct: 0, incorrect: 0, hardWords: [] })
 
   const currentCard = queue[currentIndex] || null
 
@@ -104,6 +111,7 @@ export function useStudySession(userId: number | undefined, setId?: string) {
       setReviewed(0)
       setNewLearned(0)
       setFinished(merged.length === 0)
+      accuracyRef.current = { correct: 0, incorrect: 0, hardWords: [] }
     } finally {
       setLoading(false)
     }
@@ -164,6 +172,17 @@ export function useStudySession(userId: number | undefined, setId?: string) {
       prevScheduledDays: currentCard.fsrsCard.scheduled_days,
     })
 
+    // Track accuracy
+    if (rating === Rating.Again) {
+      accuracyRef.current.incorrect += 1
+      const word = currentCard.card.front
+      if (!accuracyRef.current.hardWords.includes(word)) {
+        accuracyRef.current.hardWords.push(word)
+      }
+    } else {
+      accuracyRef.current.correct += 1
+    }
+
     setReviewed(r => r + 1)
     if (currentCard.isNew) setNewLearned(n => n + 1)
 
@@ -212,5 +231,6 @@ export function useStudySession(userId: number | undefined, setId?: string) {
     finished,
     intervals,
     rate,
+    accuracy: accuracyRef.current,
   }
 }

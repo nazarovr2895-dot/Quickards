@@ -30,6 +30,7 @@ export function StudyPage({ userId }: Props) {
     finished,
     intervals,
     rate,
+    accuracy,
   } = useStudySession(userId, setId)
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export function StudyPage({ userId }: Props) {
   if (loading) return <LoadingSpinner />
 
   if (finished && reviewed > 0) {
-    return <StudyComplete reviewed={reviewed} newLearned={newLearned} />
+    return <StudyComplete reviewed={reviewed} newLearned={newLearned} accuracy={accuracy} />
   }
 
   if (!currentCard) {

@@ -14,6 +14,10 @@ class UserBody(BaseModel):
     language_code: str = "ru"
 
 
+class DailyGoalBody(BaseModel):
+    daily_goal: int
+
+
 @router.post("/users")
 async def upsert_user(
     body: UserBody,
@@ -29,5 +33,18 @@ async def upsert_user(
             language_code = $5, updated_at = now()
         """,
         user_id, body.first_name, body.last_name, body.username, body.language_code,
+    )
+    return {"ok": True}
+
+
+@router.put("/users/daily-goal")
+async def update_daily_goal(
+    body: DailyGoalBody,
+    user_id: int = Depends(get_current_user_id),
+):
+    pool = await get_conn()
+    await pool.execute(
+        "UPDATE users SET daily_goal = $1, updated_at = now() WHERE telegram_id = $2",
+        body.daily_goal, user_id,
     )
     return {"ok": True}

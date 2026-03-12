@@ -1,15 +1,19 @@
 import { useNavigate } from 'react-router-dom'
 import { hapticNotification } from '../lib/telegram'
 import { useEffect } from 'react'
+import type { SessionAccuracy } from '../hooks/useStudySession'
 import './StudyComplete.css'
 
 interface Props {
   reviewed: number
   newLearned: number
+  accuracy: SessionAccuracy
 }
 
-export function StudyComplete({ reviewed, newLearned }: Props) {
+export function StudyComplete({ reviewed, newLearned, accuracy }: Props) {
   const navigate = useNavigate()
+  const total = accuracy.correct + accuracy.incorrect
+  const accuracyPercent = total > 0 ? Math.round((accuracy.correct / total) * 100) : 100
 
   useEffect(() => {
     hapticNotification('success')
@@ -17,7 +21,6 @@ export function StudyComplete({ reviewed, newLearned }: Props) {
 
   return (
     <div className="study-complete">
-      {/* Decorative glow */}
       <div className="study-complete__glow">
         <div className="study-complete__glow-circle" />
         <div className="study-complete__emoji">&#127881;</div>
@@ -38,7 +41,29 @@ export function StudyComplete({ reviewed, newLearned }: Props) {
             <span className="study-complete__stat-label">new learned</span>
           </div>
         )}
+        <div className="study-complete__stat">
+          <span className={`study-complete__stat-value ${accuracyPercent >= 80 ? 'study-complete__stat-value--new' : 'study-complete__stat-value--accuracy'}`}>
+            {accuracyPercent}%
+          </span>
+          <span className="study-complete__stat-label">accuracy</span>
+        </div>
       </div>
+
+      {accuracy.hardWords.length > 0 && (
+        <div className="study-complete__hard-words" style={{ animation: 'fadeInUp 0.4s ease-out 0.25s both' }}>
+          <p className="study-complete__hard-words-title">Words to practice</p>
+          <div className="study-complete__hard-words-list">
+            {accuracy.hardWords.slice(0, 5).map(word => (
+              <span key={word} className="study-complete__hard-word">{word}</span>
+            ))}
+            {accuracy.hardWords.length > 5 && (
+              <span className="study-complete__hard-word study-complete__hard-word--more">
+                +{accuracy.hardWords.length - 5}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
 
       <button
         onClick={() => navigate('/')}

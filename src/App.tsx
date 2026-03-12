@@ -62,7 +62,7 @@ function AppLayout({ userId, userName }: { userId?: number; userName?: string })
           <Route path="/sets/new" element={<CreateSetPage userId={userId} />} />
           <Route path="/sets/:setId" element={<SetDetailPage userId={userId} />} />
           <Route path="/sets/:setId/add" element={<AddCardPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/settings" element={<SettingsPage userId={userId} />} />
         </Routes>
       </main>
       {showNav && <BottomNav />}

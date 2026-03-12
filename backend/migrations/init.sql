@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS users (
   last_name     TEXT,
   username      TEXT,
   language_code TEXT DEFAULT 'ru',
+  daily_goal    INT NOT NULL DEFAULT 20,
+  streak_freezes INT NOT NULL DEFAULT 1,
   created_at    TIMESTAMPTZ DEFAULT now(),
   updated_at    TIMESTAMPTZ DEFAULT now()
 );
@@ -77,3 +79,4 @@ CREATE TABLE IF NOT EXISTS review_logs (
   reviewed_at     TIMESTAMPTZ DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS idx_review_logs_user_card ON review_logs(user_card_id);
+CREATE INDEX IF NOT EXISTS idx_review_logs_reviewed_at ON review_logs(user_card_id, reviewed_at);

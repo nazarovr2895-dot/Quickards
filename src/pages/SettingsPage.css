@@ -120,6 +120,36 @@
   transform: translateX(20px);
 }
 
+.settings-card__goal-options {
+  display: flex;
+  gap: 8px;
+}
+
+.settings-card__goal-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1.5px solid var(--app-border);
+  background: transparent;
+  color: var(--app-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings-card__goal-btn--active {
+  background: var(--app-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+}
+
+.settings-card__goal-btn:active {
+  transform: scale(0.95);
+}
+
 .settings__version {
   font-size: 12px;
   text-align: center;
