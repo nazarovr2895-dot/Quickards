@@ -1,3 +1,4 @@
+import { Component, type ReactNode } from 'react'
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useTelegram } from './hooks/useTelegram'
 import { useUser } from './hooks/useUser'
@@ -12,6 +13,23 @@ import { CreateSetPage } from './pages/CreateSetPage'
 import { AddCardPage } from './pages/AddCardPage'
 import { SettingsPage } from './pages/SettingsPage'
 
+class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
+  state: { error: Error | null } = { error: null }
+  static getDerivedStateFromError(error: Error) { return { error } }
+  render() {
+    if (this.state.error) {
+      return (
+        <div style={{ padding: 24, color: '#d32f2f', fontFamily: 'monospace', fontSize: 14, whiteSpace: 'pre-wrap' }}>
+          <h2 style={{ marginBottom: 12 }}>App Error</h2>
+          <p>{this.state.error.message}</p>
+          <p style={{ marginTop: 8, opacity: 0.7 }}>{this.state.error.stack}</p>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
+
 const TAB_ROUTES = ['/', '/sets', '/settings']
 
 export default function App() {
@@ -21,9 +39,11 @@ export default function App() {
   if (!ready || loading) return <LoadingSpinner />
 
   return (
-    <HashRouter>
-      <AppLayout userId={user?.id} userName={user?.first_name} />
-    </HashRouter>
+    <ErrorBoundary>
+      <HashRouter>
+        <AppLayout userId={user?.id} userName={user?.first_name} />
+      </HashRouter>
+    </ErrorBoundary>
   )
 }
 
