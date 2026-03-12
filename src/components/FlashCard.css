@@ -5,7 +5,7 @@
   margin: 0 auto;
   cursor: pointer;
   perspective: 1000px;
-  min-height: 320px;
+  min-height: 380px;
   animation: scaleIn 0.3s ease-out;
   user-select: none;
   -webkit-user-select: none;
@@ -15,7 +15,7 @@
 .flash-card__inner {
   position: relative;
   width: 100%;
-  min-height: 320px;
+  min-height: 380px;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
@@ -158,10 +158,10 @@
 
 @media (min-width: 768px) {
   .flash-card {
-    min-height: 360px;
+    min-height: 420px;
   }
   .flash-card__inner {
-    min-height: 360px;
+    min-height: 420px;
   }
   .flash-card__word {
     font-size: 2.25rem;

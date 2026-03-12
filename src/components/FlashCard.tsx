@@ -7,11 +7,12 @@ interface Props {
   card: StudyCard
   onReveal: () => void
   onSwipe?: (direction: 'left' | 'right') => void
+  mode?: 'en-ru' | 'ru-en'
 }
 
 const SWIPE_THRESHOLD = 80
 
-export function FlashCard({ card, onReveal, onSwipe }: Props) {
+export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   const [flipped, setFlipped] = useState(false)
   const [dragX, setDragX] = useState(0)
   const [swiping, setSwiping] = useState(false)
@@ -24,20 +25,20 @@ export function FlashCard({ card, onReveal, onSwipe }: Props) {
   const cardRef = useRef<HTMLDivElement>(null)
 
   const handleFlip = () => {
-    if (flipped || isDragging.current) return
-    setFlipped(true)
+    if (isDragging.current) return
+    setFlipped(f => !f)
     hapticFeedback('light')
-    onReveal()
+    if (!flipped) onReveal()
   }
 
   const onDragStart = useCallback((clientX: number, clientY: number) => {
-    if (!flipped || !onSwipe || exiting) return
+    if (!onSwipe || exiting) return
     startX.current = clientX
     startY.current = clientY
     isDragging.current = false
     isVertical.current = false
     setSwiping(true)
-  }, [flipped, onSwipe, exiting])
+  }, [onSwipe, exiting])
 
   const onDragMove = useCallback((clientX: number, clientY: number) => {
     if (!swiping || exiting) return
@@ -147,26 +148,24 @@ export function FlashCard({ card, onReveal, onSwipe }: Props) {
       style={cardStyle}
     >
       {/* Swipe overlays */}
-      {flipped && (
-        <>
-          {showRight && (
-            <div className="flash-card__swipe-overlay flash-card__swipe-overlay--right" style={{ opacity: overlayOpacity }}>
-              <span className="flash-card__swipe-label flash-card__swipe-label--right">KNOW</span>
-            </div>
-          )}
-          {showLeft && (
-            <div className="flash-card__swipe-overlay flash-card__swipe-overlay--left" style={{ opacity: overlayOpacity }}>
-              <span className="flash-card__swipe-label flash-card__swipe-label--left">AGAIN</span>
-            </div>
-          )}
-        </>
+      {showRight && (
+        <div className="flash-card__swipe-overlay flash-card__swipe-overlay--right" style={{ opacity: overlayOpacity }}>
+          <span className="flash-card__swipe-label flash-card__swipe-label--right">KNOW</span>
+        </div>
+      )}
+      {showLeft && (
+        <div className="flash-card__swipe-overlay flash-card__swipe-overlay--left" style={{ opacity: overlayOpacity }}>
+          <span className="flash-card__swipe-label flash-card__swipe-label--left">AGAIN</span>
+        </div>
       )}
 
       <div className={`flash-card__inner ${flipped ? 'flash-card__inner--flipped' : ''}`}>
         {/* Front */}
         <div className="flash-card__face flash-card__face--front">
-          <span className="flash-card__word">{card.card.front}</span>
-          {card.card.phonetics && (
+          <span className="flash-card__word">
+            {mode === 'ru-en' ? card.card.back : card.card.front}
+          </span>
+          {mode === 'en-ru' && card.card.phonetics && (
             <span className="flash-card__phonetics">{card.card.phonetics}</span>
           )}
           {card.card.part_of_speech && (
@@ -175,16 +174,21 @@ export function FlashCard({ card, onReveal, onSwipe }: Props) {
           {card.isNew && (
             <span className="flash-card__badge">NEW</span>
           )}
-          <span className="flash-card__hint">Tap to reveal</span>
+          <span className="flash-card__hint">Tap to flip</span>
         </div>
 
         {/* Back */}
         <div className="flash-card__face flash-card__face--back">
           <span className="flash-card__back-word">
-            {card.card.front}
-            {card.card.phonetics ? ` ${card.card.phonetics}` : ''}
+            {mode === 'ru-en' ? card.card.back : card.card.front}
+            {mode === 'en-ru' && card.card.phonetics ? ` ${card.card.phonetics}` : ''}
           </span>
-          <span className="flash-card__translation">{card.card.back}</span>
+          <span className="flash-card__translation">
+            {mode === 'ru-en' ? card.card.front : card.card.back}
+          </span>
+          {mode === 'ru-en' && card.card.phonetics && (
+            <span className="flash-card__phonetics">{card.card.phonetics}</span>
+          )}
           {card.card.part_of_speech && (
             <span className="flash-card__pos">{card.card.part_of_speech}</span>
           )}
@@ -197,6 +201,6 @@ export function FlashCard({ card, onReveal, onSwipe }: Props) {
   )
 }
 
-export function FlashCardReset({ card, onReveal, onSwipe, index }: Props & { index: number }) {
-  return <FlashCard key={card.card.id + '-' + index} card={card} onReveal={onReveal} onSwipe={onSwipe} />
+export function FlashCardReset({ card, onReveal, onSwipe, index, mode }: Props & { index: number }) {
+  return <FlashCard key={card.card.id + '-' + index} card={card} onReveal={onReveal} onSwipe={onSwipe} mode={mode} />
 }

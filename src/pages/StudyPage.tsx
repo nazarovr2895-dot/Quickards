@@ -16,10 +16,12 @@ interface Props {
   userId: number | undefined
 }
 
+type StudyMode = 'en-ru' | 'ru-en'
+
 export function StudyPage({ userId }: Props) {
   const { setId } = useParams()
   const navigate = useNavigate()
-  const [revealed, setRevealed] = useState(false)
+  const [studyMode, setStudyMode] = useState<StudyMode>('en-ru')
 
   const {
     currentCard,
@@ -39,13 +41,11 @@ export function StudyPage({ userId }: Props) {
   }, [navigate])
 
   const handleRate = (rating: Grade) => {
-    setRevealed(false)
     rate(rating)
   }
 
   const handleSwipe = (direction: 'left' | 'right') => {
     const rating = direction === 'right' ? Rating.Good : Rating.Again
-    setRevealed(false)
     rate(rating)
   }
 
@@ -69,33 +69,41 @@ export function StudyPage({ userId }: Props) {
     <div className="study-page">
       <ProgressBar current={reviewed} total={totalCards} />
 
+      <div className="study-page__mode-selector">
+        <button
+          className={`study-page__mode-btn ${studyMode === 'en-ru' ? 'study-page__mode-btn--active' : ''}`}
+          onClick={() => setStudyMode('en-ru')}
+        >
+          EN → RU
+        </button>
+        <button
+          className={`study-page__mode-btn ${studyMode === 'ru-en' ? 'study-page__mode-btn--active' : ''}`}
+          onClick={() => setStudyMode('ru-en')}
+        >
+          RU → EN
+        </button>
+      </div>
+
+      <RatingButtons
+        intervals={intervals}
+        onRate={handleRate}
+        visible={true}
+      />
+
       <div className="study-page__card-area">
         <FlashCardReset
           card={currentCard}
-          onReveal={() => setRevealed(true)}
-          onSwipe={revealed ? handleSwipe : undefined}
+          onReveal={() => {}}
+          onSwipe={handleSwipe}
           index={currentIndex}
+          mode={studyMode}
         />
       </div>
 
-      <div className="study-page__actions">
-        {revealed && (
-          <p className="study-page__swipe-hint">
-            <span className="study-page__swipe-hint-left">&larr; Again</span>
-            <span className="study-page__swipe-hint-right">Know &rarr;</span>
-          </p>
-        )}
-        <RatingButtons
-          intervals={intervals}
-          onRate={handleRate}
-          visible={revealed}
-        />
-        {!revealed && (
-          <p className="study-page__hint">
-            Tap the card to see the answer
-          </p>
-        )}
-      </div>
+      <p className="study-page__swipe-hint">
+        <span className="study-page__swipe-hint-left">&larr; Again</span>
+        <span className="study-page__swipe-hint-right">Know &rarr;</span>
+      </p>
     </div>
   )
 }
