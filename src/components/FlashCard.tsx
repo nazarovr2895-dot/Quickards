@@ -50,7 +50,6 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
 
   const handleFlip = () => {
     if (isDragging.current) return
-    if (flipCount >= 2) return
     setFlipCount(c => c + 1)
     hapticFeedback('light')
     if (flipCount === 0) onReveal()
@@ -176,8 +175,12 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   // Determine hint text based on state
   const frontHint = flipCount === 0
     ? 'Tap to flip'
-    : undefined
-  const backHint = hasExample ? 'Tap for context' : undefined
+    : flipCount >= 2
+      ? 'Tap to flip'
+      : undefined
+  const backHint = flipCount === 1 && hasExample
+    ? 'Tap for context'
+    : 'Tap to flip'
 
   return (
     <div

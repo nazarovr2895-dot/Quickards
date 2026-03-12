@@ -47,7 +47,7 @@
 }
 
 .flash-card__word {
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
   color: var(--app-text);
@@ -56,7 +56,7 @@
 
 .flash-card__phonetics {
   margin-top: 8px;
-  font-size: 16px;
+  font-size: 1.125rem;
   color: var(--app-text-secondary);
 }
 
@@ -81,20 +81,20 @@
 
 .flash-card__hint {
   margin-top: 24px;
-  font-size: 14px;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: var(--app-text-secondary);
   animation: pulse-subtle 2s ease-in-out infinite;
 }
 
 .flash-card__back-word {
-  font-size: 14px;
+  font-size: 1rem;
   margin-bottom: 8px;
   color: var(--app-text-secondary);
 }
 
 .flash-card__translation {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   text-align: center;
   color: var(--app-text);
@@ -111,14 +111,14 @@
 }
 
 .flash-card__example--blank {
-  font-size: 15px;
+  font-size: 1.0625rem;
   font-style: normal;
   color: var(--app-text-secondary);
   line-height: 1.5;
 }
 
 .flash-card__example--filled {
-  font-size: 15px;
+  font-size: 1.0625rem;
   font-style: normal;
   color: var(--app-text);
   line-height: 1.5;
@@ -131,7 +131,7 @@
 
 .flash-card__example-translation {
   margin-top: 8px;
-  font-size: 13px;
+  font-size: 0.9375rem;
   text-align: center;
   padding: 0 8px;
   color: var(--app-text-secondary);
@@ -139,7 +139,7 @@
 }
 
 .flash-card__word--small {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -219,9 +219,9 @@
     min-height: 420px;
   }
   .flash-card__word {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
   .flash-card__translation {
-    font-size: 1.875rem;
+    font-size: 2rem;
   }
 }
