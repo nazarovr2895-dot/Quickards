@@ -88,4 +88,12 @@ export function showConfirm(message: string, callback: (ok: boolean) => void) {
   }
 }
 
+export function openLink(url: string) {
+  try {
+    WebApp.openLink(url)
+  } catch {
+    window.open(url, '_blank')
+  }
+}
+
 export const colorScheme = WebApp.colorScheme
