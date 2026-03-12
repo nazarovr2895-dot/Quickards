@@ -86,6 +86,7 @@ async function main() {
         part_of_speech: w.part_of_speech || null,
         phonetics: w.phonetics || null,
         example: w.example || null,
+        example_translation: w.example_translation || null,
       }))
 
       const { error } = await supabase.from('cards').insert(batch)

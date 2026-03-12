@@ -1,0 +1,5667 @@
+[
+  {
+    "word": "abandon",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈbændən/",
+    "example": " abandon somebody The baby had been abandoned by its mother.",
+    "translation": "бросать",
+    "example_translation": "Ребёнок был брошен своей матерью."
+  },
+  {
+    "word": "absolute",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈæbsəluːt/",
+    "example": "I've joined a class for absolute beginners.",
+    "translation": "абсолютный",
+    "example_translation": "Я записался в класс для абсолютных новичков."
+  },
+  {
+    "word": "absorb",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əbˈzɔːrb/",
+    "example": " absorb something Plants absorb carbon dioxide from the air.",
+    "translation": "поглощать",
+    "example_translation": "Растения поглощают углекислый газ из воздуха."
+  },
+  {
+    "word": "abstract",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈæbstrækt/",
+    "example": "abstract knowledge/principles",
+    "translation": "абстрактный",
+    "example_translation": "абстрактные знания/принципы"
+  },
+  {
+    "word": "academic",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌækəˈdemɪk/",
+    "example": "a leading/distinguished/prominent academic",
+    "translation": "учёный",
+    "example_translation": "ведущий/выдающийся/известный учёный"
+  },
+  {
+    "word": "accent",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæksənt/",
+    "example": "a northern/Dublin/Scottish accent",
+    "translation": "акцент",
+    "example_translation": "северный/дублинский/шотландский акцент"
+  },
+  {
+    "word": "acceptable",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əkˈseptəbl/",
+    "example": "Children must learn socially acceptable behaviour.",
+    "translation": "приемлемый",
+    "example_translation": "Дети должны научиться социально приемлемому поведению."
+  },
+  {
+    "word": "accidentally",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˌæksɪˈdentəli/",
+    "example": "As I turned around, I accidentally hit him in the face.",
+    "translation": "случайно",
+    "example_translation": "Когда я повернулся, я случайно ударил его по лицу."
+  },
+  {
+    "word": "accommodate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈkɑːmədeɪt/",
+    "example": "The hotel can accommodate up to 500 guests.",
+    "translation": "вмещать",
+    "example_translation": "Отель может вместить до 500 гостей."
+  },
+  {
+    "word": "accompany",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈkʌmpəni/",
+    "example": " accompany somebody/something + adv./prep. His wife accompanied him on the trip.",
+    "translation": "сопровождать",
+    "example_translation": "Его жена сопровождала его в поездке."
+  },
+  {
+    "word": "accomplish",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈkɑːmplɪʃ/",
+    "example": "The first part of the plan has been safely accomplished.",
+    "translation": "выполнить",
+    "example_translation": "Первая часть плана была успешно выполнена."
+  },
+  {
+    "word": "account",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈkaʊnt/",
+    "example": " be accounted + adj. In English law a person is accounted innocent until they are proved guilty.",
+    "translation": "считать",
+    "example_translation": "В английском праве человек считается невиновным, пока не доказана его вина."
+  },
+  {
+    "word": "accountant",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈkaʊntənt/",
+    "example": "We talked to the company’s chief accountant.",
+    "translation": "бухгалтер",
+    "example_translation": "Мы поговорили с главным бухгалтером компании."
+  },
+  {
+    "word": "accounting",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈkaʊntɪŋ/",
+    "example": "a career in accounting",
+    "translation": "бухгалтерский учёт",
+    "example_translation": "карьера в бухгалтерском учёте"
+  },
+  {
+    "word": "accuracy",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈækjərəsi/",
+    "example": "They questioned the accuracy of the information in the file.",
+    "translation": "точность",
+    "example_translation": "Они поставили под сомнение точность информации в файле."
+  },
+  {
+    "word": "accurate",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈækjərət/",
+    "example": "an accurate description/picture of something",
+    "translation": "точный",
+    "example_translation": "точное описание/представление чего-либо"
+  },
+  {
+    "word": "accurately",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈækjərətli/",
+    "example": "The article accurately reflects public opinion.",
+    "translation": "точно",
+    "example_translation": "Статья точно отражает общественное мнение."
+  },
+  {
+    "word": "accuse",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈkjuːz/",
+    "example": " accuse somebody of something to accuse somebody of murder/a crime",
+    "translation": "обвинять",
+    "example_translation": "обвинить кого-либо в убийстве/преступлении"
+  },
+  {
+    "word": "acid",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæsɪd/",
+    "example": "The acid burned a hole in her coat.",
+    "translation": "кислота",
+    "example_translation": "Кислота прожгла дыру в её пальто."
+  },
+  {
+    "word": "acknowledge",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əkˈnɑːlɪdʒ/",
+    "example": " acknowledge something She refuses to acknowledge the need for reform.",
+    "translation": "признавать",
+    "example_translation": "Она отказывается признавать необходимость реформ."
+  },
+  {
+    "word": "acquire",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈkwaɪər/",
+    "example": "She has acquired a good knowledge of English.",
+    "translation": "приобретать",
+    "example_translation": "Она приобрела хорошие знания английского языка."
+  },
+  {
+    "word": "activate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈæktɪveɪt/",
+    "example": "The burglar alarm is activated by movement.",
+    "translation": "активировать",
+    "example_translation": "Охранная сигнализация активируется при движении."
+  },
+  {
+    "word": "actual",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈæktʃuəl/",
+    "example": "James looks younger than his wife but in actual fact (= really) he is five years older.",
+    "translation": "действительный",
+    "example_translation": "Джеймс выглядит моложе своей жены, но на самом деле он на пять лет старше."
+  },
+  {
+    "word": "adapt",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈdæpt/",
+    "example": "It's amazing how soon you adapt.",
+    "translation": "адаптироваться",
+    "example_translation": "Удивительно, как быстро ты адаптируешься."
+  },
+  {
+    "word": "addiction",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈdɪkʃn/",
+    "example": "cocaine addiction",
+    "translation": "зависимость",
+    "example_translation": "кокаиновая зависимость"
+  },
+  {
+    "word": "additional",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈdɪʃənl/",
+    "example": "additional resources/funds/security/funding/costs",
+    "translation": "дополнительный",
+    "example_translation": "дополнительные ресурсы/средства/безопасность/финансирование/расходы"
+  },
+  {
+    "word": "additionally",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/əˈdɪʃənəli/",
+    "example": "Additionally, the bus service will run on Sundays, every two hours.",
+    "translation": "кроме того",
+    "example_translation": "Кроме того, автобус будет ходить по воскресеньям каждые два часа."
+  },
+  {
+    "word": "address",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈdres/",
+    "example": " address something Your essay does not address the real issues.",
+    "translation": "обращаться к",
+    "example_translation": "Ваше эссе не затрагивает реальных проблем."
+  },
+  {
+    "word": "adequate",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈædɪkwət/",
+    "example": "They'll need an adequate supply of hot water.",
+    "translation": "достаточный",
+    "example_translation": "Им понадобится достаточный запас горячей воды."
+  },
+  {
+    "word": "adequately",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈædɪkwətli/",
+    "example": "Are you adequately insured?",
+    "translation": "достаточно",
+    "example_translation": "Вы достаточно застрахованы?"
+  },
+  {
+    "word": "adjust",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈdʒʌst/",
+    "example": " adjust something Watch out for sharp bends and adjust your speed accordingly.",
+    "translation": "регулировать",
+    "example_translation": "Следите за крутыми поворотами и соответственно регулируйте скорость."
+  },
+  {
+    "word": "administration",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ədˌmɪnɪˈstreɪʃn/",
+    "example": "Administration costs are passed on to the customer.",
+    "translation": "администрация",
+    "example_translation": "Административные расходы перекладываются на клиента."
+  },
+  {
+    "word": "adopt",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈdɑːpt/",
+    "example": "a campaign to encourage childless couples to adopt",
+    "translation": "усыновлять",
+    "example_translation": "кампания по поощрению бездетных пар к усыновлению"
+  },
+  {
+    "word": "advance",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ədˈvæns/",
+    "example": "Please give us advance warning of any changes.",
+    "translation": "предварительный",
+    "example_translation": "Пожалуйста, предупредите нас заранее о любых изменениях."
+  },
+  {
+    "word": "advance",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ədˈvæns/",
+    "example": "We live in an age of rapid technological advance.",
+    "translation": "прогресс",
+    "example_translation": "Мы живём в эпоху быстрого технологического прогресса."
+  },
+  {
+    "word": "advance",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ədˈvæns/",
+    "example": "Technology is advancing at an incredibly rapid pace.",
+    "translation": "продвигаться",
+    "example_translation": "Технологии продвигаются невероятно быстрыми темпами."
+  },
+  {
+    "word": "affair",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈfer/",
+    "example": "world/international affairs",
+    "translation": "дело",
+    "example_translation": "мировые/международные дела"
+  },
+  {
+    "word": "affordable",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈfɔːrdəbl/",
+    "example": "We offer quality products at affordable prices.",
+    "translation": "доступный по цене",
+    "example_translation": "Мы предлагаем качественные товары по доступным ценам."
+  },
+  {
+    "word": "afterwards",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈæftərwərdz/",
+    "example": "Afterwards she was sorry for what she'd said.",
+    "translation": "потом",
+    "example_translation": "Потом ей было жаль о том, что она сказала."
+  },
+  {
+    "word": "agency",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈeɪdʒənsi/",
+    "example": "She works for an advertising agency.",
+    "translation": "агентство",
+    "example_translation": "Она работает в рекламном агентстве."
+  },
+  {
+    "word": "agenda",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈdʒendə/",
+    "example": "We have a very full agenda of issues to discuss.",
+    "translation": "повестка дня",
+    "example_translation": "У нас очень насыщенная повестка дня для обсуждения."
+  },
+  {
+    "word": "aggressive",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈɡresɪv/",
+    "example": "Seals have been known to exhibit aggressive behaviour towards swimmers.",
+    "translation": "агрессивный",
+    "example_translation": "Известно, что тюлени проявляют агрессивное поведение по отношению к пловцам."
+  },
+  {
+    "word": "agriculture",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæɡrɪkʌltʃər/",
+    "example": "The number of people employed in agriculture has fallen in the last decade.",
+    "translation": "сельское хозяйство",
+    "example_translation": "Число людей, занятых в сельском хозяйстве, сократилось за последнее десятилетие."
+  },
+  {
+    "word": "aid",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/eɪd/",
+    "example": "humanitarian/food/medical aid",
+    "translation": "помощь",
+    "example_translation": "гуманитарная/продовольственная/медицинская помощь"
+  },
+  {
+    "word": "aid",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/eɪd/",
+    "example": " aid in something The test is designed to aid in the diagnosis of various diseases.",
+    "translation": "помогать",
+    "example_translation": "Тест предназначен для помощи в диагностике различных заболеваний."
+  },
+  {
+    "word": "AIDS",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/eɪdz/",
+    "example": "the AIDS epidemic",
+    "translation": "СПИД",
+    "example_translation": "эпидемия СПИДа"
+  },
+  {
+    "word": "aircraft",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈerkræft/",
+    "example": "fighter/transport/military aircraft",
+    "translation": "самолёт",
+    "example_translation": "истребительные/транспортные/военные самолёты"
+  },
+  {
+    "word": "alarm",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈlɑːrm/",
+    "example": "I can only guess that they don't want to alarm the public yet.",
+    "translation": "тревожить",
+    "example_translation": "Могу только предположить, что они не хотят пока тревожить общественность."
+  },
+  {
+    "word": "alien",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈeɪliən/",
+    "example": "an illegal alien",
+    "translation": "чужак",
+    "example_translation": "нелегальный иммигрант"
+  },
+  {
+    "word": "alongside",
+    "part_of_speech": "preposition",
+    "level": "B2",
+    "phonetics": "/əˌlɔːŋˈsaɪd/",
+    "example": "A police car pulled up alongside us.",
+    "translation": "рядом с",
+    "example_translation": "Полицейская машина остановилась рядом с нами."
+  },
+  {
+    "word": "alter",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈɔːltər/",
+    "example": "Prices did not alter significantly during 2019.",
+    "translation": "изменять",
+    "example_translation": "Цены существенно не изменились в течение 2019 года."
+  },
+  {
+    "word": "altogether",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˌɔːltəˈɡeðər/",
+    "example": "The train went slower and slower until it stopped altogether.",
+    "translation": "совсем",
+    "example_translation": "Поезд ехал всё медленнее и медленнее, пока не остановился совсем."
+  },
+  {
+    "word": "ambulance",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæmbjələns/",
+    "example": "Call an ambulance!",
+    "translation": "скорая помощь",
+    "example_translation": "Вызовите скорую!"
+  },
+  {
+    "word": "amount",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈmaʊnt/",
+    "example": "",
+    "translation": "составлять"
+  },
+  {
+    "word": "amusing",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈmjuːzɪŋ/",
+    "example": "an amusing story/game/incident",
+    "translation": "забавный",
+    "example_translation": "забавная история/игра/происшествие"
+  },
+  {
+    "word": "analyst",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈænəlɪst/",
+    "example": "a political/financial analyst",
+    "translation": "аналитик",
+    "example_translation": "политический/финансовый аналитик"
+  },
+  {
+    "word": "ancestor",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈænsestər/",
+    "example": "His ancestors had come to America from Ireland.",
+    "translation": "предок",
+    "example_translation": "Его предки приехали в Америку из Ирландии."
+  },
+  {
+    "word": "anger",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæŋɡər/",
+    "example": "She had to find a way to express her pent-up anger.",
+    "translation": "гнев",
+    "example_translation": "Ей нужно было найти способ выразить свой сдерживаемый гнев."
+  },
+  {
+    "word": "angle",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæŋɡl/",
+    "example": "a 45° angle",
+    "translation": "угол",
+    "example_translation": "угол 45°"
+  },
+  {
+    "word": "angrily",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈæŋɡrəli/",
+    "example": "Some senators reacted angrily to the president's remarks.",
+    "translation": "гневно",
+    "example_translation": "Некоторые сенаторы гневно отреагировали на замечания президента."
+  },
+  {
+    "word": "animation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌænɪˈmeɪʃn/",
+    "example": "computer/cartoon animation",
+    "translation": "анимация",
+    "example_translation": "компьютерная/мультипликационная анимация"
+  },
+  {
+    "word": "anniversary",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌænɪˈvɜːrsəri/",
+    "example": "on the anniversary of his wife’s death",
+    "translation": "годовщина",
+    "example_translation": "в годовщину смерти его жены"
+  },
+  {
+    "word": "annual",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈænjuəl/",
+    "example": "an annual meeting/event/report/conference",
+    "translation": "ежегодный",
+    "example_translation": "ежегодное собрание/мероприятие/отчёт/конференция"
+  },
+  {
+    "word": "annually",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈænjuəli/",
+    "example": "The exhibition is held annually.",
+    "translation": "ежегодно",
+    "example_translation": "Выставка проводится ежегодно."
+  },
+  {
+    "word": "anticipate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ænˈtɪsɪpeɪt/",
+    "example": " anticipate something We don't anticipate any major problems.",
+    "translation": "предвидеть",
+    "example_translation": "Мы не предвидим каких-либо серьёзных проблем."
+  },
+  {
+    "word": "anxiety",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/æŋˈzaɪəti/",
+    "example": "acute/intense/deep anxiety",
+    "translation": "тревога",
+    "example_translation": "острая/сильная/глубокая тревога"
+  },
+  {
+    "word": "anxious",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈæŋkʃəs/",
+    "example": "The bus was late and Sue began to get anxious.",
+    "translation": "тревожный",
+    "example_translation": "Автобус опаздывал, и Сью начала тревожиться."
+  },
+  {
+    "word": "apology",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈpɑːlədʒi/",
+    "example": "to offer/make/demand/accept an apology",
+    "translation": "извинение",
+    "example_translation": "предложить/принести/потребовать/принять извинение"
+  },
+  {
+    "word": "apparent",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈpærənt/",
+    "example": "Their devotion was apparent.",
+    "translation": "очевидный",
+    "example_translation": "Их преданность была очевидна."
+  },
+  {
+    "word": "apparently",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/əˈpærəntli/",
+    "example": "Apparently they are getting divorced soon.",
+    "translation": "по-видимому",
+    "example_translation": "По-видимому, они скоро разводятся."
+  },
+  {
+    "word": "appeal",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈpiːl/",
+    "example": " appeal for something to launch a TV appeal for donations to the charity",
+    "translation": "призыв",
+    "example_translation": "запустить телевизионный призыв к пожертвованиям в благотворительный фонд"
+  },
+  {
+    "word": "appeal",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈpiːl/",
+    "example": "I am appealing (= asking for money) on behalf of the famine victims.",
+    "translation": "призывать",
+    "example_translation": "Я обращаюсь с призывом от имени жертв голода."
+  },
+  {
+    "word": "applicant",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæplɪkənt/",
+    "example": "There were over 500 applicants for the job.",
+    "translation": "кандидат",
+    "example_translation": "На эту должность было более 500 кандидатов."
+  },
+  {
+    "word": "approach",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈprəʊtʃ/",
+    "example": "She took the wrong approach in her dealings with them.",
+    "translation": "подход",
+    "example_translation": "Она выбрала неправильный подход в общении с ними."
+  },
+  {
+    "word": "approach",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈprəʊtʃ/",
+    "example": "We could hear the train approaching.",
+    "translation": "приближаться",
+    "example_translation": "Мы слышали, как приближается поезд."
+  },
+  {
+    "word": "appropriate",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈprəʊpriət/",
+    "example": "an appropriate response/measure/method",
+    "translation": "подходящий",
+    "example_translation": "подходящий ответ/мера/метод"
+  },
+  {
+    "word": "appropriately",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/əˈprəʊpriətli/",
+    "example": "The government has been accused of not responding appropriately to the needs of the homeless.",
+    "translation": "надлежащим образом",
+    "example_translation": "Правительство обвинили в том, что оно не реагирует надлежащим образом на нужды бездомных."
+  },
+  {
+    "word": "approval",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈpruːvl/",
+    "example": "She desperately wanted to win her father's approval.",
+    "translation": "одобрение",
+    "example_translation": "Она отчаянно хотела заслужить одобрение отца."
+  },
+  {
+    "word": "approve",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈpruːv/",
+    "example": "I told my mother I wanted to leave school but she didn't approve.",
+    "translation": "одобрять",
+    "example_translation": "Я сказал маме, что хочу бросить школу, но она не одобрила."
+  },
+  {
+    "word": "arise",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈraɪz/",
+    "example": "An opportunity arose to work in the United States.",
+    "translation": "возникать",
+    "example_translation": "Возникла возможность поработать в США."
+  },
+  {
+    "word": "armed",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɑːrmd/",
+    "example": "an armed robbery",
+    "translation": "вооружённый",
+    "example_translation": "вооружённое ограбление"
+  },
+  {
+    "word": "arms",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɑːrmz/",
+    "example": "arms and ammunition",
+    "translation": "оружие",
+    "example_translation": "оружие и боеприпасы"
+  },
+  {
+    "word": "arrow",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈærəʊ/",
+    "example": "a bow and arrow",
+    "translation": "стрела",
+    "example_translation": "лук и стрелы"
+  },
+  {
+    "word": "artificial",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌɑːrtɪˈfɪʃl/",
+    "example": "an artificial limb/flower/sweetener/fertilizer ",
+    "translation": "искусственный",
+    "example_translation": "искусственная конечность/цветок/подсластитель/удобрение"
+  },
+  {
+    "word": "artistic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɑːrˈtɪstɪk/",
+    "example": "the artistic works of the period",
+    "translation": "художественный",
+    "example_translation": "художественные произведения того периода"
+  },
+  {
+    "word": "artwork",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈɑːrtwɜːrk/",
+    "example": "Can you let me have the finished artwork for the poster by Friday?",
+    "translation": "иллюстрация",
+    "example_translation": "Можете ли вы предоставить мне готовую иллюстрацию для плаката к пятнице?"
+  },
+  {
+    "word": "ashamed",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈʃeɪmd/",
+    "example": " ashamed of something She was deeply ashamed of her behaviour at the party.",
+    "translation": "пристыженный",
+    "example_translation": "Ей было очень стыдно за своё поведение на вечеринке."
+  },
+  {
+    "word": "aside",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/əˈsaɪd/",
+    "example": "She pulled the curtain aside.",
+    "translation": "в сторону",
+    "example_translation": "Она отодвинула штору в сторону."
+  },
+  {
+    "word": "aspect",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæspekt/",
+    "example": " aspect of something The book aims to cover all aspects of city life.",
+    "translation": "аспект",
+    "example_translation": "Книга призвана охватить все аспекты городской жизни."
+  },
+  {
+    "word": "assess",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈses/",
+    "example": " assess somebody/something Accurately assessing environmental impacts is very complex.",
+    "translation": "оценивать",
+    "example_translation": "Точная оценка воздействия на окружающую среду — очень сложная задача."
+  },
+  {
+    "word": "assessment",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈsesmənt/",
+    "example": "a detailed assessment of the risks involved",
+    "translation": "оценка",
+    "example_translation": "подробная оценка связанных рисков"
+  },
+  {
+    "word": "asset",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈæset/",
+    "example": "In his job, patience is an invaluable asset.",
+    "translation": "актив",
+    "example_translation": "В его работе терпение — бесценный актив."
+  },
+  {
+    "word": "assign",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈsaɪn/",
+    "example": " assign something (to somebody) The teacher assigned a different task to each of the children.",
+    "translation": "назначать",
+    "example_translation": "Учитель назначил каждому ребёнку отдельное задание."
+  },
+  {
+    "word": "assistance",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈsɪstəns/",
+    "example": "technical/economic/military assistance",
+    "translation": "помощь",
+    "example_translation": "техническая/экономическая/военная помощь"
+  },
+  {
+    "word": "associate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈsəʊʃieɪt/",
+    "example": " associate somebody/something with somebody/something I always associate the smell of baking with my childhood.",
+    "translation": "ассоциировать",
+    "example_translation": "Я всегда ассоциирую запах выпечки с детством."
+  },
+  {
+    "word": "associated",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈsəʊʃieɪtɪd/",
+    "example": " associated with doing something the risks associated with taking drugs",
+    "translation": "связанный",
+    "example_translation": "риски, связанные с употреблением наркотиков"
+  },
+  {
+    "word": "association",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˌsəʊʃiˈeɪʃn/",
+    "example": "Do you belong to any professional or trade associations?",
+    "translation": "ассоциация",
+    "example_translation": "Вы состоите в каких-либо профессиональных или торговых ассоциациях?"
+  },
+  {
+    "word": "assume",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈsuːm/",
+    "example": " assume (that)… It is reasonable to assume (that) the economy will continue to improve.",
+    "translation": "предполагать",
+    "example_translation": "Разумно предположить, что экономика продолжит улучшаться."
+  },
+  {
+    "word": "assumption",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈsʌmpʃn/",
+    "example": "an underlying/implicit assumption",
+    "translation": "предположение",
+    "example_translation": "основополагающее/неявное предположение"
+  },
+  {
+    "word": "assure",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈʃʊr/",
+    "example": " assure somebody (that)… You think I did it deliberately, but I assure you (that) I did not.",
+    "translation": "уверять",
+    "example_translation": "Вы думаете, что я сделал это намеренно, но уверяю вас, что нет."
+  },
+  {
+    "word": "astonishing",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/əˈstɑːnɪʃɪŋ/",
+    "example": "She ran 100m in an astonishing 10.6 seconds.",
+    "translation": "поразительный",
+    "example_translation": "Она пробежала 100 м за поразительные 10,6 секунды."
+  },
+  {
+    "word": "attachment",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈtætʃmənt/",
+    "example": "No attachment was included.",
+    "translation": "вложение",
+    "example_translation": "Вложение не было прикреплено."
+  },
+  {
+    "word": "attempt",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈtempt/",
+    "example": "I passed my driving test at the first attempt.",
+    "translation": "попытка",
+    "example_translation": "Я сдал экзамен по вождению с первой попытки."
+  },
+  {
+    "word": "attempt",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/əˈtempt/",
+    "example": " attempt to do something I will attempt to answer all your questions.",
+    "translation": "пытаться",
+    "example_translation": "Я попытаюсь ответить на все ваши вопросы."
+  },
+  {
+    "word": "auction",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈɔːkʃn/",
+    "example": "an auction of paintings",
+    "translation": "аукцион",
+    "example_translation": "аукцион картин"
+  },
+  {
+    "word": "audio",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈɔːdiəʊ/",
+    "example": "audio and video recordings/files/clips",
+    "translation": "аудио",
+    "example_translation": "аудио- и видеозаписи/файлы/клипы"
+  },
+  {
+    "word": "automatic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌɔːtəˈmætɪk/",
+    "example": "automatic doors",
+    "translation": "автоматический",
+    "example_translation": "автоматические двери"
+  },
+  {
+    "word": "automatically",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˌɔːtəˈmætɪkli/",
+    "example": "The heating switches off automatically.",
+    "translation": "автоматически",
+    "example_translation": "Отопление выключается автоматически."
+  },
+  {
+    "word": "awareness",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/əˈwernəs/",
+    "example": " awareness of something an awareness of the importance of eating a healthy diet",
+    "translation": "осведомлённость",
+    "example_translation": "осведомлённость о важности здорового питания"
+  },
+  {
+    "word": "awkward",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈɔːkwərd/",
+    "example": "There was an awkward silence.",
+    "translation": "неловкий",
+    "example_translation": "Наступила неловкая тишина."
+  },
+  {
+    "word": "back",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/bæk/",
+    "example": "Her parents backed her in her choice of career.",
+    "translation": "поддерживать",
+    "example_translation": "Родители поддержали её в выборе карьеры."
+  },
+  {
+    "word": "bacteria",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bækˈtɪriə/",
+    "example": "Neither chilling nor freezing kills all bacteria.",
+    "translation": "бактерии",
+    "example_translation": "Ни охлаждение, ни замораживание не убивает все бактерии."
+  },
+  {
+    "word": "badge",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bædʒ/",
+    "example": "She wore a badge saying ‘Vote for Coates’.",
+    "translation": "значок",
+    "example_translation": "На ней был значок с надписью «Голосуйте за Коутса»."
+  },
+  {
+    "word": "balanced",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈbælənst/",
+    "example": "The programme presented a balanced view of the two sides of the conflict.",
+    "translation": "сбалансированный",
+    "example_translation": "Программа представила сбалансированный взгляд на обе стороны конфликта."
+  },
+  {
+    "word": "ballet",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bæˈleɪ/",
+    "example": "She wants to be a ballet dancer.",
+    "translation": "балет",
+    "example_translation": "Она хочет стать балериной."
+  },
+  {
+    "word": "balloon",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bəˈluːn/",
+    "example": "to blow up/burst/pop a balloon",
+    "translation": "воздушный шар",
+    "example_translation": "надуть/лопнуть воздушный шар"
+  },
+  {
+    "word": "bar",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/bɑːr/",
+    "example": " bar somebody from doing something Prisoners are barred by law from voting in general elections. ",
+    "translation": "запрещать",
+    "example_translation": "Заключённым по закону запрещено голосовать на всеобщих выборах."
+  },
+  {
+    "word": "barely",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈberli/",
+    "example": "He could barely read and write.",
+    "translation": "едва",
+    "example_translation": "Он едва умел читать и писать."
+  },
+  {
+    "word": "bargain",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbɑːrɡən/",
+    "example": "I picked up a few good bargains in the sale.",
+    "translation": "выгодная покупка",
+    "example_translation": "На распродаже я нашёл несколько выгодных покупок."
+  },
+  {
+    "word": "barrier",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbæriər/",
+    "example": "The crowd had to stand behind barriers.",
+    "translation": "барьер",
+    "example_translation": "Толпа стояла за барьерами."
+  },
+  {
+    "word": "basement",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbeɪsmənt/",
+    "example": "Kitchen goods are sold in the basement.",
+    "translation": "подвал",
+    "example_translation": "Кухонные товары продаются в подвале."
+  },
+  {
+    "word": "basically",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈbeɪsɪkli/",
+    "example": "I think we are basically saying the same thing. ",
+    "translation": "в основном",
+    "example_translation": "Я думаю, мы в основном говорим об одном и том же."
+  },
+  {
+    "word": "basket",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbæskɪt/",
+    "example": "a shopping basket",
+    "translation": "корзина",
+    "example_translation": "корзина для покупок"
+  },
+  {
+    "word": "bat",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bæt/",
+    "example": "a baseball/cricket bat",
+    "translation": "бита",
+    "example_translation": "бейсбольная/крикетная бита"
+  },
+  {
+    "word": "battle",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈbætl/",
+    "example": "Both teams battled hard.",
+    "translation": "сражаться",
+    "example_translation": "Обе команды упорно сражались."
+  },
+  {
+    "word": "bear",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ber/",
+    "example": " bear something The pain was almost more than he could bear.",
+    "translation": "выносить",
+    "example_translation": "Боль была почти невыносимой для него."
+  },
+  {
+    "word": "beat",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/biːt/",
+    "example": "several loud beats on the drum",
+    "translation": "удар",
+    "example_translation": "несколько громких ударов по барабану"
+  },
+  {
+    "word": "beg",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/beɡ/",
+    "example": "Now you have to beg and plead.",
+    "translation": "умолять",
+    "example_translation": "Теперь тебе приходится умолять и упрашивать."
+  },
+  {
+    "word": "being",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbiːɪŋ/",
+    "example": "The Irish Free State came into being in 1922.",
+    "translation": "существо",
+    "example_translation": "Ирландское Свободное государство появилось в 1922 году."
+  },
+  {
+    "word": "beneficial",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌbenɪˈfɪʃl/",
+    "example": "A good diet is beneficial to health.",
+    "translation": "полезный",
+    "example_translation": "Хорошее питание полезно для здоровья."
+  },
+  {
+    "word": "bent",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/bent/",
+    "example": "a piece of bent wire",
+    "translation": "согнутый",
+    "example_translation": "кусок согнутой проволоки"
+  },
+  {
+    "word": "beside",
+    "part_of_speech": "preposition",
+    "level": "B2",
+    "phonetics": "/bɪˈsaɪd/",
+    "example": "He sat beside her all night.",
+    "translation": "рядом с",
+    "example_translation": "Он сидел рядом с ней всю ночь."
+  },
+  {
+    "word": "besides",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/bɪˈsaɪdz/",
+    "example": "I don't really want to go. Besides, it's too late now.",
+    "translation": "к тому же",
+    "example_translation": "Я не очень хочу идти. К тому же, уже слишком поздно."
+  },
+  {
+    "word": "besides",
+    "part_of_speech": "preposition",
+    "level": "B2",
+    "phonetics": "/bɪˈsaɪdz/",
+    "example": "We have lots of things in common besides music.",
+    "translation": "помимо",
+    "example_translation": "У нас много общего помимо музыки."
+  },
+  {
+    "word": "bet",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bet/",
+    "example": "to win/lose a bet",
+    "translation": "ставка",
+    "example_translation": "выиграть/проиграть пари"
+  },
+  {
+    "word": "bet",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/bet/",
+    "example": "You have to be over 16 to bet.",
+    "translation": "делать ставку",
+    "example_translation": "Чтобы делать ставки, нужно быть старше 16 лет."
+  },
+  {
+    "word": "beyond",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/bɪˈjɑːnd/",
+    "example": "Snowdon and the mountains beyond were covered in snow.",
+    "translation": "за пределами",
+    "example_translation": "Сноудон и горы за ними были покрыты снегом."
+  },
+  {
+    "word": "beyond",
+    "part_of_speech": "preposition",
+    "level": "B2",
+    "phonetics": "/bɪˈjɑːnd/",
+    "example": "The road continues beyond the village up into the hills.",
+    "translation": "за",
+    "example_translation": "Дорога продолжается за деревней вверх в холмы."
+  },
+  {
+    "word": "bias",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbaɪəs/",
+    "example": "accusations of political bias in news programmes (= that reports are unfair and show favour to one political party)",
+    "translation": "предвзятость",
+    "example_translation": "обвинения в политической предвзятости новостных программ"
+  },
+  {
+    "word": "bid",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bɪd/",
+    "example": " bid for something A German firm launched a takeover bid for the company.",
+    "translation": "заявка",
+    "example_translation": "Немецкая фирма выступила с предложением о поглощении компании."
+  },
+  {
+    "word": "bid",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/bɪd/",
+    "example": " bid (something) (for something) I bid £2 000 for the painting.",
+    "translation": "предлагать цену",
+    "example_translation": "Я предложил 2000 фунтов за картину."
+  },
+  {
+    "word": "bill",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/bɪl/",
+    "example": " bill somebody for something Please bill me for the books.",
+    "translation": "выставлять счёт",
+    "example_translation": "Пожалуйста, выставьте мне счёт за книги."
+  },
+  {
+    "word": "biological",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌbaɪəˈlɑːdʒɪkl/",
+    "example": "the biological sciences",
+    "translation": "биологический",
+    "example_translation": "биологические науки"
+  },
+  {
+    "word": "bitter",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈbɪtər/",
+    "example": "Black coffee leaves a bitter taste in the mouth.",
+    "translation": "горький",
+    "example_translation": "Чёрный кофе оставляет горький вкус во рту."
+  },
+  {
+    "word": "blame",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bleɪm/",
+    "example": "Why do I always get the blame for everything that goes wrong?",
+    "translation": "вина",
+    "example_translation": "Почему всегда я виноват во всём, что идёт не так?"
+  },
+  {
+    "word": "blame",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/bleɪm/",
+    "example": " blame somebody/something for something She doesn't blame anyone for her father's death.",
+    "translation": "обвинять",
+    "example_translation": "Она никого не обвиняет в смерти своего отца."
+  },
+  {
+    "word": "blanket",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈblæŋkɪt/",
+    "example": "It’s cold tonight—can I have another blanket?",
+    "translation": "одеяло",
+    "example_translation": "Сегодня холодно — можно мне ещё одно одеяло?"
+  },
+  {
+    "word": "blind",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/blaɪnd/",
+    "example": "Doctors think he will go blind.",
+    "translation": "слепой",
+    "example_translation": "Врачи думают, что он ослепнет."
+  },
+  {
+    "word": "blow",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bləʊ/",
+    "example": "She received a severe blow on the head.",
+    "translation": "удар",
+    "example_translation": "Она получила сильный удар по голове."
+  },
+  {
+    "word": "bold",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/bəʊld/",
+    "example": "It was a bold move on their part to open a business in France.",
+    "translation": "смелый",
+    "example_translation": "Это был смелый шаг с их стороны — открыть бизнес во Франции."
+  },
+  {
+    "word": "bombing",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbɑːmɪŋ/",
+    "example": "recent bombings in major cities",
+    "translation": "взрыв",
+    "example_translation": "недавние взрывы в крупных городах"
+  },
+  {
+    "word": "bond",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bɑːnd/",
+    "example": "the bond that links us",
+    "translation": "связь",
+    "example_translation": "связь, которая нас объединяет"
+  },
+  {
+    "word": "booking",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbʊkɪŋ/",
+    "example": "a booking form/hall/clerk",
+    "translation": "бронирование",
+    "example_translation": "бланк/зал/клерк для бронирования"
+  },
+  {
+    "word": "boost",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/buːst/",
+    "example": "a great/tremendous/welcome boost",
+    "translation": "стимул",
+    "example_translation": "большой/огромный/приятный стимул"
+  },
+  {
+    "word": "boost",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/buːst/",
+    "example": "to boost exports/profits",
+    "translation": "повышать",
+    "example_translation": "повышать экспорт/прибыль"
+  },
+  {
+    "word": "border",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈbɔːrdər/",
+    "example": "the countries bordering the Baltic",
+    "translation": "граничить",
+    "example_translation": "страны, граничащие с Балтикой"
+  },
+  {
+    "word": "bound",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/baʊnd/",
+    "example": "There are bound to be changes when the new system is introduced.",
+    "translation": "обязательный",
+    "example_translation": "Изменения неизбежны, когда введут новую систему."
+  },
+  {
+    "word": "breast",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/brest/",
+    "example": "She put the baby to her breast.",
+    "translation": "грудь",
+    "example_translation": "Она приложила ребёнка к груди."
+  },
+  {
+    "word": "brick",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/brɪk/",
+    "example": "The school is built of brick.",
+    "translation": "кирпич",
+    "example_translation": "Школа построена из кирпича."
+  },
+  {
+    "word": "brief",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/briːf/",
+    "example": "a brief visit/meeting/conversation",
+    "translation": "краткий",
+    "example_translation": "краткий визит/встреча/разговор"
+  },
+  {
+    "word": "briefly",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈbriːfli/",
+    "example": "He had spoken to Emma only briefly.",
+    "translation": "кратко",
+    "example_translation": "Он поговорил с Эммой лишь кратко."
+  },
+  {
+    "word": "broad",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/brɔːd/",
+    "example": "a broad street/avenue/river",
+    "translation": "широкий",
+    "example_translation": "широкая улица/проспект/река"
+  },
+  {
+    "word": "broadcast",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbrɔːdkæst/",
+    "example": " (British English) a party political broadcast (= for example, before an election)",
+    "translation": "трансляция",
+    "example_translation": "политическая трансляция партии"
+  },
+  {
+    "word": "broadcast",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈbrɔːdkæst/",
+    "example": "The concert will be broadcast live (= at the same time as it takes place) tomorrow evening.",
+    "translation": "транслировать",
+    "example_translation": "Концерт будет транслироваться в прямом эфире завтра вечером."
+  },
+  {
+    "word": "broadcaster",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbrɔːdkæstər/",
+    "example": "She is a writer and broadcaster on environmental matters.",
+    "translation": "ведущий",
+    "example_translation": "Она писатель и ведущая передач об экологии."
+  },
+  {
+    "word": "broadly",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈbrɔːdli/",
+    "example": "Broadly speaking, I agree with you.",
+    "translation": "в целом",
+    "example_translation": "В целом, я с вами согласен."
+  },
+  {
+    "word": "budget",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbʌdʒɪt/",
+    "example": "an annual budget of £10 million ",
+    "translation": "бюджет",
+    "example_translation": "годовой бюджет в 10 миллионов фунтов"
+  },
+  {
+    "word": "bug",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bʌɡ/",
+    "example": "There's a bug crawling up your arm.",
+    "translation": "жук",
+    "example_translation": "По твоей руке ползёт жук."
+  },
+  {
+    "word": "bullet",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈbʊlɪt/",
+    "example": "He was found to have a single bullet wound in his chest.",
+    "translation": "пуля",
+    "example_translation": "У него обнаружили одно пулевое ранение в груди."
+  },
+  {
+    "word": "bunch",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bʌntʃ/",
+    "example": "a bunch of bananas, grapes, etc.",
+    "translation": "связка",
+    "example_translation": "связка бананов, гроздь винограда и т.д."
+  },
+  {
+    "word": "burn",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bɜːrn/",
+    "example": "to have minor/severe/third-degree burns",
+    "translation": "ожог",
+    "example_translation": "иметь лёгкие/тяжёлые/ожоги третьей степени"
+  },
+  {
+    "word": "bush",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/bʊʃ/",
+    "example": "a rose/holly bush",
+    "translation": "куст",
+    "example_translation": "розовый/остролистный куст"
+  },
+  {
+    "word": "but",
+    "part_of_speech": "preposition",
+    "level": "B2",
+    "phonetics": "/bʌt/",
+    "example": "We've had nothing but trouble with this car.",
+    "translation": "кроме",
+    "example_translation": "У нас не было ничего, кроме проблем с этой машиной."
+  },
+  {
+    "word": "cabin",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkæbɪn/",
+    "example": "I lay in my cabin feeling miserably seasick.",
+    "translation": "каюта",
+    "example_translation": "Я лежал в каюте, страдая от морской болезни."
+  },
+  {
+    "word": "cable",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkeɪbl/",
+    "example": "fibre-optic cable",
+    "translation": "кабель",
+    "example_translation": "оптоволоконный кабель"
+  },
+  {
+    "word": "calculate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈkælkjuleɪt/",
+    "example": " calculate something An independent valuer will calculate the value of your property.",
+    "translation": "рассчитывать",
+    "example_translation": "Независимый оценщик рассчитает стоимость вашей недвижимости."
+  },
+  {
+    "word": "canal",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈnæl/",
+    "example": "the Panama/Suez Canal",
+    "translation": "канал",
+    "example_translation": "Панамский/Суэцкий канал"
+  },
+  {
+    "word": "cancel",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈkænsl/",
+    "example": "All flights have been cancelled because of bad weather.",
+    "translation": "отменять",
+    "example_translation": "Все рейсы были отменены из-за плохой погоды."
+  },
+  {
+    "word": "cancer",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkænsər/",
+    "example": "breast/lung cancer",
+    "translation": "рак",
+    "example_translation": "рак молочной железы/лёгких"
+  },
+  {
+    "word": "candle",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkændl/",
+    "example": "a flickering candle",
+    "translation": "свеча",
+    "example_translation": "мерцающая свеча"
+  },
+  {
+    "word": "capable",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkeɪpəbl/",
+    "example": " capable of something You are capable of better work than this.",
+    "translation": "способный",
+    "example_translation": "Вы способны на лучшую работу, чем эта."
+  },
+  {
+    "word": "capacity",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈpæsəti/",
+    "example": "a fuel tank with a maximum capacity of 50 litres",
+    "translation": "ёмкость",
+    "example_translation": "топливный бак максимальной ёмкостью 50 литров"
+  },
+  {
+    "word": "capture",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkæptʃər/",
+    "example": "He evaded capture for three days.",
+    "translation": "захват",
+    "example_translation": "Он избегал захвата три дня."
+  },
+  {
+    "word": "capture",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈkæptʃər/",
+    "example": "Allied troops captured over 300 enemy soldiers.",
+    "translation": "захватывать",
+    "example_translation": "Союзные войска захватили более 300 вражеских солдат."
+  },
+  {
+    "word": "carbon",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːrbən/",
+    "example": "carbon fibre",
+    "translation": "углерод",
+    "example_translation": "углеродное волокно"
+  },
+  {
+    "word": "cast",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kæst/",
+    "example": "an all-star cast (= including many well-known actors)",
+    "translation": "актёрский состав",
+    "example_translation": "звёздный актёрский состав"
+  },
+  {
+    "word": "cast",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kæst/",
+    "example": " cast something + adv./prep. She cast a welcoming smile in his direction.",
+    "translation": "бросать",
+    "example_translation": "Она бросила приветливую улыбку в его сторону."
+  },
+  {
+    "word": "casual",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkæʒuəl/",
+    "example": "casual clothes (= comfortable clothes that you choose to wear in your free time)",
+    "translation": "повседневный",
+    "example_translation": "повседневная одежда"
+  },
+  {
+    "word": "catch",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ketʃ/",
+    "example": "Roger made some brilliant catches at today's game.",
+    "translation": "улов",
+    "example_translation": "Роджер сделал несколько блестящих ловлей на сегодняшней игре."
+  },
+  {
+    "word": "cave",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/keɪv/",
+    "example": "the mouth (= the entrance) of the cave",
+    "translation": "пещера",
+    "example_translation": "вход в пещеру"
+  },
+  {
+    "word": "cell",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/sel/",
+    "example": "red and white blood cells",
+    "translation": "клетка",
+    "example_translation": "красные и белые кровяные клетки"
+  },
+  {
+    "word": "certainty",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈsɜːrtnti/",
+    "example": "There is no certainty that the president's removal would end the civil war.",
+    "translation": "уверенность",
+    "example_translation": "Нет уверенности в том, что отстранение президента прекратит гражданскую войну."
+  },
+  {
+    "word": "certificate",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/sərˈtɪfɪkət/",
+    "example": "a birth/marriage/death certificate",
+    "translation": "свидетельство",
+    "example_translation": "свидетельство о рождении/браке/смерти"
+  },
+  {
+    "word": "chain",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/tʃeɪn/",
+    "example": " chain somebody/something The doors were always locked and chained.",
+    "translation": "приковывать",
+    "example_translation": "Двери всегда были заперты на замок и цепь."
+  },
+  {
+    "word": "chair",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/tʃer/",
+    "example": "to chair a committee",
+    "translation": "председательствовать",
+    "example_translation": "председательствовать в комитете"
+  },
+  {
+    "word": "chairman",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈtʃermən/",
+    "example": "Sir Herbert took it upon himself to act as chairman.",
+    "translation": "председатель",
+    "example_translation": "Сэр Герберт взял на себя роль председателя."
+  },
+  {
+    "word": "challenge",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈtʃælɪndʒ/",
+    "example": " challenge something His legal team immediately sought to challenge the decision. ",
+    "translation": "оспаривать",
+    "example_translation": "Его юристы немедленно попытались оспорить решение."
+  },
+  {
+    "word": "challenging",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈtʃælɪndʒɪŋ/",
+    "example": "challenging work/questions/problems",
+    "translation": "сложный",
+    "example_translation": "сложная работа/вопросы/проблемы"
+  },
+  {
+    "word": "championship",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈtʃæmpiənʃɪp/",
+    "example": "the National Basketball Association Championship",
+    "translation": "чемпионат",
+    "example_translation": "чемпионат Национальной баскетбольной ассоциации"
+  },
+  {
+    "word": "characteristic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌkærəktəˈrɪstɪk/",
+    "example": " characteristic of something/somebody Community support of families is characteristic of many societies.",
+    "translation": "характерный",
+    "example_translation": "Поддержка семьи общиной характерна для многих обществ."
+  },
+  {
+    "word": "characteristic",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌkærəktəˈrɪstɪk/",
+    "example": "There were few similarities in the brothers' physical characteristics.",
+    "translation": "характеристика",
+    "example_translation": "Между физическими характеристиками братьев было мало сходства."
+  },
+  {
+    "word": "charming",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈtʃɑːrmɪŋ/",
+    "example": "The cottage is tiny, but it's charming.",
+    "translation": "очаровательный",
+    "example_translation": "Коттедж крошечный, но он очаровательный."
+  },
+  {
+    "word": "chart",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/tʃɑːrt/",
+    "example": "The exhibition charts the history of the palace.",
+    "translation": "прослеживать",
+    "example_translation": "Выставка прослеживает историю дворца."
+  },
+  {
+    "word": "chase",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/tʃeɪs/",
+    "example": "The thieves were caught by police after a short chase.",
+    "translation": "погоня",
+    "example_translation": "Воры были пойманы полицией после короткой погони."
+  },
+  {
+    "word": "chase",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/tʃeɪs/",
+    "example": " chase somebody/something My dog likes chasing rabbits.",
+    "translation": "преследовать",
+    "example_translation": "Моя собака любит гоняться за кроликами."
+  },
+  {
+    "word": "cheek",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/tʃiːk/",
+    "example": "chubby/rosy/pink cheeks",
+    "translation": "щека",
+    "example_translation": "пухлые/румяные/розовые щёки"
+  },
+  {
+    "word": "cheer",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/tʃɪr/",
+    "example": "A great cheer went up from the crowd.",
+    "translation": "возглас одобрения",
+    "example_translation": "Из толпы раздался громкий возглас одобрения."
+  },
+  {
+    "word": "cheer",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/tʃɪr/",
+    "example": "We all cheered as the team came on to the field.",
+    "translation": "приветствовать",
+    "example_translation": "Мы все приветствовали команду, когда она вышла на поле."
+  },
+  {
+    "word": "chief",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/tʃiːf/",
+    "example": "the chief cause/problem/reason",
+    "translation": "главный",
+    "example_translation": "главная причина/проблема/довод"
+  },
+  {
+    "word": "chief",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/tʃiːf/",
+    "example": "army/police chiefs",
+    "translation": "руководитель",
+    "example_translation": "армейские/полицейские руководители"
+  },
+  {
+    "word": "choir",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkwaɪər/",
+    "example": "She sings in the school choir.",
+    "translation": "хор",
+    "example_translation": "Она поёт в школьном хоре."
+  },
+  {
+    "word": "chop",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/tʃɑːp/",
+    "example": " chop something He was chopping logs for firewood.",
+    "translation": "рубить",
+    "example_translation": "Он рубил брёвна на дрова."
+  },
+  {
+    "word": "circuit",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈsɜːrkɪt/",
+    "example": "The race ended with eight laps of a city centre circuit.",
+    "translation": "круг",
+    "example_translation": "Гонка завершилась восемью кругами по городской трассе."
+  },
+  {
+    "word": "circumstance",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈsɜːrkəmstæns/",
+    "example": "Police said there were no suspicious circumstances surrounding the boy's death.",
+    "translation": "обстоятельство",
+    "example_translation": "Полиция заявила, что подозрительных обстоятельств гибели мальчика не выявлено."
+  },
+  {
+    "word": "cite",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/saɪt/",
+    "example": " cite something She cited examples of companies the city has helped relocate or expand.",
+    "translation": "цитировать",
+    "example_translation": "Она привела примеры компаний, которым город помог переехать или расшириться."
+  },
+  {
+    "word": "citizen",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈsɪtɪzn/",
+    "example": "The defeat of the president did not change the lives of ordinary citizens for the better.",
+    "translation": "гражданин",
+    "example_translation": "Отстранение президента не изменило к лучшему жизнь простых граждан."
+  },
+  {
+    "word": "civil",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈsɪvl/",
+    "example": "civil unrest (= that is caused by groups of people within a country)",
+    "translation": "гражданский",
+    "example_translation": "гражданские беспорядки"
+  },
+  {
+    "word": "civilization",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌsɪvələˈzeɪʃn/",
+    "example": "the technology of modern civilization",
+    "translation": "цивилизация",
+    "example_translation": "технологии современной цивилизации"
+  },
+  {
+    "word": "clarify",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈklærəfaɪ/",
+    "example": " clarify something to clarify a situation/problem/issue",
+    "translation": "прояснять",
+    "example_translation": "прояснить ситуацию/проблему/вопрос"
+  },
+  {
+    "word": "classic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈklæsɪk/",
+    "example": "a classic film/story/car/game ",
+    "translation": "классический",
+    "example_translation": "классический фильм/история/автомобиль/игра"
+  },
+  {
+    "word": "classic",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈklæsɪk/",
+    "example": "The film is now a cult classic.",
+    "translation": "классика",
+    "example_translation": "Этот фильм теперь — культовая классика."
+  },
+  {
+    "word": "classify",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈklæsɪfaɪ/",
+    "example": "The books in the library are classified according to subject.",
+    "translation": "классифицировать",
+    "example_translation": "Книги в библиотеке классифицированы по тематике."
+  },
+  {
+    "word": "cleaning",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkliːnɪŋ/",
+    "example": "They pay someone to do the cleaning.",
+    "translation": "уборка",
+    "example_translation": "Они платят кому-то за уборку."
+  },
+  {
+    "word": "clerk",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/klɜːrk/",
+    "example": "The clerk at the counter gave me too little change.",
+    "translation": "клерк",
+    "example_translation": "Кассир на прилавке дал мне слишком мало сдачи."
+  },
+  {
+    "word": "cliff",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/klɪf/",
+    "example": "the cliff edge/top",
+    "translation": "утёс",
+    "example_translation": "край/вершина утёса"
+  },
+  {
+    "word": "clinic",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈklɪnɪk/",
+    "example": "Your local family planning clinic can give you advice about birth control.",
+    "translation": "клиника",
+    "example_translation": "Ваша местная клиника планирования семьи может дать вам совет о контрацепции."
+  },
+  {
+    "word": "clip",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/klɪp/",
+    "example": "Here is a clip from her latest movie.",
+    "translation": "клип",
+    "example_translation": "Вот клип из её последнего фильма."
+  },
+  {
+    "word": "close",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kləʊz/",
+    "example": "at the close of the seventeenth century",
+    "translation": "конец",
+    "example_translation": "в конце семнадцатого века"
+  },
+  {
+    "word": "closely",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈkləʊsli/",
+    "example": "He walked into the room, closely followed by the rest of the family.",
+    "translation": "тесно",
+    "example_translation": "Он вошёл в комнату, за ним следом шла вся семья."
+  },
+  {
+    "word": "coincidence",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəʊˈɪnsɪdəns/",
+    "example": "a strange/an extraordinary/a remarkable coincidence",
+    "translation": "совпадение",
+    "example_translation": "странное/необычайное/замечательное совпадение"
+  },
+  {
+    "word": "collapse",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈlæps/",
+    "example": "the collapse of the Soviet Union",
+    "translation": "крах",
+    "example_translation": "крах Советского Союза"
+  },
+  {
+    "word": "collapse",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kəˈlæps/",
+    "example": "The roof collapsed under the weight of snow.",
+    "translation": "рухнуть",
+    "example_translation": "Крыша рухнула под тяжестью снега."
+  },
+  {
+    "word": "collector",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈlektər/",
+    "example": "a stamp collector",
+    "translation": "коллекционер",
+    "example_translation": "коллекционер марок"
+  },
+  {
+    "word": "colony",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːləni/",
+    "example": "former British colonies",
+    "translation": "колония",
+    "example_translation": "бывшие британские колонии"
+  },
+  {
+    "word": "colourful",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkʌlərfl/",
+    "example": "colourful shop windows",
+    "translation": "красочный",
+    "example_translation": "красочные витрины магазинов"
+  },
+  {
+    "word": "combination",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌkɑːmbɪˈneɪʃn/",
+    "example": " combination of something The tragedy was due to a combination of factors.",
+    "translation": "сочетание",
+    "example_translation": "Трагедия произошла из-за сочетания факторов."
+  },
+  {
+    "word": "comfort",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkʌmfərt/",
+    "example": "The hotel offers a high standard of comfort and service.",
+    "translation": "комфорт",
+    "example_translation": "Отель предлагает высокий уровень комфорта и обслуживания."
+  },
+  {
+    "word": "comfort",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈkʌmfərt/",
+    "example": " comfort somebody The victim's widow was today being comforted by family and friends.",
+    "translation": "утешать",
+    "example_translation": "Вдову жертвы сегодня утешали родные и друзья."
+  },
+  {
+    "word": "comic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkɑːmɪk/",
+    "example": "a comic monologue/story",
+    "translation": "комический",
+    "example_translation": "комический монолог/история"
+  },
+  {
+    "word": "comic",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːmɪk/",
+    "example": "a comic book superhero",
+    "translation": "комикс",
+    "example_translation": "супергерой из комиксов"
+  },
+  {
+    "word": "command",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈmænd/",
+    "example": "Begin when I give the command.",
+    "translation": "команда",
+    "example_translation": "Начинайте, когда я дам команду."
+  },
+  {
+    "word": "command",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kəˈmænd/",
+    "example": " command somebody to do something He commanded his men to retreat.",
+    "translation": "командовать",
+    "example_translation": "Он приказал своим людям отступить."
+  },
+  {
+    "word": "commander",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈmændər/",
+    "example": "military/allied/field/flight commanders",
+    "translation": "командир",
+    "example_translation": "военные/союзные/полевые/лётные командиры"
+  },
+  {
+    "word": "commission",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈmɪʃn/",
+    "example": "The commission is expected to report its findings next month.",
+    "translation": "комиссия",
+    "example_translation": "Ожидается, что комиссия представит свои выводы в следующем месяце."
+  },
+  {
+    "word": "commission",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kəˈmɪʃn/",
+    "example": " commission somebody to do something She has been commissioned to write a new national anthem.",
+    "translation": "заказывать",
+    "example_translation": "Ей заказали написать новый национальный гимн."
+  },
+  {
+    "word": "commitment",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈmɪtmənt/",
+    "example": "I'm not ready to make a long-term commitment.",
+    "translation": "обязательство",
+    "example_translation": "Я не готов брать на себя долгосрочные обязательства."
+  },
+  {
+    "word": "committee",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈmɪti/",
+    "example": "an executive/advisory/organizing committee",
+    "translation": "комитет",
+    "example_translation": "исполнительный/консультативный/организационный комитет"
+  },
+  {
+    "word": "commonly",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈkɑːmənli/",
+    "example": "Christopher is commonly known as Kit.",
+    "translation": "обычно",
+    "example_translation": "Кристофера обычно называют Кит."
+  },
+  {
+    "word": "comparative",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kəmˈpærətɪv/",
+    "example": "Then he was living in comparative comfort (= compared with others or with his own life at a previous time).",
+    "translation": "сравнительный",
+    "example_translation": "Тогда он жил в сравнительном комфорте."
+  },
+  {
+    "word": "completion",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəmˈpliːʃn/",
+    "example": "the completion of the new hospital building",
+    "translation": "завершение",
+    "example_translation": "завершение строительства нового здания больницы"
+  },
+  {
+    "word": "complex",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːmpleks/",
+    "example": "a sports/leisure/shopping complex",
+    "translation": "комплекс",
+    "example_translation": "спортивный/развлекательный/торговый комплекс"
+  },
+  {
+    "word": "complicated",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkɑːmplɪkeɪtɪd/",
+    "example": "a complicated issue/process/system",
+    "translation": "сложный",
+    "example_translation": "сложный вопрос/процесс/система"
+  },
+  {
+    "word": "component",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəmˈpəʊnənt/",
+    "example": "the different organizations involved in the design of the various components ",
+    "translation": "компонент",
+    "example_translation": "различные организации, участвующие в разработке компонентов"
+  },
+  {
+    "word": "compose",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kəmˈpəʊz/",
+    "example": "Mozart composed his last opera shortly before he died.",
+    "translation": "сочинять",
+    "example_translation": "Моцарт сочинил свою последнюю оперу незадолго до смерти."
+  },
+  {
+    "word": "composer",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəmˈpəʊzər/",
+    "example": "Verdi was a prolific composer of operas.",
+    "translation": "композитор",
+    "example_translation": "Верди был плодовитым композитором опер."
+  },
+  {
+    "word": "compound",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːmpaʊnd/",
+    "example": "compounds derived from rainforest plants",
+    "translation": "соединение",
+    "example_translation": "соединения, полученные из растений тропических лесов"
+  },
+  {
+    "word": "comprehensive",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌkɑːmprɪˈhensɪv/",
+    "example": "a comprehensive list of addresses",
+    "translation": "всесторонний",
+    "example_translation": "полный список адресов"
+  },
+  {
+    "word": "comprise",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kəmˈpraɪz/",
+    "example": " comprise something The collection comprises 327 paintings.",
+    "translation": "включать",
+    "example_translation": "Коллекция включает 327 картин."
+  },
+  {
+    "word": "compulsory",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kəmˈpʌlsəri/",
+    "example": "English is a compulsory subject at this level.",
+    "translation": "обязательный",
+    "example_translation": "Английский язык является обязательным предметом на этом уровне."
+  },
+  {
+    "word": "concentration",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌkɑːnsnˈtreɪʃn/",
+    "example": "This book requires a great deal of concentration.",
+    "translation": "концентрация",
+    "example_translation": "Эта книга требует большой сосредоточенности."
+  },
+  {
+    "word": "concept",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnsept/",
+    "example": " concept of something the concept of social class",
+    "translation": "понятие",
+    "example_translation": "понятие социального класса"
+  },
+  {
+    "word": "concern",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈsɜːrn/",
+    "example": " concern about something/somebody Villagers expressed concern about the level of traffic.",
+    "translation": "беспокойство",
+    "example_translation": "Жители выразили обеспокоенность уровнем дорожного движения."
+  },
+  {
+    "word": "concern",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈsɜːrn/",
+    "example": "Don't interfere in what doesn't concern you.",
+    "translation": "касаться",
+    "example_translation": "Не вмешивайтесь в то, что вас не касается."
+  },
+  {
+    "word": "concerned",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈsɜːrnd/",
+    "example": "Concerned citizens can have a huge impact.",
+    "translation": "обеспокоенный",
+    "example_translation": "Неравнодушные граждане могут оказать огромное влияние."
+  },
+  {
+    "word": "concrete",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnkriːt/",
+    "example": "a concrete floor",
+    "translation": "бетонный",
+    "example_translation": "бетонный пол"
+  },
+  {
+    "word": "concrete",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnkriːt/",
+    "example": "a slab of concrete",
+    "translation": "бетон",
+    "example_translation": "плита из бетона"
+  },
+  {
+    "word": "conduct",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːndʌkt/",
+    "example": "The sport has a strict code of conduct.",
+    "translation": "поведение",
+    "example_translation": "В спорте действует строгий кодекс поведения."
+  },
+  {
+    "word": "conduct",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈdʌkt/",
+    "example": "to conduct an experiment/inquiry/investigation/interview",
+    "translation": "проводить",
+    "example_translation": "проводить эксперимент/расследование/исследование/интервью"
+  },
+  {
+    "word": "confess",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈfes/",
+    "example": "After hours of questioning, the suspect confessed.",
+    "translation": "признаваться",
+    "example_translation": "После нескольких часов допроса подозреваемый признался."
+  },
+  {
+    "word": "confidence",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnfɪdəns/",
+    "example": "The president's actions hardly inspire confidence.",
+    "translation": "уверенность",
+    "example_translation": "Действия президента вряд ли внушают уверенность."
+  },
+  {
+    "word": "conflict",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnflɪkt/",
+    "example": "The violence was the result of political conflicts.",
+    "translation": "конфликт",
+    "example_translation": "Насилие стало результатом политических конфликтов."
+  },
+  {
+    "word": "conflict",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈflɪkt/",
+    "example": "Reports conflicted on how much of the aid was reaching the famine victims.",
+    "translation": "противоречить",
+    "example_translation": "Отчёты противоречили друг другу о том, сколько помощи доходило до жертв голода."
+  },
+  {
+    "word": "confusing",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈfjuːzɪŋ/",
+    "example": "The instructions on the box are very confusing.",
+    "translation": "запутанный",
+    "example_translation": "Инструкции на коробке очень запутанные."
+  },
+  {
+    "word": "confusion",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈfjuːʒn/",
+    "example": "The announcement caused a lot of confusion.",
+    "translation": "путаница",
+    "example_translation": "Объявление вызвало большую путаницу."
+  },
+  {
+    "word": "conscious",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnʃəs/",
+    "example": " conscious of something She's very conscious of the problems involved.",
+    "translation": "сознающий",
+    "example_translation": "Она хорошо осознаёт связанные проблемы."
+  },
+  {
+    "word": "consequently",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnsɪkwentli/",
+    "example": "This poses a threat to agriculture and the food chain, and consequently to human health.",
+    "translation": "следовательно",
+    "example_translation": "Это представляет угрозу для сельского хозяйства и пищевой цепочки и, следовательно, для здоровья человека."
+  },
+  {
+    "word": "conservation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌkɑːnsərˈveɪʃn/",
+    "example": "to be interested in wildlife conservation",
+    "translation": "охрана",
+    "example_translation": "интересоваться охраной дикой природы"
+  },
+  {
+    "word": "conservative",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈsɜːrvətɪv/",
+    "example": "the conservative views of his parents",
+    "translation": "консервативный",
+    "example_translation": "консервативные взгляды его родителей"
+  },
+  {
+    "word": "conservative",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈsɜːrvətɪv/",
+    "example": "social/religious conservatives",
+    "translation": "консерватор",
+    "example_translation": "социальные/религиозные консерваторы"
+  },
+  {
+    "word": "considerable",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈsɪdərəbl/",
+    "example": "The project wasted a considerable amount of time and money.",
+    "translation": "значительный",
+    "example_translation": "Проект потратил значительное количество времени и денег."
+  },
+  {
+    "word": "considerably",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/kənˈsɪdərəbli/",
+    "example": "The need for sleep varies considerably from person to person.",
+    "translation": "значительно",
+    "example_translation": "Потребность во сне значительно варьируется от человека к человеку."
+  },
+  {
+    "word": "consideration",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˌsɪdəˈreɪʃn/",
+    "example": "An employer is legally bound to give due consideration to the request.",
+    "translation": "рассмотрение",
+    "example_translation": "Работодатель юридически обязан должным образом рассмотреть запрос."
+  },
+  {
+    "word": "consistent",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈsɪstənt/",
+    "example": "a consistent approach to the problem",
+    "translation": "последовательный",
+    "example_translation": "последовательный подход к проблеме"
+  },
+  {
+    "word": "consistently",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/kənˈsɪstəntli/",
+    "example": "Her work has been of a consistently high standard.",
+    "translation": "неизменно",
+    "example_translation": "Качество её работы неизменно высокое."
+  },
+  {
+    "word": "conspiracy",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈspɪrəsi/",
+    "example": " conspiracy (to do something) a conspiracy to overthrow the government",
+    "translation": "заговор",
+    "example_translation": "заговор с целью свержения правительства"
+  },
+  {
+    "word": "constant",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnstənt/",
+    "example": "There were constant interruptions.",
+    "translation": "постоянный",
+    "example_translation": "Были постоянные перебои."
+  },
+  {
+    "word": "constantly",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈkɑːnstəntli/",
+    "example": "Fashion is constantly changing.",
+    "translation": "постоянно",
+    "example_translation": "Мода постоянно меняется."
+  },
+  {
+    "word": "construct",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈstrʌkt/",
+    "example": " construct something The building was constructed in 1993.",
+    "translation": "строить",
+    "example_translation": "Здание было построено в 1993 году."
+  },
+  {
+    "word": "construction",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈstrʌkʃn/",
+    "example": "Construction began this year and will take approximately 18 months.",
+    "translation": "строительство",
+    "example_translation": "Строительство началось в этом году и займёт около 18 месяцев."
+  },
+  {
+    "word": "consult",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈsʌlt/",
+    "example": " consult somebody If the pain continues, consult your doctor.",
+    "translation": "консультироваться",
+    "example_translation": "Если боль не проходит, обратитесь к врачу."
+  },
+  {
+    "word": "consultant",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈsʌltənt/",
+    "example": "a technology/design consultant",
+    "translation": "консультант",
+    "example_translation": "технологический/дизайнерский консультант"
+  },
+  {
+    "word": "consumption",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈsʌmpʃn/",
+    "example": "the production of fuel for domestic consumption (= to be used in the country where it is produced)",
+    "translation": "потребление",
+    "example_translation": "производство топлива для внутреннего потребления"
+  },
+  {
+    "word": "contemporary",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈtempəreri/",
+    "example": "We have no contemporary account of the battle (= written near the time that it happened).",
+    "translation": "современный",
+    "example_translation": "У нас нет современного описания битвы."
+  },
+  {
+    "word": "contest",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːntest/",
+    "example": "to hold a singing/talent contest",
+    "translation": "конкурс",
+    "example_translation": "провести конкурс пения/талантов"
+  },
+  {
+    "word": "contest",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈtest/",
+    "example": "Three candidates contested the leadership.",
+    "translation": "оспаривать",
+    "example_translation": "Три кандидата оспаривали лидерство."
+  },
+  {
+    "word": "contract",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːntrækt/",
+    "example": "All employees have a written contract of employment.",
+    "translation": "контракт",
+    "example_translation": "У всех сотрудников есть письменный трудовой контракт."
+  },
+  {
+    "word": "contract",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈtrækt/",
+    "example": "Glass contracts as it cools.",
+    "translation": "сжиматься",
+    "example_translation": "Стекло сжимается при охлаждении."
+  },
+  {
+    "word": "contribute",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈtrɪbjuːt/",
+    "example": "Do you wish to contribute?",
+    "translation": "вносить вклад",
+    "example_translation": "Вы хотите сделать вклад?"
+  },
+  {
+    "word": "contribution",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌkɑːntrɪˈbjuːʃn/",
+    "example": "All contributions will be gratefully received.",
+    "translation": "вклад",
+    "example_translation": "Все пожертвования будут приняты с благодарностью."
+  },
+  {
+    "word": "controversial",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌkɑːntrəˈvɜːrʃl/",
+    "example": "a highly controversial topic",
+    "translation": "спорный",
+    "example_translation": "крайне спорная тема"
+  },
+  {
+    "word": "controversy",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɑːntrəvɜːrsi/",
+    "example": "to arouse/cause controversy",
+    "translation": "полемика",
+    "example_translation": "вызывать полемику"
+  },
+  {
+    "word": "convenience",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈviːniəns/",
+    "example": "We have provided seats for the convenience of our customers.",
+    "translation": "удобство",
+    "example_translation": "Мы предоставили сиденья для удобства наших клиентов."
+  },
+  {
+    "word": "convention",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kənˈvenʃn/",
+    "example": "the rigid social conventions of Victorian Britain",
+    "translation": "условность",
+    "example_translation": "жёсткие социальные условности викторианской Британии"
+  },
+  {
+    "word": "conventional",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈvenʃənl/",
+    "example": "conventional behaviour/morality",
+    "translation": "обычный",
+    "example_translation": "обычное поведение/мораль"
+  },
+  {
+    "word": "convert",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈvɜːrt/",
+    "example": " convert something They took just nine months to convert the building.",
+    "translation": "преобразовывать",
+    "example_translation": "Им потребовалось всего девять месяцев, чтобы перестроить здание."
+  },
+  {
+    "word": "convey",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kənˈveɪ/",
+    "example": " convey something Colours like red convey a sense of energy and strength.",
+    "translation": "передавать",
+    "example_translation": "Такие цвета, как красный, передают ощущение энергии и силы."
+  },
+  {
+    "word": "convinced",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈvɪnst/",
+    "example": "Sam nodded but he didn't look convinced.",
+    "translation": "убеждённый",
+    "example_translation": "Сэм кивнул, но не выглядел убеждённым."
+  },
+  {
+    "word": "convincing",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kənˈvɪnsɪŋ/",
+    "example": "a convincing argument/explanation/case",
+    "translation": "убедительный",
+    "example_translation": "убедительный аргумент/объяснение/довод"
+  },
+  {
+    "word": "cope",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kəʊp/",
+    "example": "I got to the stage where I wasn't coping any more.",
+    "translation": "справляться",
+    "example_translation": "Я дошёл до стадии, когда больше не справлялся."
+  },
+  {
+    "word": "core",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kɔːr/",
+    "example": "core subjects (= subjects that all the students have to study) such as English and mathematics",
+    "translation": "основной",
+    "example_translation": "основные предметы, такие как английский и математика"
+  },
+  {
+    "word": "core",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kɔːr/",
+    "example": "This report goes to the core of the argument.",
+    "translation": "ядро",
+    "example_translation": "Этот доклад затрагивает суть вопроса."
+  },
+  {
+    "word": "corporate",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkɔːrpərət/",
+    "example": "corporate finance/profits/tax",
+    "translation": "корпоративный",
+    "example_translation": "корпоративные финансы/прибыль/налог"
+  },
+  {
+    "word": "corporation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌkɔːrpəˈreɪʃn/",
+    "example": "multinational corporations",
+    "translation": "корпорация",
+    "example_translation": "транснациональные корпорации"
+  },
+  {
+    "word": "corridor",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɔːrɪdɔːr/",
+    "example": "His room is along the corridor.",
+    "translation": "коридор",
+    "example_translation": "Его комната дальше по коридору."
+  },
+  {
+    "word": "council",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkaʊnsl/",
+    "example": "a town council",
+    "translation": "совет",
+    "example_translation": "городской совет"
+  },
+  {
+    "word": "counter",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkaʊntər/",
+    "example": " behind the counter I asked the woman behind the counter if they had any postcards.",
+    "translation": "прилавок",
+    "example_translation": "Я спросил женщину за прилавком, есть ли у них открытки."
+  },
+  {
+    "word": "county",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkaʊnti/",
+    "example": "rural counties west of the Mississippi",
+    "translation": "округ",
+    "example_translation": "сельские округа к западу от Миссисипи"
+  },
+  {
+    "word": "courage",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɜːrɪdʒ/",
+    "example": "He showed great courage and determination.",
+    "translation": "мужество",
+    "example_translation": "Он проявил большое мужество и решительность."
+  },
+  {
+    "word": "coverage",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkʌvərɪdʒ/",
+    "example": "media/newspaper/press coverage",
+    "translation": "освещение",
+    "example_translation": "освещение в СМИ/газетах/прессе"
+  },
+  {
+    "word": "crack",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kræk/",
+    "example": "This cup has a crack in it.",
+    "translation": "трещина",
+    "example_translation": "На этой чашке трещина."
+  },
+  {
+    "word": "crack",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kræk/",
+    "example": "The ice cracked as I stepped onto it.",
+    "translation": "трескаться",
+    "example_translation": "Лёд треснул, когда я на него наступил."
+  },
+  {
+    "word": "craft",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kræft/",
+    "example": "traditional crafts like basket-weaving",
+    "translation": "ремесло",
+    "example_translation": "традиционные ремёсла, такие как плетение корзин"
+  },
+  {
+    "word": "crash",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kræʃ/",
+    "example": "a car/plane crash",
+    "translation": "авария",
+    "example_translation": "автомобильная/авиакатастрофа"
+  },
+  {
+    "word": "crash",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kræʃ/",
+    "example": "I was terrified that the plane would crash.",
+    "translation": "разбиться",
+    "example_translation": "Я ужасно боялся, что самолёт разобьётся."
+  },
+  {
+    "word": "creation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kriˈeɪʃn/",
+    "example": "Job creation needs to be the top priority.",
+    "translation": "создание",
+    "example_translation": "Создание рабочих мест должно быть главным приоритетом."
+  },
+  {
+    "word": "creativity",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌkriːeɪˈtɪvəti/",
+    "example": "Creativity and originality are more important than technical skill.",
+    "translation": "творчество",
+    "example_translation": "Творчество и оригинальность важнее технического мастерства."
+  },
+  {
+    "word": "creature",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkriːtʃər/",
+    "example": "respect for all living creatures",
+    "translation": "существо",
+    "example_translation": "уважение ко всем живым существам"
+  },
+  {
+    "word": "credit",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈkredɪt/",
+    "example": " credit something They credited my account two days later.",
+    "translation": "зачислять",
+    "example_translation": "Они зачислили деньги на мой счёт через два дня."
+  },
+  {
+    "word": "crew",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kruː/",
+    "example": "crew members",
+    "translation": "экипаж",
+    "example_translation": "члены экипажа"
+  },
+  {
+    "word": "crisis",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkraɪsɪs/",
+    "example": "an economic/a financial crisis",
+    "translation": "кризис",
+    "example_translation": "экономический/финансовый кризис"
+  },
+  {
+    "word": "criterion",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kraɪˈtɪriən/",
+    "example": "The main criterion is value for money.",
+    "translation": "критерий",
+    "example_translation": "Главный критерий — соотношение цены и качества."
+  },
+  {
+    "word": "critic",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkrɪtɪk/",
+    "example": "a film/an art/a music critic",
+    "translation": "критик",
+    "example_translation": "кинокритик/искусствовед/музыкальный критик"
+  },
+  {
+    "word": "critical",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkrɪtɪkl/",
+    "example": " You should just ignore any critical comments.",
+    "translation": "критический",
+    "example_translation": "Вам следует просто игнорировать критические замечания."
+  },
+  {
+    "word": "critically",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈkrɪtɪkli/",
+    "example": "She spoke critically of her father.",
+    "translation": "критически",
+    "example_translation": "Она критически отозвалась о своём отце."
+  },
+  {
+    "word": "criticism",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkrɪtɪsɪzəm/",
+    "example": "to draw/face/receive criticism",
+    "translation": "критика",
+    "example_translation": "вызывать/получать критику"
+  },
+  {
+    "word": "criticize",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈkrɪtɪsaɪz/",
+    "example": "All you ever do is criticize!",
+    "translation": "критиковать",
+    "example_translation": "Всё, что ты делаешь, — критикуешь!"
+  },
+  {
+    "word": "crop",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/krɑːp/",
+    "example": "Sugar cane is an important crop on the island.",
+    "translation": "урожай",
+    "example_translation": "Сахарный тростник — важная культура на острове."
+  },
+  {
+    "word": "crucial",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkruːʃl/",
+    "example": "The next few weeks are going to be crucial.",
+    "translation": "решающий",
+    "example_translation": "Следующие несколько недель будут решающими."
+  },
+  {
+    "word": "cruise",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kruːz/",
+    "example": "I'd love to go on a round-the-world cruise.",
+    "translation": "круиз",
+    "example_translation": "Я бы хотел отправиться в кругосветный круиз."
+  },
+  {
+    "word": "cruise",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kruːz/",
+    "example": " (+ adv./prep.) They cruised down the Nile.",
+    "translation": "плыть",
+    "example_translation": "Они плыли вниз по Нилу."
+  },
+  {
+    "word": "cry",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kraɪ/",
+    "example": " cry of something to give a cry of anguish/despair/pain/joy/alarm, etc.",
+    "translation": "крик",
+    "example_translation": "издать крик боли/отчаяния/радости/тревоги"
+  },
+  {
+    "word": "cue",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kjuː/",
+    "example": " cue (for something) Jon's arrival was a cue for more champagne.",
+    "translation": "сигнал",
+    "example_translation": "Прибытие Джона стало сигналом для новой бутылки шампанского."
+  },
+  {
+    "word": "cure",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kjʊr/",
+    "example": " cure for something the search for a cure for cancer",
+    "translation": "лекарство",
+    "example_translation": "поиски лекарства от рака"
+  },
+  {
+    "word": "cure",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kjʊr/",
+    "example": " cure somebody Will you be able to cure him, Doctor?",
+    "translation": "вылечить",
+    "example_translation": "Вы сможете вылечить его, доктор?"
+  },
+  {
+    "word": "curious",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈkjʊriəs/",
+    "example": "He is such a curious boy, always asking questions.",
+    "translation": "любопытный",
+    "example_translation": "Он такой любопытный мальчик, всегда задаёт вопросы."
+  },
+  {
+    "word": "current",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈkɜːrənt/",
+    "example": " with the current It's easier to go with the current.",
+    "translation": "течение",
+    "example_translation": "По течению плыть легче."
+  },
+  {
+    "word": "curriculum",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kəˈrɪkjələm/",
+    "example": "The school curriculum should be as broad as possible.",
+    "translation": "учебная программа",
+    "example_translation": "Школьная программа должна быть как можно шире."
+  },
+  {
+    "word": "curve",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/kɜːrv/",
+    "example": " curve of something He admired the delicate curve of her ear.",
+    "translation": "изгиб",
+    "example_translation": "Он любовался изящным изгибом её уха."
+  },
+  {
+    "word": "curve",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/kɜːrv/",
+    "example": "a curving staircase",
+    "translation": "изгибаться",
+    "example_translation": "изогнутая лестница"
+  },
+  {
+    "word": "curved",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kɜːrvd/",
+    "example": "a curved edge/surface",
+    "translation": "изогнутый",
+    "example_translation": "изогнутый край/поверхность"
+  },
+  {
+    "word": "cute",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/kjuːt/",
+    "example": "a cute little baby",
+    "translation": "милый",
+    "example_translation": "милый маленький ребёнок"
+  },
+  {
+    "word": "dairy",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈderi/",
+    "example": "dairy products/produce",
+    "translation": "молочный",
+    "example_translation": "молочные продукты"
+  },
+  {
+    "word": "dairy",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈderi/",
+    "example": "The doctor told me to eat less red meat and dairy.",
+    "translation": "молочные продукты",
+    "example_translation": "Врач велел мне есть меньше красного мяса и молочных продуктов."
+  },
+  {
+    "word": "dare",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/der/",
+    "example": "She said it as loudly as she dared.",
+    "translation": "сметь",
+    "example_translation": "Она сказала это так громко, как осмелилась."
+  },
+  {
+    "word": "darkness",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdɑːrknəs/",
+    "example": "After a few minutes our eyes got used to the darkness.",
+    "translation": "темнота",
+    "example_translation": "Через несколько минут наши глаза привыкли к темноте."
+  },
+  {
+    "word": "database",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdætəbeɪs/",
+    "example": "The database is updated monthly.",
+    "translation": "база данных",
+    "example_translation": "База данных обновляется ежемесячно."
+  },
+  {
+    "word": "date",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/deɪt/",
+    "example": "Thank you for your letter dated 24th March.",
+    "translation": "датировать",
+    "example_translation": "Спасибо за ваше письмо от 24 марта."
+  },
+  {
+    "word": "deadline",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdedlaɪn/",
+    "example": "I prefer to work to a deadline.",
+    "translation": "крайний срок",
+    "example_translation": "Я предпочитаю работать в условиях крайнего срока."
+  },
+  {
+    "word": "deadly",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈdedli/",
+    "example": "a deadly weapon/disease",
+    "translation": "смертельный",
+    "example_translation": "смертельное оружие/заболевание"
+  },
+  {
+    "word": "dealer",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdiːlər/",
+    "example": "an art/antique dealer",
+    "translation": "торговец",
+    "example_translation": "торговец произведениями искусства/антиквариатом"
+  },
+  {
+    "word": "debate",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈbeɪt/",
+    "example": "the first ever televised presidential debate",
+    "translation": "дебаты",
+    "example_translation": "первые в истории телевизионные президентские дебаты"
+  },
+  {
+    "word": "debate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈbeɪt/",
+    "example": " debate (something) Politicians will be debating the bill later this week.",
+    "translation": "обсуждать",
+    "example_translation": "Политики будут обсуждать законопроект позже на этой неделе."
+  },
+  {
+    "word": "debt",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/det/",
+    "example": "to pay/repay a debt",
+    "translation": "долг",
+    "example_translation": "выплатить долг"
+  },
+  {
+    "word": "decent",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈdiːsnt/",
+    "example": "a decent meal/place to live ",
+    "translation": "приличный",
+    "example_translation": "приличная еда/жильё"
+  },
+  {
+    "word": "deck",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dek/",
+    "example": " on deck I was the only person on deck at that time of night.",
+    "translation": "палуба",
+    "example_translation": "Я был единственным человеком на палубе в это время ночи."
+  },
+  {
+    "word": "declare",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈkler/",
+    "example": " declare something The government has declared a state of emergency.",
+    "translation": "объявлять",
+    "example_translation": "Правительство объявило чрезвычайное положение."
+  },
+  {
+    "word": "decline",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈklaɪn/",
+    "example": " decline in something There has been a 5 per cent decline in student numbers.",
+    "translation": "снижение",
+    "example_translation": "Произошло снижение числа студентов на 5 процентов."
+  },
+  {
+    "word": "decline",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈklaɪn/",
+    "example": "Support for the party continues to decline.",
+    "translation": "снижаться",
+    "example_translation": "Поддержка партии продолжает снижаться."
+  },
+  {
+    "word": "decoration",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌdekəˈreɪʃn/",
+    "example": "Christmas/festive decorations",
+    "translation": "украшение",
+    "example_translation": "рождественские/праздничные украшения"
+  },
+  {
+    "word": "decrease",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdiːkriːs/",
+    "example": "Sales for May show a decrease compared with the same month last year.",
+    "translation": "уменьшение",
+    "example_translation": "Продажи за май показали уменьшение по сравнению с тем же месяцем прошлого года."
+  },
+  {
+    "word": "decrease",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈkriːs/",
+    "example": "Donations have decreased significantly over the past few years.",
+    "translation": "уменьшаться",
+    "example_translation": "Пожертвования значительно уменьшились за последние несколько лет."
+  },
+  {
+    "word": "deeply",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈdiːpli/",
+    "example": "She is deeply religious.",
+    "translation": "глубоко",
+    "example_translation": "Она глубоко религиозна."
+  },
+  {
+    "word": "defeat",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈfiːt/",
+    "example": "The party faces defeat in the election.",
+    "translation": "поражение",
+    "example_translation": "Партию ожидает поражение на выборах."
+  },
+  {
+    "word": "defeat",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈfiːt/",
+    "example": " defeat somebody/something He defeated the champion in three sets.",
+    "translation": "побеждать",
+    "example_translation": "Он победил чемпиона в трёх сетах."
+  },
+  {
+    "word": "defence",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈfens/",
+    "example": " in defence of somebody/something soldiers who died in defence of their country",
+    "translation": "оборона",
+    "example_translation": "солдаты, погибшие при обороне страны"
+  },
+  {
+    "word": "defend",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈfend/",
+    "example": " defend somebody/something The role of the military is to defend the country.",
+    "translation": "защищать",
+    "example_translation": "Роль армии — защищать страну."
+  },
+  {
+    "word": "defender",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈfendər/",
+    "example": "",
+    "translation": "защитник"
+  },
+  {
+    "word": "delay",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈleɪ/",
+    "example": "Commuters will face long delays on the roads today.",
+    "translation": "задержка",
+    "example_translation": "Пассажиры столкнутся сегодня с большими задержками на дорогах."
+  },
+  {
+    "word": "delay",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈleɪ/",
+    "example": "My flight was delayed. ",
+    "translation": "задерживать",
+    "example_translation": "Мой рейс задержали."
+  },
+  {
+    "word": "delete",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈliːt/",
+    "example": "Your name has been deleted from the list.",
+    "translation": "удалять",
+    "example_translation": "Ваше имя было удалено из списка."
+  },
+  {
+    "word": "deliberate",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪˈlɪbərət/",
+    "example": "a deliberate act of vandalism",
+    "translation": "намеренный",
+    "example_translation": "намеренный акт вандализма"
+  },
+  {
+    "word": "deliberately",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/dɪˈlɪbərətli/",
+    "example": "She's been deliberately ignoring him all day.",
+    "translation": "намеренно",
+    "example_translation": "Она намеренно игнорировала его весь день."
+  },
+  {
+    "word": "delight",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈlaɪt/",
+    "example": "a feeling of sheer/pure delight",
+    "translation": "восторг",
+    "example_translation": "чувство полного восторга"
+  },
+  {
+    "word": "delight",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈlaɪt/",
+    "example": "This news will delight his fans all over the world.",
+    "translation": "восхищать",
+    "example_translation": "Эта новость восхитит его поклонников по всему миру."
+  },
+  {
+    "word": "delighted",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪˈlaɪtɪd/",
+    "example": "a delighted smile",
+    "translation": "восхищённый",
+    "example_translation": "восхищённая улыбка"
+  },
+  {
+    "word": "delivery",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈlɪvəri/",
+    "example": "Allow 28 days for delivery.",
+    "translation": "доставка",
+    "example_translation": "Срок доставки — 28 дней."
+  },
+  {
+    "word": "demand",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈmænd/",
+    "example": " demand for something a demand for higher pay",
+    "translation": "требование",
+    "example_translation": "требование повышения зарплаты"
+  },
+  {
+    "word": "demand",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈmænd/",
+    "example": " demand something They are demanding the release of all political prisoners.",
+    "translation": "требовать",
+    "example_translation": "Они требуют освобождения всех политических заключённых."
+  },
+  {
+    "word": "democracy",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈmɑːkrəsi/",
+    "example": "parliamentary democracy",
+    "translation": "демократия",
+    "example_translation": "парламентская демократия"
+  },
+  {
+    "word": "democratic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌdeməˈkrætɪk/",
+    "example": "a democratic country",
+    "translation": "демократический",
+    "example_translation": "демократическая страна"
+  },
+  {
+    "word": "demonstrate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈdemənstreɪt/",
+    "example": " demonstrate that… New research convincingly demonstrates that age-related memory loss is not inevitable.",
+    "translation": "демонстрировать",
+    "example_translation": "Новые исследования убедительно демонстрируют это."
+  },
+  {
+    "word": "demonstration",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌdemənˈstreɪʃn/",
+    "example": "to take part in/go on a demonstration",
+    "translation": "демонстрация",
+    "example_translation": "принять участие в демонстрации"
+  },
+  {
+    "word": "deny",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈnaɪ/",
+    "example": " deny something to deny an allegation/a charge/an accusation",
+    "translation": "отрицать",
+    "example_translation": "отрицать обвинение"
+  },
+  {
+    "word": "depart",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈpɑːrt/",
+    "example": " depart (for…) (from…) Flights for Rome depart from Terminal 3.",
+    "translation": "отправляться",
+    "example_translation": "Рейсы в Рим отправляются от терминала 3."
+  },
+  {
+    "word": "dependent",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪˈpendənt/",
+    "example": "a woman with several dependent children",
+    "translation": "зависимый",
+    "example_translation": "женщина с несколькими детьми-иждивенцами"
+  },
+  {
+    "word": "deposit",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈpɑːzɪt/",
+    "example": "They normally ask you to pay $100 (as a) deposit.",
+    "translation": "залог",
+    "example_translation": "Обычно они просят заплатить 100 долларов в качестве залога."
+  },
+  {
+    "word": "depressed",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪˈprest/",
+    "example": "You mustn't let yourself get depressed.",
+    "translation": "подавленный",
+    "example_translation": "Нельзя позволять себе впадать в подавленное состояние."
+  },
+  {
+    "word": "depressing",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪˈpresɪŋ/",
+    "example": "a depressing sight/thought/experience ",
+    "translation": "гнетущий",
+    "example_translation": "гнетущее зрелище/мысль/впечатление"
+  },
+  {
+    "word": "depression",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈpreʃn/",
+    "example": "She was diagnosed as having clinical depression.",
+    "translation": "депрессия",
+    "example_translation": "Ей поставили диагноз «клиническая депрессия»."
+  },
+  {
+    "word": "depth",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/depθ/",
+    "example": " depth of something What's the depth of the water here?",
+    "translation": "глубина",
+    "example_translation": "Какова глубина воды здесь?"
+  },
+  {
+    "word": "derive",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈraɪv/",
+    "example": "",
+    "translation": "получать"
+  },
+  {
+    "word": "desert",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈzɜːrt/",
+    "example": "She was deserted by her husband.",
+    "translation": "бросать",
+    "example_translation": "Муж бросил её."
+  },
+  {
+    "word": "deserve",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈzɜːrv/",
+    "example": " deserve something You deserve a rest after all that hard work.",
+    "translation": "заслуживать",
+    "example_translation": "Ты заслуживаешь отдых после всей этой тяжёлой работы."
+  },
+  {
+    "word": "desire",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈzaɪər/",
+    "example": "He now had enough money to satisfy all his desires.",
+    "translation": "желание",
+    "example_translation": "Теперь у него было достаточно денег, чтобы удовлетворить все свои желания."
+  },
+  {
+    "word": "desire",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈzaɪər/",
+    "example": " desire something We all desire health and happiness.",
+    "translation": "желать",
+    "example_translation": "Мы все желаем здоровья и счастья."
+  },
+  {
+    "word": "desperate",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈdespərət/",
+    "example": "The prisoners grew increasingly desperate.",
+    "translation": "отчаянный",
+    "example_translation": "Заключённые становились всё более отчаянными."
+  },
+  {
+    "word": "desperately",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈdespərətli/",
+    "example": "She looked desperately around for a weapon.",
+    "translation": "отчаянно",
+    "example_translation": "Она отчаянно искала глазами оружие."
+  },
+  {
+    "word": "destruction",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈstrʌkʃn/",
+    "example": "the destruction of the rainforests",
+    "translation": "разрушение",
+    "example_translation": "разрушение тропических лесов"
+  },
+  {
+    "word": "detail",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈteɪl/",
+    "example": "The brochure details all the hotels in the area and their facilities.",
+    "translation": "подробно описывать",
+    "example_translation": "В брошюре подробно описаны все отели в районе и их удобства."
+  },
+  {
+    "word": "detailed",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪˈteɪld/",
+    "example": "a detailed description of the events",
+    "translation": "подробный",
+    "example_translation": "подробное описание событий"
+  },
+  {
+    "word": "detect",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈtekt/",
+    "example": "The tests are designed to detect the disease early.",
+    "translation": "обнаруживать",
+    "example_translation": "Тесты предназначены для раннего обнаружения заболевания."
+  },
+  {
+    "word": "determination",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˌtɜːrmɪˈneɪʃn/",
+    "example": "fierce/grim/dogged determination",
+    "translation": "решимость",
+    "example_translation": "яростная/мрачная/упорная решимость"
+  },
+  {
+    "word": "devote",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈvəʊt/",
+    "example": "",
+    "translation": "посвящать"
+  },
+  {
+    "word": "differ",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈdɪfər/",
+    "example": "They hold differing views.",
+    "translation": "отличаться",
+    "example_translation": "У них разные взгляды."
+  },
+  {
+    "word": "dig",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪɡ/",
+    "example": "I think I'll do some digging in the garden.",
+    "translation": "копать",
+    "example_translation": "Я думаю, покопаюсь в саду."
+  },
+  {
+    "word": "disability",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌdɪsəˈbɪləti/",
+    "example": "a physical/developmental/intellectual disability",
+    "translation": "инвалидность",
+    "example_translation": "физическая/умственная инвалидность"
+  },
+  {
+    "word": "disabled",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪsˈeɪbld/",
+    "example": "physically/developmentally/intellectually disabled",
+    "translation": "инвалид",
+    "example_translation": "физически/умственно ограниченный в возможностях"
+  },
+  {
+    "word": "disagreement",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌdɪsəˈɡriːmənt/",
+    "example": " disagreement (about/on/over/as to something) Disagreement arose about exactly how to plan the show.",
+    "translation": "разногласие",
+    "example_translation": "Разногласия по этому вопросу остаются."
+  },
+  {
+    "word": "disappoint",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˌdɪsəˈpɔɪnt/",
+    "example": " disappoint (somebody) Her decision to cancel the concert is bound to disappoint her fans.",
+    "translation": "разочаровывать",
+    "example_translation": "Её решение отменить концерт обязательно разочарует поклонников."
+  },
+  {
+    "word": "disappointment",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌdɪsəˈpɔɪntmənt/",
+    "example": "Book early for the show to avoid disappointment.",
+    "translation": "разочарование",
+    "example_translation": "Бронируйте билеты на шоу заранее, чтобы избежать разочарования."
+  },
+  {
+    "word": "disc",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪsk/",
+    "example": "He wears an identity disc around his neck.",
+    "translation": "диск",
+    "example_translation": "Он носит на шее опознавательный жетон."
+  },
+  {
+    "word": "discipline",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdɪsəplɪn/",
+    "example": "The school has a reputation for high standards of discipline.",
+    "translation": "дисциплина",
+    "example_translation": "Школа известна высокими стандартами дисциплины."
+  },
+  {
+    "word": "discount",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈdɪskaʊnt/",
+    "example": " be discounted by something Most of our stock has been discounted by up to 40 per cent.",
+    "translation": "снижать цену",
+    "example_translation": "Большая часть нашего товара была уценена."
+  },
+  {
+    "word": "discourage",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪsˈkɜːrɪdʒ/",
+    "example": " discourage (doing) something a campaign to discourage smoking among teenagers",
+    "translation": "отговаривать",
+    "example_translation": "кампания по предотвращению курения"
+  },
+  {
+    "word": "dishonest",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪsˈɑːnɪst/",
+    "example": "Beware of dishonest traders in the tourist areas.",
+    "translation": "нечестный",
+    "example_translation": "Остерегайтесь нечестных торговцев в туристических зонах."
+  },
+  {
+    "word": "disk",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪsk/",
+    "example": "Red blood cells are roughly the shape of a disk.",
+    "translation": "диск",
+    "example_translation": "Красные кровяные тельца примерно имеют форму диска."
+  },
+  {
+    "word": "dismiss",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪsˈmɪs/",
+    "example": " dismiss somebody/something to dismiss a suggestion/a claim/an idea",
+    "translation": "отвергать",
+    "example_translation": "отвергнуть предложение/заявление/идею"
+  },
+  {
+    "word": "disorder",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪsˈɔːrdər/",
+    "example": "a blood/bowel disorder",
+    "translation": "расстройство",
+    "example_translation": "расстройство крови/кишечника"
+  },
+  {
+    "word": "display",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈspleɪ/",
+    "example": "a beautiful floral display ",
+    "translation": "выставка",
+    "example_translation": "прекрасная цветочная выставка"
+  },
+  {
+    "word": "display",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈspleɪ/",
+    "example": " display something The exhibition gives local artists an opportunity to display their work.",
+    "translation": "демонстрировать",
+    "example_translation": "Выставка даёт местным художникам возможность продемонстрировать свои работы."
+  },
+  {
+    "word": "distant",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈdɪstənt/",
+    "example": "the distant sound of music",
+    "translation": "далёкий",
+    "example_translation": "далёкий звук музыки"
+  },
+  {
+    "word": "distinct",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dɪˈstɪŋkt/",
+    "example": "There was a distinct smell of gas.",
+    "translation": "отчётливый",
+    "example_translation": "Чувствовался отчётливый запах газа."
+  },
+  {
+    "word": "distinguish",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈstɪŋɡwɪʃ/",
+    "example": " distinguish between A and B At what age are children able to distinguish between right and wrong?",
+    "translation": "различать",
+    "example_translation": "В каком возрасте дети могут различать добро и зло?"
+  },
+  {
+    "word": "distract",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈstrækt/",
+    "example": "You're distracting me from my work.",
+    "translation": "отвлекать",
+    "example_translation": "Ты отвлекаешь меня от работы."
+  },
+  {
+    "word": "distribute",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈstrɪbjuːt/",
+    "example": " distribute something The leaflets have been widely distributed.",
+    "translation": "распространять",
+    "example_translation": "Листовки были широко распространены."
+  },
+  {
+    "word": "distribution",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌdɪstrɪˈbjuːʃn/",
+    "example": " distribution of something They studied the geographical distribution of the disease.",
+    "translation": "распределение",
+    "example_translation": "Они изучали географическое распределение."
+  },
+  {
+    "word": "district",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdɪstrɪkt/",
+    "example": "the City of London’s financial district",
+    "translation": "район",
+    "example_translation": "финансовый район лондонского Сити"
+  },
+  {
+    "word": "disturb",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈstɜːrb/",
+    "example": "I'm sorry to disturb you, but can I talk to you for a moment?",
+    "translation": "беспокоить",
+    "example_translation": "Извините за беспокойство, но можно поговорить с вами минутку?"
+  },
+  {
+    "word": "dive",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/daɪv/",
+    "example": "a spectacular high dive (= from high above the water)",
+    "translation": "прыжок в воду",
+    "example_translation": "впечатляющий прыжок с большой высоты"
+  },
+  {
+    "word": "dive",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/daɪv/",
+    "example": " dive (from/off something) (into something) We dived into the river to cool off.",
+    "translation": "нырять",
+    "example_translation": "Мы нырнули в воду."
+  },
+  {
+    "word": "diverse",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/daɪˈvɜːrs/",
+    "example": "People from diverse cultures were invited to the event.",
+    "translation": "разнообразный",
+    "example_translation": "На мероприятие были приглашены люди из различных культур."
+  },
+  {
+    "word": "diversity",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/daɪˈvɜːrsəti/",
+    "example": "the biological diversity of the rainforests",
+    "translation": "разнообразие",
+    "example_translation": "биологическое разнообразие тропических лесов"
+  },
+  {
+    "word": "divide",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈvaɪd/",
+    "example": "He offered advice on bridging cultural divides.",
+    "translation": "разрыв",
+    "example_translation": "Он дал советы о преодолении культурных различий."
+  },
+  {
+    "word": "division",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈvɪʒn/",
+    "example": "The organism begins as a single cell and grows by cell division.",
+    "translation": "деление",
+    "example_translation": "Организм начинается с одной клетки и растёт путём деления."
+  },
+  {
+    "word": "divorce",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɪˈvɔːrs/",
+    "example": "The marriage ended in divorce in 1996.",
+    "translation": "развод",
+    "example_translation": "Брак закончился разводом в 1996 году."
+  },
+  {
+    "word": "divorce",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dɪˈvɔːrs/",
+    "example": "They're getting divorced.",
+    "translation": "разводиться",
+    "example_translation": "Они разводятся."
+  },
+  {
+    "word": "document",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈdɑːkjument/",
+    "example": "Urban life in the nineteenth century is well documented.",
+    "translation": "документировать",
+    "example_translation": "Городская жизнь в девятнадцатом веке хорошо задокументирована."
+  },
+  {
+    "word": "domestic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dəˈmestɪk/",
+    "example": "domestic affairs/politics",
+    "translation": "внутренний",
+    "example_translation": "внутренние дела/политика"
+  },
+  {
+    "word": "dominant",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈdɑːmɪnənt/",
+    "example": "The firm has achieved a dominant position in the world market.",
+    "translation": "доминирующий",
+    "example_translation": "Фирма заняла доминирующее положение на мировом рынке."
+  },
+  {
+    "word": "dominate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈdɑːmɪneɪt/",
+    "example": "She always says a lot in meetings, but she doesn't dominate.",
+    "translation": "доминировать",
+    "example_translation": "Она всегда много говорит на собраниях, но не доминирует."
+  },
+  {
+    "word": "donation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dəʊˈneɪʃn/",
+    "example": "a generous/large/small donation",
+    "translation": "пожертвование",
+    "example_translation": "щедрое/крупное/небольшое пожертвование"
+  },
+  {
+    "word": "dot",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dɑːt/",
+    "example": "There are dots above the letters i and j.",
+    "translation": "точка",
+    "example_translation": "Над буквами i и j стоят точки."
+  },
+  {
+    "word": "downtown",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌdaʊnˈtaʊn/",
+    "example": "a downtown store",
+    "translation": "центральный",
+    "example_translation": "магазин в центре города"
+  },
+  {
+    "word": "downtown",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˌdaʊnˈtaʊn/",
+    "example": "to go/work downtown",
+    "translation": "в центр города",
+    "example_translation": "поехать/работать в центре города"
+  },
+  {
+    "word": "downtown",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌdaʊnˈtaʊn/",
+    "example": "a hotel in the heart of downtown",
+    "translation": "центр города",
+    "example_translation": "отель в самом центре города"
+  },
+  {
+    "word": "downwards",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈdaʊnwərdz/",
+    "example": "She was lying face downwards on the grass.",
+    "translation": "вниз",
+    "example_translation": "Она лежала лицом вниз на траве."
+  },
+  {
+    "word": "dozen",
+    "part_of_speech": "determiner",
+    "level": "B2",
+    "phonetics": "/ˈdʌzn/",
+    "example": "Give me a dozen, please.",
+    "translation": "дюжина",
+    "example_translation": "Дайте мне дюжину, пожалуйста."
+  },
+  {
+    "word": "dozen",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈdʌzn/",
+    "example": "Give me a dozen, please.",
+    "translation": "дюжина",
+    "example_translation": "Дайте мне дюжину, пожалуйста."
+  },
+  {
+    "word": "draft",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/dræft/",
+    "example": "This is only the first draft of my speech.",
+    "translation": "черновик",
+    "example_translation": "Это только первый черновик моей речи."
+  },
+  {
+    "word": "draft",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dræft/",
+    "example": "I'll draft a letter for you.",
+    "translation": "составлять",
+    "example_translation": "Я составлю для вас письмо."
+  },
+  {
+    "word": "drag",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dræɡ/",
+    "example": " drag somebody/something The sack is too heavy to lift—you’ll have to drag it.",
+    "translation": "тащить",
+    "example_translation": "Мешок слишком тяжёл, чтобы поднять — придётся тащить."
+  },
+  {
+    "word": "dramatic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/drəˈmætɪk/",
+    "example": "a dramatic increase/change/improvement/shift",
+    "translation": "резкий",
+    "example_translation": "резкое увеличение/изменение/улучшение/сдвиг"
+  },
+  {
+    "word": "dramatically",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/drəˈmætɪkli/",
+    "example": "Prices have fallen dramatically.",
+    "translation": "резко",
+    "example_translation": "Цены резко упали."
+  },
+  {
+    "word": "drought",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/draʊt/",
+    "example": "Farmers are facing ruin after two years of severe drought.",
+    "translation": "засуха",
+    "example_translation": "Фермеры разорены после двух лет сильной засухи."
+  },
+  {
+    "word": "dull",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/dʌl/",
+    "example": "Life in a small town could be deadly dull.",
+    "translation": "скучный",
+    "example_translation": "Жизнь в маленьком городке может быть смертельно скучной."
+  },
+  {
+    "word": "dump",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/dʌmp/",
+    "example": "Too much toxic waste is being dumped at sea.",
+    "translation": "сбрасывать",
+    "example_translation": "Слишком много токсичных отходов сбрасывается в море."
+  },
+  {
+    "word": "duration",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/duˈreɪʃn/",
+    "example": "The school was used as a hospital for the duration of the war.",
+    "translation": "продолжительность",
+    "example_translation": "Школа использовалась как госпиталь на протяжении всей войны."
+  },
+  {
+    "word": "dynamic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/daɪˈnæmɪk/",
+    "example": "a dynamic leader",
+    "translation": "динамичный",
+    "example_translation": "динамичный лидер"
+  },
+  {
+    "word": "economics",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌekəˈnɑːmɪks/",
+    "example": "He studied politics and economics at Yale.",
+    "translation": "экономика",
+    "example_translation": "Он изучал политику и экономику в Йеле."
+  },
+  {
+    "word": "economist",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪˈkɑːnəmɪst/",
+    "example": "the World Bank's chief economist",
+    "translation": "экономист",
+    "example_translation": "главный экономист Всемирного банка"
+  },
+  {
+    "word": "edit",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈedɪt/",
+    "example": " edit (something) This draft text will need to be edited.",
+    "translation": "редактировать",
+    "example_translation": "Этот черновой текст необходимо отредактировать."
+  },
+  {
+    "word": "edition",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪˈdɪʃn/",
+    "example": "a paperback/hardback edition",
+    "translation": "издание",
+    "example_translation": "издание в мягкой/твёрдой обложке"
+  },
+  {
+    "word": "editorial",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌedɪˈtɔːriəl/",
+    "example": "the magazine’s editorial staff",
+    "translation": "редакционный",
+    "example_translation": "редакционный персонал журнала"
+  },
+  {
+    "word": "efficient",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪˈfɪʃnt/",
+    "example": "a highly efficient worker",
+    "translation": "эффективный",
+    "example_translation": "высокоэффективный работник"
+  },
+  {
+    "word": "efficiently",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ɪˈfɪʃntli/",
+    "example": "a very efficiently organized event",
+    "translation": "эффективно",
+    "example_translation": "очень эффективно организованное мероприятие"
+  },
+  {
+    "word": "elbow",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈelbəʊ/",
+    "example": "She jabbed him with her elbow.",
+    "translation": "локоть",
+    "example_translation": "Она ткнула его локтем."
+  },
+  {
+    "word": "elderly",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈeldərli/",
+    "example": "an elderly man/woman/lady",
+    "translation": "пожилой",
+    "example_translation": "пожилой мужчина/женщина"
+  },
+  {
+    "word": "elect",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈlekt/",
+    "example": " elect somebody/something Voters will elect a new president on 30 March next year.",
+    "translation": "избирать",
+    "example_translation": "Избиратели выберут нового президента в ноябре."
+  },
+  {
+    "word": "electronics",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪˌlekˈtrɑːnɪks/",
+    "example": "",
+    "translation": "электроника"
+  },
+  {
+    "word": "elegant",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈelɪɡənt/",
+    "example": "She was tall and elegant.",
+    "translation": "элегантный",
+    "example_translation": "Она была высокой и элегантной."
+  },
+  {
+    "word": "elementary",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌelɪˈmentri/",
+    "example": "an elementary English course",
+    "translation": "элементарный",
+    "example_translation": "элементарный курс английского языка"
+  },
+  {
+    "word": "eliminate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈlɪmɪneɪt/",
+    "example": " eliminate something Credit cards eliminate the need to carry a lot of cash.",
+    "translation": "устранять",
+    "example_translation": "Кредитные карты устраняют необходимость носить наличные."
+  },
+  {
+    "word": "elsewhere",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˌelsˈwer/",
+    "example": "Dissatisfied customers will look elsewhere.",
+    "translation": "в другом месте",
+    "example_translation": "Недовольные клиенты будут искать в другом месте."
+  },
+  {
+    "word": "embrace",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪmˈbreɪs/",
+    "example": "They embraced and promised to keep in touch.",
+    "translation": "обнимать",
+    "example_translation": "Они обнялись и обещали поддерживать связь."
+  },
+  {
+    "word": "emerge",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈmɜːrdʒ/",
+    "example": "The crabs emerge at low tide to look for food.",
+    "translation": "появляться",
+    "example_translation": "Крабы появляются во время отлива, чтобы искать пищу."
+  },
+  {
+    "word": "emission",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪˈmɪʃn/",
+    "example": "the emission of carbon dioxide into the atmosphere",
+    "translation": "выброс",
+    "example_translation": "выброс углекислого газа в атмосферу"
+  },
+  {
+    "word": "emotional",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪˈməʊʃənl/",
+    "example": "emotional problems/stress",
+    "translation": "эмоциональный",
+    "example_translation": "эмоциональные проблемы/стресс"
+  },
+  {
+    "word": "emotionally",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ɪˈməʊʃənəli/",
+    "example": "emotionally disturbed children",
+    "translation": "эмоционально",
+    "example_translation": "эмоционально неуравновешенные дети"
+  },
+  {
+    "word": "emphasis",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈemfəsɪs/",
+    "example": " emphasis on/upon something Since the elections there has been a greater emphasis on education.",
+    "translation": "акцент",
+    "example_translation": "С момента выборов акцент сместился."
+  },
+  {
+    "word": "emphasize",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈemfəsaɪz/",
+    "example": " emphasize something His speech emphasized the importance of attracting industry to the town.",
+    "translation": "подчёркивать",
+    "example_translation": "В его речи подчёркивалась важность этого вопроса."
+  },
+  {
+    "word": "empire",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈempaɪər/",
+    "example": "These invasions almost led to the collapse of the Roman Empire.",
+    "translation": "империя",
+    "example_translation": "Эти вторжения почти привели к краху Римской империи."
+  },
+  {
+    "word": "enable",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈneɪbl/",
+    "example": "This new programme will enable older people to study at college.",
+    "translation": "позволять",
+    "example_translation": "Эта новая программа позволит пожилым людям учиться в колледже."
+  },
+  {
+    "word": "encounter",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪnˈkaʊntər/",
+    "example": "a chance encounter",
+    "translation": "встреча",
+    "example_translation": "случайная встреча"
+  },
+  {
+    "word": "encounter",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪnˈkaʊntər/",
+    "example": "We encountered a number of difficulties in the first week.",
+    "translation": "столкнуться",
+    "example_translation": "В первую неделю мы столкнулись с рядом трудностей."
+  },
+  {
+    "word": "engage",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪnˈɡeɪdʒ/",
+    "example": "It is a movie that engages both the mind and the eye.",
+    "translation": "вовлекать",
+    "example_translation": "Это фильм, который захватывает и ум, и глаз."
+  },
+  {
+    "word": "enhance",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪnˈhæns/",
+    "example": "This is an opportunity to enhance the reputation of the company.",
+    "translation": "улучшать",
+    "example_translation": "Это возможность улучшить репутацию компании."
+  },
+  {
+    "word": "enjoyable",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪnˈdʒɔɪəbl/",
+    "example": "an enjoyable weekend/experience",
+    "translation": "приятный",
+    "example_translation": "приятные выходные/впечатления"
+  },
+  {
+    "word": "enquiry",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪnˈkwaɪəri/",
+    "example": "a murder enquiry ",
+    "translation": "расследование",
+    "example_translation": "расследование убийства"
+  },
+  {
+    "word": "ensure",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪnˈʃʊr/",
+    "example": " ensure something We are working to ensure the safety of people in the city. ",
+    "translation": "обеспечивать",
+    "example_translation": "Мы работаем над обеспечением безопасности людей."
+  },
+  {
+    "word": "entertaining",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌentərˈteɪnɪŋ/",
+    "example": "an entertaining speech/evening",
+    "translation": "развлекательный",
+    "example_translation": "развлекательная речь/вечер"
+  },
+  {
+    "word": "enthusiasm",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪnˈθuːziæzəm/",
+    "example": "Her voice was full of enthusiasm.",
+    "translation": "энтузиазм",
+    "example_translation": "Её голос был полон энтузиазма."
+  },
+  {
+    "word": "enthusiastic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪnˌθuːziˈæstɪk/",
+    "example": "an enthusiastic supporter",
+    "translation": "восторженный",
+    "example_translation": "восторженный сторонник"
+  },
+  {
+    "word": "entire",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪnˈtaɪər/",
+    "example": "The entire village was destroyed.",
+    "translation": "целый",
+    "example_translation": "Вся деревня была уничтожена."
+  },
+  {
+    "word": "entirely",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ɪnˈtaɪərli/",
+    "example": "The experience was entirely new to me.",
+    "translation": "полностью",
+    "example_translation": "Этот опыт был для меня совершенно новым."
+  },
+  {
+    "word": "entrepreneur",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌɑːntrəprəˈnɜːr/",
+    "example": "A creative entrepreneur, he was continually dreaming up new projects.",
+    "translation": "предприниматель",
+    "example_translation": "Творческий предприниматель, он постоянно придумывал новые идеи."
+  },
+  {
+    "word": "envelope",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈɑːnvələʊp/",
+    "example": "Writing paper and envelopes are provided in your room.",
+    "translation": "конверт",
+    "example_translation": "Бумага и конверты предоставлены в вашем номере."
+  },
+  {
+    "word": "equal",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈiːkwəl/",
+    "example": "She treats the people who work for her as her equals.",
+    "translation": "равный",
+    "example_translation": "Она обращается с подчинёнными как с равными."
+  },
+  {
+    "word": "equip",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈkwɪp/",
+    "example": " equip something to be fully/poorly equipped",
+    "translation": "оснащать",
+    "example_translation": "быть полностью/плохо оснащённым"
+  },
+  {
+    "word": "equivalent",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪˈkwɪvələnt/",
+    "example": "250 grams or an equivalent amount in ounces",
+    "translation": "равноценный",
+    "example_translation": "250 граммов или эквивалентное количество в унциях"
+  },
+  {
+    "word": "equivalent",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪˈkwɪvələnt/",
+    "example": "Send €20 or the equivalent in your own currency.",
+    "translation": "эквивалент",
+    "example_translation": "Отправьте 20 евро или эквивалент в вашей валюте."
+  },
+  {
+    "word": "era",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈerə/",
+    "example": "the Victorian/modern/post-war era",
+    "translation": "эра",
+    "example_translation": "викторианская/современная/послевоенная эра"
+  },
+  {
+    "word": "erupt",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈrʌpt/",
+    "example": "The volcano could erupt at any time.",
+    "translation": "извергаться",
+    "example_translation": "Вулкан может извергнуться в любой момент."
+  },
+  {
+    "word": "essentially",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ɪˈsenʃəli/",
+    "example": "There are three essentially different ways of tackling the problem.",
+    "translation": "по существу",
+    "example_translation": "Есть три по существу разных способа решения проблемы."
+  },
+  {
+    "word": "establish",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈstæblɪʃ/",
+    "example": "The committee was established in 1912.",
+    "translation": "основать",
+    "example_translation": "Комитет был основан в 1912 году."
+  },
+  {
+    "word": "estate",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪˈsteɪt/",
+    "example": " on an estate She lives in a tower block on an estate in London.",
+    "translation": "имение",
+    "example_translation": "Она живёт в многоэтажке на жилом массиве в Лондоне."
+  },
+  {
+    "word": "estimate",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈestɪmət/",
+    "example": "to provide/obtain an estimate",
+    "translation": "оценка",
+    "example_translation": "предоставить/получить оценку"
+  },
+  {
+    "word": "estimate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈestɪmeɪt/",
+    "example": " estimate something to estimate the cost/value/number of something",
+    "translation": "оценивать",
+    "example_translation": "оценить стоимость/ценность/количество чего-либо"
+  },
+  {
+    "word": "ethic",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈeθɪk/",
+    "example": "professional/business/medical ethics",
+    "translation": "этика",
+    "example_translation": "профессиональная/деловая/медицинская этика"
+  },
+  {
+    "word": "ethical",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈeθɪkl/",
+    "example": "ethical issues/standards/questions/dilemmas",
+    "translation": "этический",
+    "example_translation": "этические вопросы/стандарты/дилеммы"
+  },
+  {
+    "word": "ethnic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈeθnɪk/",
+    "example": "ethnic background/origin",
+    "translation": "этнический",
+    "example_translation": "этническое происхождение"
+  },
+  {
+    "word": "evaluate",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈvæljueɪt/",
+    "example": " evaluate something The trial will evaluate the effectiveness of the different drugs.",
+    "translation": "оценивать",
+    "example_translation": "Испытание оценит эффективность препарата."
+  },
+  {
+    "word": "evaluation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪˌvæljuˈeɪʃn/",
+    "example": "an evaluation of the healthcare system",
+    "translation": "оценка",
+    "example_translation": "оценка системы здравоохранения"
+  },
+  {
+    "word": "even",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈiːvn/",
+    "example": "4, 6, 8 and 10 are all even numbers.",
+    "translation": "чётный",
+    "example_translation": "4, 6, 8 и 10 — все чётные числа."
+  },
+  {
+    "word": "evident",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈevɪdənt/",
+    "example": "The orchestra played with evident enjoyment.",
+    "translation": "очевидный",
+    "example_translation": "Оркестр играл с очевидным удовольствием."
+  },
+  {
+    "word": "evil",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈiːvl/",
+    "example": "Police described the killer as ‘a desperate and evil man’.",
+    "translation": "злой",
+    "example_translation": "Полиция описала убийцу как «отчаянного и злого человека»."
+  },
+  {
+    "word": "evil",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈiːvl/",
+    "example": "the eternal struggle between good and evil",
+    "translation": "зло",
+    "example_translation": "извечная борьба между добром и злом"
+  },
+  {
+    "word": "evolution",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌevəˈluːʃn/",
+    "example": "the evolution of the human species",
+    "translation": "эволюция",
+    "example_translation": "эволюция человеческого вида"
+  },
+  {
+    "word": "evolve",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪˈvɑːlv/",
+    "example": " evolve (from something) (into something) The idea evolved from a drawing I discovered in the attic.",
+    "translation": "развиваться",
+    "example_translation": "Идея развилась из простого предложения."
+  },
+  {
+    "word": "examination",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪɡˌzæmɪˈneɪʃn/",
+    "example": "successful candidates in GCSE examinations",
+    "translation": "экзамен",
+    "example_translation": "успешные кандидаты на экзаменах GCSE"
+  },
+  {
+    "word": "exceed",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪkˈsiːd/",
+    "example": "The price will not exceed £100.",
+    "translation": "превышать",
+    "example_translation": "Цена не превысит 100 фунтов."
+  },
+  {
+    "word": "exception",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈsepʃn/",
+    "example": "Most of the buildings in the town are modern, but the church is an exception.",
+    "translation": "исключение",
+    "example_translation": "Большинство зданий в городе современные, но церковь — исключение."
+  },
+  {
+    "word": "excessive",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪkˈsesɪv/",
+    "example": "They complained about the excessive noise coming from the upstairs flat.",
+    "translation": "чрезмерный",
+    "example_translation": "Они пожаловались на чрезмерный шум сверху."
+  },
+  {
+    "word": "exclude",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪkˈskluːd/",
+    "example": "The cost of borrowing has been excluded from the inflation figures.",
+    "translation": "исключать",
+    "example_translation": "Стоимость заимствования была исключена из показателя инфляции."
+  },
+  {
+    "word": "excuse",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈskjuːs/",
+    "example": "Late again! What's your excuse this time?",
+    "translation": "оправдание",
+    "example_translation": "Опять опоздал! Какое у тебя на этот раз оправдание?"
+  },
+  {
+    "word": "excuse",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪkˈskjuːz/",
+    "example": " excuse something Please excuse the mess.",
+    "translation": "извинять",
+    "example_translation": "Пожалуйста, простите за беспорядок."
+  },
+  {
+    "word": "executive",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪɡˈzekjətɪv/",
+    "example": "She has an executive position in a finance company.",
+    "translation": "исполнительный",
+    "example_translation": "Она занимает руководящую должность в финансовой компании."
+  },
+  {
+    "word": "executive",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪɡˈzekjətɪv/",
+    "example": "company/corporate/business/industry executives",
+    "translation": "руководитель",
+    "example_translation": "руководители компаний/корпораций"
+  },
+  {
+    "word": "exhibit",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪɡˈzɪbɪt/",
+    "example": "The museum contains some interesting exhibits on Spanish rural life.",
+    "translation": "экспонат",
+    "example_translation": "В музее есть интересные экспонаты об испанской сельской жизни."
+  },
+  {
+    "word": "exhibit",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪɡˈzɪbɪt/",
+    "example": " exhibit something (at/in…) They will be exhibiting their new designs at the trade fairs.",
+    "translation": "выставлять",
+    "example_translation": "Они будут выставлять свои новые работы в следующем месяце."
+  },
+  {
+    "word": "existence",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪɡˈzɪstəns/",
+    "example": "I was unaware of his existence until today.",
+    "translation": "существование",
+    "example_translation": "Я не знал о его существовании до сегодняшнего дня."
+  },
+  {
+    "word": "exit",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈeɡzɪt/",
+    "example": "Where's the exit?",
+    "translation": "выход",
+    "example_translation": "Где выход?"
+  },
+  {
+    "word": "exotic",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪɡˈzɑːtɪk/",
+    "example": "brightly-coloured exotic flowers/plants/birds",
+    "translation": "экзотический",
+    "example_translation": "яркие экзотические цветы/растения/птицы"
+  },
+  {
+    "word": "expansion",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈspænʃn/",
+    "example": "a period of rapid economic expansion",
+    "translation": "расширение",
+    "example_translation": "период быстрого экономического расширения"
+  },
+  {
+    "word": "expectation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌekspekˈteɪʃn/",
+    "example": " expectation of something We are confident in our expectation of a full recovery.",
+    "translation": "ожидание",
+    "example_translation": "Мы уверены в наших ожиданиях."
+  },
+  {
+    "word": "expense",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈspens/",
+    "example": "The garden was transformed at great expense.",
+    "translation": "расход",
+    "example_translation": "Сад был преобразован за большие деньги."
+  },
+  {
+    "word": "expertise",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌekspɜːrˈtiːz/",
+    "example": "professional/scientific/technical, etc. expertise",
+    "translation": "компетентность",
+    "example_translation": "профессиональная/научная/техническая компетентность"
+  },
+  {
+    "word": "exploit",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪkˈsplɔɪt/",
+    "example": "He exploited his father's name to get himself a job.",
+    "translation": "эксплуатировать",
+    "example_translation": "Он использовал имя отца, чтобы получить работу."
+  },
+  {
+    "word": "exploration",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˌekspləˈreɪʃn/",
+    "example": "Budgets for space exploration have been cut back.",
+    "translation": "исследование",
+    "example_translation": "Бюджеты на космические исследования были сокращены."
+  },
+  {
+    "word": "expose",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪkˈspəʊz/",
+    "example": " expose something He smiled suddenly, exposing a set of amazingly white teeth.",
+    "translation": "подвергать",
+    "example_translation": "Он внезапно улыбнулся, обнажив ряд удивительных зубов."
+  },
+  {
+    "word": "exposure",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈspəʊʒər/",
+    "example": "prolonged exposure to harmful radiation",
+    "translation": "воздействие",
+    "example_translation": "длительное воздействие вредного излучения"
+  },
+  {
+    "word": "extend",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ɪkˈstend/",
+    "example": "to extend a fence/road/house",
+    "translation": "расширять",
+    "example_translation": "расширить забор/дорогу/дом"
+  },
+  {
+    "word": "extension",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈstenʃn/",
+    "example": "the extension of new technology into developing countries",
+    "translation": "расширение",
+    "example_translation": "распространение новых технологий в развивающиеся страны"
+  },
+  {
+    "word": "extensive",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪkˈstensɪv/",
+    "example": "The house has extensive grounds.",
+    "translation": "обширный",
+    "example_translation": "У дома обширная территория."
+  },
+  {
+    "word": "extensively",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ɪkˈstensɪvli/",
+    "example": "She has travelled extensively.",
+    "translation": "обширно",
+    "example_translation": "Она много путешествовала."
+  },
+  {
+    "word": "extent",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈstent/",
+    "example": "It is difficult to assess the full extent of the damage.",
+    "translation": "масштаб",
+    "example_translation": "Трудно оценить полный масштаб ущерба."
+  },
+  {
+    "word": "external",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪkˈstɜːrnl/",
+    "example": "the external walls of the building",
+    "translation": "внешний",
+    "example_translation": "внешние стены здания"
+  },
+  {
+    "word": "extract",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈekstrækt/",
+    "example": "The following extract is taken from her new novel.",
+    "translation": "отрывок",
+    "example_translation": "Следующий отрывок взят из её нового романа."
+  },
+  {
+    "word": "extraordinary",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ɪkˈstrɔːrdəneri/",
+    "example": "What an extraordinary thing to say!",
+    "translation": "необычайный",
+    "example_translation": "Какая необычайная вещь!"
+  },
+  {
+    "word": "extreme",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ɪkˈstriːm/",
+    "example": "extremes of love and hate",
+    "translation": "крайность",
+    "example_translation": "крайности любви и ненависти"
+  },
+  {
+    "word": "fabric",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfæbrɪk/",
+    "example": "They sell a wide variety of printed cotton fabric.",
+    "translation": "ткань",
+    "example_translation": "Они продают широкий ассортимент набивной хлопковой ткани."
+  },
+  {
+    "word": "fabulous",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfæbjələs/",
+    "example": "They put on a fabulous performance.",
+    "translation": "потрясающий",
+    "example_translation": "Они устроили потрясающее представление."
+  },
+  {
+    "word": "facility",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fəˈsɪləti/",
+    "example": "leisure/sports facilities",
+    "translation": "объект",
+    "example_translation": "развлекательные/спортивные объекты"
+  },
+  {
+    "word": "failed",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/feɪld/",
+    "example": "a failed writer",
+    "translation": "неудавшийся",
+    "example_translation": "неудавшийся писатель"
+  },
+  {
+    "word": "failure",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfeɪljər/",
+    "example": "The success or failure of the plan depends on you.",
+    "translation": "провал",
+    "example_translation": "Успех или провал плана зависит от вас."
+  },
+  {
+    "word": "faith",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/feɪθ/",
+    "example": "If the company can retain its customers' faith, it could become the market leader.",
+    "translation": "вера",
+    "example_translation": "Если компания сможет сохранить доверие клиентов, она может стать успешной."
+  },
+  {
+    "word": "fake",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/feɪk/",
+    "example": "There were a few stalls selling fake designer clothing.",
+    "translation": "поддельный",
+    "example_translation": "Было несколько прилавков с поддельной дизайнерской одеждой."
+  },
+  {
+    "word": "fame",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/feɪm/",
+    "example": "to achieve/win instant fame",
+    "translation": "слава",
+    "example_translation": "обрести мгновенную славу"
+  },
+  {
+    "word": "fantasy",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfæntəsi/",
+    "example": "He spoke of his childhood fantasies about becoming a famous football player.",
+    "translation": "фантазия",
+    "example_translation": "Он рассказывал о своих детских фантазиях стать знаменитым."
+  },
+  {
+    "word": "fare",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fer/",
+    "example": "bus/taxi fares",
+    "translation": "плата за проезд",
+    "example_translation": "стоимость проезда на автобусе/такси"
+  },
+  {
+    "word": "fault",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fɔːlt/",
+    "example": "Why should I say sorry when it's not my fault?",
+    "translation": "вина",
+    "example_translation": "Почему я должен извиняться, если это не моя вина?"
+  },
+  {
+    "word": "favour",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈfeɪvər/",
+    "example": " favour something Many countries favour a presidential system of government.",
+    "translation": "предпочитать",
+    "example_translation": "Многие страны предпочитают президентскую систему."
+  },
+  {
+    "word": "feather",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfeðər/",
+    "example": "a peacock feather",
+    "translation": "перо",
+    "example_translation": "павлинье перо"
+  },
+  {
+    "word": "federal",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfedərəl/",
+    "example": "a federal republic",
+    "translation": "федеральный",
+    "example_translation": "федеративная республика"
+  },
+  {
+    "word": "fee",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fiː/",
+    "example": "Employees are reimbursed for any legal fees incurred when they relocate.",
+    "translation": "плата",
+    "example_translation": "Сотрудникам возмещаются любые судебные расходы."
+  },
+  {
+    "word": "feed",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fiːd/",
+    "example": "her morning feed",
+    "translation": "кормление",
+    "example_translation": "утреннее кормление"
+  },
+  {
+    "word": "feedback",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfiːdbæk/",
+    "example": "customer/user feedback",
+    "translation": "обратная связь",
+    "example_translation": "отзывы клиентов/пользователей"
+  },
+  {
+    "word": "feeding",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfiːdɪŋ/",
+    "example": "breast/bottle feeding",
+    "translation": "кормление",
+    "example_translation": "грудное/искусственное вскармливание"
+  },
+  {
+    "word": "feel",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fiːl/",
+    "example": "You can tell it's silk by the feel.",
+    "translation": "ощущение",
+    "example_translation": "По ощущению можно определить, что это шёлк."
+  },
+  {
+    "word": "fellow",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfeləʊ/",
+    "example": "fellow citizens/students",
+    "translation": "собратья",
+    "example_translation": "сограждане/однокурсники"
+  },
+  {
+    "word": "fever",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfiːvər/",
+    "example": "He has a high fever.",
+    "translation": "лихорадка",
+    "example_translation": "У него высокая температура."
+  },
+  {
+    "word": "figure",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈfɪɡjər/",
+    "example": "My feelings about the matter didn't seem to figure at all.",
+    "translation": "фигурировать",
+    "example_translation": "Мои чувства по этому поводу, похоже, вообще не учитывались."
+  },
+  {
+    "word": "file",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/faɪl/",
+    "example": " file something (+ adv./prep.) The forms should be filed alphabetically.",
+    "translation": "подавать",
+    "example_translation": "Формы следует подшивать в алфавитном порядке."
+  },
+  {
+    "word": "finance",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fəˈnæns/",
+    "example": "The project will only go ahead if they can raise the necessary finance.",
+    "translation": "финансы",
+    "example_translation": "Проект будет осуществлён, только если они смогут найти необходимое финансирование."
+  },
+  {
+    "word": "finance",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/fəˈnæns/",
+    "example": " finance something He took a job to finance his stay in Germany.",
+    "translation": "финансировать",
+    "example_translation": "Он устроился на работу, чтобы финансировать своё пребывание в Германии."
+  },
+  {
+    "word": "finding",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfaɪndɪŋ/",
+    "example": "Our research findings indicate that pregnant women benefit from this treatment.",
+    "translation": "вывод",
+    "example_translation": "Результаты нашего исследования показывают, что беременные женщины получают пользу."
+  },
+  {
+    "word": "firefighter",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfaɪərfaɪtər/",
+    "example": "Firefighters were called to a house in Summertown.",
+    "translation": "пожарный",
+    "example_translation": "Пожарных вызвали к дому в Саммертауне."
+  },
+  {
+    "word": "firework",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfaɪərwɜːrk/",
+    "example": " (British English) to let off a few fireworks",
+    "translation": "фейерверк",
+    "example_translation": "запустить несколько фейерверков"
+  },
+  {
+    "word": "firm",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/fɜːrm/",
+    "example": "a firm bed/mattress",
+    "translation": "твёрдый",
+    "example_translation": "твёрдая кровать/матрас"
+  },
+  {
+    "word": "firm",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fɜːrm/",
+    "example": "a law/consulting/research firm",
+    "translation": "фирма",
+    "example_translation": "юридическая/консалтинговая/исследовательская фирма"
+  },
+  {
+    "word": "firmly",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈfɜːrmli/",
+    "example": "‘I can manage,’ she said firmly.",
+    "translation": "твёрдо",
+    "example_translation": "«Я справлюсь», — твёрдо сказала она."
+  },
+  {
+    "word": "fix",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fɪks/",
+    "example": "Luckily there is an easy fix. ",
+    "translation": "решение",
+    "example_translation": "К счастью, есть простое решение."
+  },
+  {
+    "word": "flame",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fleɪm/",
+    "example": "the tiny yellow flame of a match",
+    "translation": "пламя",
+    "example_translation": "крошечное жёлтое пламя спички"
+  },
+  {
+    "word": "flash",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/flæʃ/",
+    "example": "a flash of lightning",
+    "translation": "вспышка",
+    "example_translation": "вспышка молнии"
+  },
+  {
+    "word": "flash",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/flæʃ/",
+    "example": "Lightning flashed in the distance.",
+    "translation": "сверкать",
+    "example_translation": "Вдали сверкала молния."
+  },
+  {
+    "word": "flavour",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfleɪvər/",
+    "example": "The tomatoes give extra flavour to the sauce.",
+    "translation": "вкус",
+    "example_translation": "Помидоры придают соусу дополнительный вкус."
+  },
+  {
+    "word": "flexible",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfleksəbl/",
+    "example": "a more flexible approach",
+    "translation": "гибкий",
+    "example_translation": "более гибкий подход"
+  },
+  {
+    "word": "float",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/fləʊt/",
+    "example": "A group of swans floated by.",
+    "translation": "плыть",
+    "example_translation": "Мимо проплыла стая лебедей."
+  },
+  {
+    "word": "fold",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fəʊld/",
+    "example": "the folds of her dress",
+    "translation": "складка",
+    "example_translation": "складки её платья"
+  },
+  {
+    "word": "folding",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfəʊldɪŋ/",
+    "example": "a folding chair/bike/knife",
+    "translation": "складной",
+    "example_translation": "складной стул/велосипед/нож"
+  },
+  {
+    "word": "following",
+    "part_of_speech": "preposition",
+    "level": "B2",
+    "phonetics": "/ˈfɑːləʊɪŋ/",
+    "example": "He took charge of the family business following his father's death.",
+    "translation": "после",
+    "example_translation": "Он принял на себя руководство семейным бизнесом после смерти отца."
+  },
+  {
+    "word": "fond",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/fɑːnd/",
+    "example": "Over the years, I have grown quite fond of her.",
+    "translation": "привязанный",
+    "example_translation": "С годами я стал к ней довольно привязан."
+  },
+  {
+    "word": "fool",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fuːl/",
+    "example": "Don't be such a fool!",
+    "translation": "дурак",
+    "example_translation": "Не будь таким дураком!"
+  },
+  {
+    "word": "forbid",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/fərˈbɪd/",
+    "example": " forbid somebody (from doing something) He forbade them from mentioning the subject again.",
+    "translation": "запрещать",
+    "example_translation": "Он запретил им покидать дом."
+  },
+  {
+    "word": "forecast",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrkæst/",
+    "example": "The sales forecasts are encouraging.",
+    "translation": "прогноз",
+    "example_translation": "Прогнозы продаж обнадёживают."
+  },
+  {
+    "word": "forecast",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrkæst/",
+    "example": " forecast something Experts are forecasting a recovery in the economy.",
+    "translation": "прогнозировать",
+    "example_translation": "Эксперты прогнозируют восстановление экономики."
+  },
+  {
+    "word": "forgive",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/fərˈɡɪv/",
+    "example": " forgive somebody Can you ever forgive me?",
+    "translation": "прощать",
+    "example_translation": "Ты когда-нибудь сможешь меня простить?"
+  },
+  {
+    "word": "format",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrmæt/",
+    "example": "The format of the new quiz show has proved popular.",
+    "translation": "формат",
+    "example_translation": "Формат нового шоу с викториной оказался популярным."
+  },
+  {
+    "word": "formation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/fɔːrˈmeɪʃn/",
+    "example": "the formation of a new government",
+    "translation": "формирование",
+    "example_translation": "формирование нового правительства"
+  },
+  {
+    "word": "former",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrmər/",
+    "example": "This fine ruin was, in former times, a royal castle.",
+    "translation": "бывший",
+    "example_translation": "Эти прекрасные руины в прошлом были королевским замком."
+  },
+  {
+    "word": "formerly",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrmərli/",
+    "example": "Namibia, formerly known as South West Africa",
+    "translation": "ранее",
+    "example_translation": "Намибия, ранее известная как Юго-Западная Африка"
+  },
+  {
+    "word": "fortunate",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrtʃənət/",
+    "example": "Remember those less fortunate than yourselves.",
+    "translation": "удачливый",
+    "example_translation": "Помните о тех, кому повезло меньше, чем вам."
+  },
+  {
+    "word": "fortune",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrtʃən/",
+    "example": "He made a fortune in real estate.",
+    "translation": "состояние",
+    "example_translation": "Он сколотил состояние на недвижимости."
+  },
+  {
+    "word": "forum",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrəm/",
+    "example": " forum (on something) to hold an international forum on drug abuse",
+    "translation": "форум",
+    "example_translation": "провести международный форум по наркотикам"
+  },
+  {
+    "word": "forward",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfɔːrwərd/",
+    "example": "The door opened, blocking his forward movement.",
+    "translation": "передний",
+    "example_translation": "Дверь открылась, преградив его движение вперёд."
+  },
+  {
+    "word": "fossil",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfɑːsl/",
+    "example": "fossils over two million years old",
+    "translation": "ископаемое",
+    "example_translation": "ископаемые возрастом более двух миллионов лет"
+  },
+  {
+    "word": "found",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/faʊnd/",
+    "example": "to found a club/company/school",
+    "translation": "основать",
+    "example_translation": "основать клуб/компанию/школу"
+  },
+  {
+    "word": "foundation",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/faʊnˈdeɪʃn/",
+    "example": "Respect and friendship provide a solid foundation for marriage.",
+    "translation": "основа",
+    "example_translation": "Уважение и дружба служат прочной основой для брака."
+  },
+  {
+    "word": "founder",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfaʊndər/",
+    "example": "the founder and president of the company",
+    "translation": "основатель",
+    "example_translation": "основатель и президент компании"
+  },
+  {
+    "word": "fraction",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfrækʃn/",
+    "example": "Only a small fraction of a bank's total deposits will be withdrawn at any one time.",
+    "translation": "доля",
+    "example_translation": "Лишь малая доля всех банковских вкладов будет снята."
+  },
+  {
+    "word": "fragment",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfræɡmənt/",
+    "example": " fragment (of something) Police found fragments of glass near the scene.",
+    "translation": "фрагмент",
+    "example_translation": "Полиция обнаружила осколки стекла рядом."
+  },
+  {
+    "word": "framework",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfreɪmwɜːrk/",
+    "example": "built on a wooden framework",
+    "translation": "каркас",
+    "example_translation": "построенный на деревянном каркасе"
+  },
+  {
+    "word": "fraud",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/frɔːd/",
+    "example": "She was charged with credit card fraud.",
+    "translation": "мошенничество",
+    "example_translation": "Ей предъявили обвинение в мошенничестве с кредитными картами."
+  },
+  {
+    "word": "free",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/friː/",
+    "example": " free somebody The hijackers agreed to free a further ten hostages.",
+    "translation": "освобождать",
+    "example_translation": "Угонщики согласились освободить ещё десять заложников."
+  },
+  {
+    "word": "freedom",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfriːdəm/",
+    "example": "Press freedom is under attack.",
+    "translation": "свобода",
+    "example_translation": "Свобода прессы под угрозой."
+  },
+  {
+    "word": "freely",
+    "part_of_speech": "adverb",
+    "level": "B2",
+    "phonetics": "/ˈfriːli/",
+    "example": "the country’s first freely elected president",
+    "translation": "свободно",
+    "example_translation": "первый свободно избранный президент страны"
+  },
+  {
+    "word": "frequency",
+    "part_of_speech": "noun",
+    "level": "B2",
+    "phonetics": "/ˈfriːkwənsi/",
+    "example": "Fatal road accidents have decreased in frequency over recent years.",
+    "translation": "частота",
+    "example_translation": "Смертельные ДТП стали происходить реже в последние годы."
+  },
+  {
+    "word": "frequent",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˈfriːkwənt/",
+    "example": "He is a frequent visitor to this country.",
+    "translation": "частый",
+    "example_translation": "Он — частый гость этой страны."
+  },
+  {
+    "word": "fuel",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/ˈfjuːəl/",
+    "example": "Uranium is used to fuel nuclear plants.",
+    "translation": "заправлять",
+    "example_translation": "Уран используется для заправки атомных электростанций."
+  },
+  {
+    "word": "fulfil",
+    "part_of_speech": "verb",
+    "level": "B2",
+    "phonetics": "/fʊlˈfɪl/",
+    "example": "to fulfil your dream/ambition/potential",
+    "translation": "выполнять",
+    "example_translation": "осуществить свою мечту/амбиции/потенциал"
+  },
+  {
+    "word": "full-time",
+    "part_of_speech": "adjective",
+    "level": "B2",
+    "phonetics": "/ˌfʊl ˈtaɪm/",
+    "example": "students in full-time education",
+    "translation": "очный",
+    "example_translation": "студенты очной формы обучения"
+  }
+]

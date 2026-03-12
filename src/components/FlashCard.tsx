@@ -16,8 +16,26 @@ function youglishUrl(word: string) {
   return `https://youglish.com/pronounce/${encodeURIComponent(word)}/english`
 }
 
+function escapeRegex(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function blankExample(example: string, word: string): string {
+  const regex = new RegExp(`\\b${escapeRegex(word)}\\b`, 'i')
+  return regex.test(example) ? example.replace(regex, '______') : example
+}
+
+function highlightWord(example: string, word: string): React.ReactNode {
+  const regex = new RegExp(`(\\b${escapeRegex(word)}\\b)`, 'i')
+  const parts = example.split(regex)
+  if (parts.length === 1) return example
+  return parts.map((part, i) =>
+    regex.test(part) ? <strong key={i} className="flash-card__highlight">{part}</strong> : part
+  )
+}
+
 export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
-  const [flipped, setFlipped] = useState(false)
+  const [flipCount, setFlipCount] = useState(0)
   const [dragX, setDragX] = useState(0)
   const [swiping, setSwiping] = useState(false)
   const [exiting, setExiting] = useState<'left' | 'right' | null>(null)
@@ -28,11 +46,14 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   const isVertical = useRef(false)
   const cardRef = useRef<HTMLDivElement>(null)
 
+  const hasExample = !!card.card.example
+
   const handleFlip = () => {
     if (isDragging.current) return
-    setFlipped(f => !f)
+    if (flipCount >= 2) return
+    setFlipCount(c => c + 1)
     hapticFeedback('light')
-    if (!flipped) onReveal()
+    if (flipCount === 0) onReveal()
   }
 
   const handleYouGlish = (e: React.MouseEvent) => {
@@ -152,6 +173,12 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
     </button>
   )
 
+  // Determine hint text based on state
+  const frontHint = flipCount === 0
+    ? 'Tap to flip'
+    : undefined
+  const backHint = hasExample ? 'Tap for context' : undefined
+
   return (
     <div
       ref={cardRef}
@@ -178,26 +205,59 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
         </div>
       )}
 
-      <div className={`flash-card__inner ${flipped ? 'flash-card__inner--flipped' : ''}`}>
-        {/* Front */}
+      <div
+        className="flash-card__inner"
+        style={{ transform: `rotateY(${flipCount * 180}deg)` }}
+      >
+        {/* Front face — state 0: question / state 2: enhanced context */}
         <div className="flash-card__face flash-card__face--front">
-          <span className="flash-card__word">
-            {mode === 'ru-en' ? card.card.back : card.card.front}
-          </span>
-          {mode === 'en-ru' && card.card.phonetics && (
-            <span className="flash-card__phonetics">{card.card.phonetics}</span>
+          {flipCount < 2 ? (
+            /* --- State 0: Initial question --- */
+            <>
+              <span className="flash-card__word">
+                {mode === 'ru-en' ? card.card.back : card.card.front}
+              </span>
+              {mode === 'en-ru' && card.card.phonetics && (
+                <span className="flash-card__phonetics">{card.card.phonetics}</span>
+              )}
+              {card.card.part_of_speech && (
+                <span className="flash-card__pos">{card.card.part_of_speech}</span>
+              )}
+              {/* ru-en: show example with blank on the question side */}
+              {mode === 'ru-en' && hasExample && (
+                <p className="flash-card__example flash-card__example--blank">
+                  {blankExample(card.card.example!, card.card.front)}
+                </p>
+              )}
+              {card.isNew && (
+                <span className="flash-card__badge">NEW</span>
+              )}
+              {frontHint && <span className="flash-card__hint">{frontHint}</span>}
+              {youglishBtn}
+            </>
+          ) : (
+            /* --- State 2: Enhanced context (filled example + translation) --- */
+            <>
+              <span className="flash-card__word flash-card__word--small">
+                {mode === 'ru-en' ? card.card.back : card.card.front}
+                {mode === 'en-ru' && card.card.phonetics ? ` ${card.card.phonetics}` : ''}
+              </span>
+              {hasExample && (
+                <p className="flash-card__example flash-card__example--filled">
+                  {highlightWord(card.card.example!, card.card.front)}
+                </p>
+              )}
+              {card.card.example_translation && (
+                <p className="flash-card__example-translation">
+                  {card.card.example_translation}
+                </p>
+              )}
+              {youglishBtn}
+            </>
           )}
-          {card.card.part_of_speech && (
-            <span className="flash-card__pos">{card.card.part_of_speech}</span>
-          )}
-          {card.isNew && (
-            <span className="flash-card__badge">NEW</span>
-          )}
-          <span className="flash-card__hint">Tap to flip</span>
-          {youglishBtn}
         </div>
 
-        {/* Back */}
+        {/* Back face — state 1: answer */}
         <div className="flash-card__face flash-card__face--back">
           <span className="flash-card__back-word">
             {mode === 'ru-en' ? card.card.back : card.card.front}
@@ -212,9 +272,13 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
           {card.card.part_of_speech && (
             <span className="flash-card__pos">{card.card.part_of_speech}</span>
           )}
-          {card.card.example && (
-            <p className="flash-card__example">"{card.card.example}"</p>
+          {/* en-ru: show example with blank on the answer side */}
+          {mode === 'en-ru' && hasExample && (
+            <p className="flash-card__example flash-card__example--blank">
+              {blankExample(card.card.example!, card.card.front)}
+            </p>
           )}
+          {backHint && <span className="flash-card__hint">{backHint}</span>}
           {youglishBtn}
         </div>
       </div>

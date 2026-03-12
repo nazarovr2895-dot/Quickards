@@ -37,6 +37,7 @@ export interface DBCard {
   part_of_speech: string | null
   phonetics: string | null
   example: string | null
+  example_translation: string | null
   created_at: string
 }
 

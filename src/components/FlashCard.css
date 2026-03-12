@@ -20,9 +20,7 @@
   transition: transform 0.5s;
 }
 
-.flash-card__inner--flipped {
-  transform: rotateY(180deg);
-}
+/* rotation is now driven by inline style (flipCount * 180deg) */
 
 .flash-card__face {
   position: absolute;
@@ -110,6 +108,40 @@
   text-align: center;
   padding: 0 8px;
   color: var(--app-text-secondary);
+}
+
+.flash-card__example--blank {
+  font-size: 15px;
+  font-style: normal;
+  color: var(--app-text-secondary);
+  line-height: 1.5;
+}
+
+.flash-card__example--filled {
+  font-size: 15px;
+  font-style: normal;
+  color: var(--app-text);
+  line-height: 1.5;
+}
+
+.flash-card__highlight {
+  color: var(--app-accent, #6366f1);
+  font-weight: 700;
+}
+
+.flash-card__example-translation {
+  margin-top: 8px;
+  font-size: 13px;
+  text-align: center;
+  padding: 0 8px;
+  color: var(--app-text-secondary);
+  font-style: italic;
+}
+
+.flash-card__word--small {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 /* YouGlish button */

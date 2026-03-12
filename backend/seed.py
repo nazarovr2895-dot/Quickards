@@ -59,12 +59,13 @@ async def main():
             batch = words[i:i + batch_size]
             await conn.executemany(
                 """
-                INSERT INTO cards (set_id, front, back, part_of_speech, phonetics, example)
-                VALUES ($1, $2, $3, $4, $5, $6)
+                INSERT INTO cards (set_id, front, back, part_of_speech, phonetics, example, example_translation)
+                VALUES ($1, $2, $3, $4, $5, $6, $7)
                 """,
                 [
                     (set_id, w["word"], w.get("translation", w["word"]),
-                     w.get("part_of_speech"), w.get("phonetics"), w.get("example"))
+                     w.get("part_of_speech"), w.get("phonetics"), w.get("example"),
+                     w.get("example_translation"))
                     for w in batch
                 ],
             )
