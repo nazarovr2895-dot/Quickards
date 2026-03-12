@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 import { hapticFeedback } from '../lib/telegram'
+import { YouGlishModal } from './YouGlishModal'
 import type { StudyCard } from '../lib/types'
 import './FlashCard.css'
 
@@ -17,6 +18,7 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   const [dragX, setDragX] = useState(0)
   const [swiping, setSwiping] = useState(false)
   const [exiting, setExiting] = useState<'left' | 'right' | null>(null)
+  const [showYouGlish, setShowYouGlish] = useState(false)
 
   const startX = useRef(0)
   const startY = useRef(0)
@@ -175,6 +177,17 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
             <span className="flash-card__badge">NEW</span>
           )}
           <span className="flash-card__hint">Tap to flip</span>
+          <button
+            className="flash-card__youglish-btn"
+            onClick={(e) => { e.stopPropagation(); setShowYouGlish(true) }}
+            aria-label="Hear in context"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
+          </button>
         </div>
 
         {/* Back */}
@@ -195,8 +208,25 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
           {card.card.example && (
             <p className="flash-card__example">"{card.card.example}"</p>
           )}
+          <button
+            className="flash-card__youglish-btn"
+            onClick={(e) => { e.stopPropagation(); setShowYouGlish(true) }}
+            aria-label="Hear in context"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
+          </button>
         </div>
       </div>
+
+      <YouGlishModal
+        word={card.card.front}
+        isOpen={showYouGlish}
+        onClose={() => setShowYouGlish(false)}
+      />
     </div>
   )
 }
