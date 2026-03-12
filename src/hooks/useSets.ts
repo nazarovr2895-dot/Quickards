@@ -27,10 +27,16 @@ export function useUserSets(userId: number | undefined) {
   const [loading, setLoading] = useState(true)
 
   const load = useCallback(async () => {
-    if (!userId) return
-    const data = await apiGet<DBSet[]>('/api/sets/user')
-    setSets(data || [])
-    setLoading(false)
+    if (!userId) {
+      setLoading(false)
+      return
+    }
+    try {
+      const data = await apiGet<DBSet[]>('/api/sets/user')
+      setSets(data || [])
+    } finally {
+      setLoading(false)
+    }
   }, [userId])
 
   useEffect(() => { load() }, [load])
@@ -43,10 +49,16 @@ export function useSubscribedSets(userId: number | undefined) {
   const [loading, setLoading] = useState(true)
 
   const load = useCallback(async () => {
-    if (!userId) return
-    const data = await apiGet<UserSetRow[]>('/api/user-sets')
-    setUserSets(data || [])
-    setLoading(false)
+    if (!userId) {
+      setLoading(false)
+      return
+    }
+    try {
+      const data = await apiGet<UserSetRow[]>('/api/user-sets')
+      setUserSets(data || [])
+    } finally {
+      setLoading(false)
+    }
   }, [userId])
 
   useEffect(() => { load() }, [load])

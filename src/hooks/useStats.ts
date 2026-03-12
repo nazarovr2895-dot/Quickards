@@ -12,10 +12,16 @@ export function useStats(userId: number | undefined) {
   const [loading, setLoading] = useState(true)
 
   const load = useCallback(async () => {
-    if (!userId) return
-    const data = await apiGet<StudyStats>('/api/study/stats')
-    setStats(data)
-    setLoading(false)
+    if (!userId) {
+      setLoading(false)
+      return
+    }
+    try {
+      const data = await apiGet<StudyStats>('/api/study/stats')
+      if (data) setStats(data)
+    } finally {
+      setLoading(false)
+    }
   }, [userId])
 
   useEffect(() => { load() }, [load])

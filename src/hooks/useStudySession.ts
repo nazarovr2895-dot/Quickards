@@ -47,62 +47,66 @@ export function useStudySession(userId: number | undefined, setId?: string) {
 
   // Load session cards
   const loadCards = useCallback(async () => {
-    if (!userId) return
+    if (!userId) {
+      setLoading(false)
+      return
+    }
     setLoading(true)
+    try {
+      // 1. Get due cards
+      const dueUrl = setId
+        ? `/api/study/due?set_id=${setId}&limit=50`
+        : '/api/study/due?limit=50'
+      const dueCards = await apiGet<(DBUserCard & { card: DBCard })[]>(dueUrl)
 
-    // 1. Get due cards
-    const dueUrl = setId
-      ? `/api/study/due?set_id=${setId}&limit=50`
-      : '/api/study/due?limit=50'
-    const dueCards = await apiGet<(DBUserCard & { card: DBCard })[]>(dueUrl)
+      const studyCards: StudyCard[] = (dueCards || []).map(uc => ({
+        userCard: uc,
+        card: uc.card,
+        fsrsCard: dbCardToFSRS(uc),
+        isNew: false,
+      }))
 
-    const studyCards: StudyCard[] = (dueCards || []).map(uc => ({
-      userCard: uc,
-      card: uc.card,
-      fsrsCard: dbCardToFSRS(uc),
-      isNew: false,
-    }))
-
-    // 2. Get new cards
-    let newCardsData: DBCard[] = []
-    if (setId) {
-      newCardsData = await apiGet<DBCard[]>(`/api/cards/new?set_id=${setId}&limit=10`)
-    } else {
-      // Get user's subscribed set IDs first
-      const userSets = await apiGet<{ set_id: string }[]>('/api/user-sets')
-      if (userSets && userSets.length > 0) {
-        const setIds = userSets.map(us => us.set_id).join(',')
-        newCardsData = await apiGet<DBCard[]>(`/api/cards/new?set_ids=${setIds}&limit=10`)
+      // 2. Get new cards
+      let newCardsData: DBCard[] = []
+      if (setId) {
+        newCardsData = await apiGet<DBCard[]>(`/api/cards/new?set_id=${setId}&limit=10`)
+      } else {
+        const userSets = await apiGet<{ set_id: string }[]>('/api/user-sets')
+        if (userSets && userSets.length > 0) {
+          const setIds = userSets.map(us => us.set_id).join(',')
+          newCardsData = await apiGet<DBCard[]>(`/api/cards/new?set_ids=${setIds}&limit=10`)
+        }
       }
+
+      const newStudyCards: StudyCard[] = (newCardsData || []).map((card: DBCard) => ({
+        userCard: null,
+        card,
+        fsrsCard: newFSRSCard(),
+        isNew: true,
+      }))
+
+      // 3. Interleave: after every 5 review cards, insert 1 new card
+      const merged: StudyCard[] = []
+      let reviewIdx = 0
+      let newIdx = 0
+      while (reviewIdx < studyCards.length || newIdx < newStudyCards.length) {
+        for (let i = 0; i < 5 && reviewIdx < studyCards.length; i++) {
+          merged.push(studyCards[reviewIdx++])
+        }
+        if (newIdx < newStudyCards.length) {
+          merged.push(newStudyCards[newIdx++])
+        }
+      }
+
+      setQueue(merged)
+      setTotalCards(merged.length)
+      setCurrentIndex(0)
+      setReviewed(0)
+      setNewLearned(0)
+      setFinished(merged.length === 0)
+    } finally {
+      setLoading(false)
     }
-
-    const newStudyCards: StudyCard[] = (newCardsData || []).map((card: DBCard) => ({
-      userCard: null,
-      card,
-      fsrsCard: newFSRSCard(),
-      isNew: true,
-    }))
-
-    // 3. Interleave: after every 5 review cards, insert 1 new card
-    const merged: StudyCard[] = []
-    let reviewIdx = 0
-    let newIdx = 0
-    while (reviewIdx < studyCards.length || newIdx < newStudyCards.length) {
-      for (let i = 0; i < 5 && reviewIdx < studyCards.length; i++) {
-        merged.push(studyCards[reviewIdx++])
-      }
-      if (newIdx < newStudyCards.length) {
-        merged.push(newStudyCards[newIdx++])
-      }
-    }
-
-    setQueue(merged)
-    setTotalCards(merged.length)
-    setCurrentIndex(0)
-    setReviewed(0)
-    setNewLearned(0)
-    setFinished(merged.length === 0)
-    setLoading(false)
   }, [userId, setId])
 
   // Flush write queue to backend
