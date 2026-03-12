@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel
 
 from ..database import get_conn
@@ -163,3 +163,49 @@ async def create_set(
         user_id, row["id"],
     )
     return {"id": set_id}
+
+
+@router.delete("/sets/{set_id}")
+async def delete_set(
+    set_id: str,
+    user_id: int = Depends(get_current_user_id),
+):
+    pool = await get_conn()
+    row = await pool.fetchrow("SELECT owner_id, is_system FROM sets WHERE id = $1", set_id)
+    if not row:
+        raise HTTPException(status_code=404, detail="Set not found")
+    if row["is_system"]:
+        raise HTTPException(status_code=403, detail="Cannot delete system set")
+    if row["owner_id"] != user_id:
+        raise HTTPException(status_code=403, detail="Not set owner")
+
+    async with pool.acquire() as conn:
+        async with conn.transaction():
+            # Delete review logs first (references user_cards)
+            await conn.execute(
+                """
+                DELETE FROM review_logs
+                WHERE user_card_id IN (
+                    SELECT uc.id FROM user_cards uc
+                    JOIN cards c ON c.id = uc.card_id
+                    WHERE c.set_id = $1
+                )
+                """,
+                set_id,
+            )
+            # Delete user_cards (references cards)
+            await conn.execute(
+                """
+                DELETE FROM user_cards
+                WHERE card_id IN (SELECT id FROM cards WHERE set_id = $1)
+                """,
+                set_id,
+            )
+            # Delete cards
+            await conn.execute("DELETE FROM cards WHERE set_id = $1", set_id)
+            # Delete subscriptions
+            await conn.execute("DELETE FROM user_sets WHERE set_id = $1", set_id)
+            # Delete the set
+            await conn.execute("DELETE FROM sets WHERE id = $1", set_id)
+
+    return {"ok": True}

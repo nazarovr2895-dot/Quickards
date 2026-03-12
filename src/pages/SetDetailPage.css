@@ -142,36 +142,94 @@
   transform: none;
 }
 
-/* Footer */
-.set-detail__footer {
+/* Hero right (ring + menu) */
+.set-detail__hero-right {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding-top: 8px;
-  border-top: 1px solid var(--app-border);
-  margin-top: 8px;
+  align-items: flex-start;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
-.set-detail__footer-link {
-  font-size: 14px;
-  font-weight: 700;
+/* ⋯ Menu */
+.set-detail__menu {
+  position: relative;
+}
+
+.set-detail__menu-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: none;
+  background: var(--app-surface);
+  color: var(--app-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.set-detail__menu-btn:active {
+  background: var(--app-border);
+}
+
+.set-detail__dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  min-width: 200px;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 6px;
+  z-index: 100;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.set-detail__dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
   border: none;
   background: none;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   font-family: inherit;
-  transition: opacity 0.2s ease;
-  padding: 8px;
+  color: var(--app-text);
+  transition: background 0.15s ease;
 }
 
-.set-detail__footer-link:active {
-  opacity: 0.6;
+.set-detail__dropdown-item:active {
+  background: var(--app-surface);
 }
 
-.set-detail__footer-link--danger {
+.set-detail__dropdown-item--danger {
   color: var(--app-error);
-  font-weight: 500;
-  font-size: 13px;
+}
+
+/* CTA row (owner: manage + study) */
+.set-detail__cta-row {
+  display: flex;
+  gap: 10px;
+  animation: fadeInUp 0.4s ease-out 0.1s both;
+}
+
+.set-detail__cta-row .set-detail__cta {
+  flex: 1;
+  font-size: 15px;
+  padding: 13px 10px;
+}
+
+.set-detail__cta--secondary {
+  background: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  box-shadow: none !important;
 }
 
 @media (min-width: 768px) {
