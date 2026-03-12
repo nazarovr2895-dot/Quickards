@@ -1,0 +1,24 @@
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stats-bar__item {
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stats-bar__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.stats-bar__label {
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 500;
+  color: var(--app-text-secondary);
+}

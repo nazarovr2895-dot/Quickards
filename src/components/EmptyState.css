@@ -1,0 +1,40 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.empty-state__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  background: var(--app-accent-muted);
+}
+
+.empty-state__emoji {
+  font-size: 2rem;
+}
+
+.empty-state__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  margin: 0 0 6px;
+}
+
+.empty-state__description {
+  font-size: 14px;
+  color: var(--app-text-secondary);
+  max-width: 260px;
+  line-height: 1.4;
+  margin: 0;
+}

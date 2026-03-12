@@ -1,0 +1,69 @@
+.set-card {
+  width: 100%;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.set-card:active {
+  transform: scale(0.98);
+}
+
+@media (min-width: 768px) {
+  .set-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--app-shadow-lg);
+  }
+}
+
+.set-card__level {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.set-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.set-card__name {
+  font-weight: 600;
+  color: var(--app-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.set-card__meta {
+  font-size: 12px;
+  margin-top: 2px;
+  color: var(--app-text-secondary);
+}
+
+.set-card__studying {
+  margin-left: 8px;
+  font-weight: 600;
+  color: var(--app-accent);
+}
+
+.set-card__chevron {
+  flex-shrink: 0;
+  color: var(--app-text-secondary);
+}

@@ -2,6 +2,7 @@ import { SetCard } from '../components/SetCard'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 import { useSystemSets, useUserSets, useSubscribedSets } from '../hooks/useSets'
 import { useNavigate } from 'react-router-dom'
+import './SetsPage.css'
 
 interface Props {
   userId: number | undefined
@@ -19,56 +20,43 @@ export function SetsPage({ userId }: Props) {
   const oxford5000 = systemSets.filter(s => s.source === 'oxford5000')
 
   return (
-    <div className="flex flex-col gap-5 p-4 pb-4" style={{ animation: 'fadeInUp 0.4s ease-out' }}>
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>Sets</h1>
+    <div className="sets-page">
+      <div className="sets-page__header">
+        <h1 className="sets-page__title">Sets</h1>
         <button
           onClick={() => navigate('/sets/new')}
-          className="text-sm font-bold px-4 py-2 rounded-xl transition-all duration-200 active:scale-95"
-          style={{
-            color: '#ffffff',
-            background: 'var(--app-gradient)',
-            boxShadow: '0 2px 8px rgba(255,107,53,0.2)',
-          }}
+          className="sets-page__new-btn"
         >
           + New Set
         </button>
       </div>
 
       {oxford3000.length > 0 && (
-        <Section title="Oxford 3000">
+        <div className="sets-page__section">
+          <h2 className="sets-page__section-title">Oxford 3000</h2>
           {oxford3000.map(set => (
             <SetCard key={set.id} set={set} subscribed={isSubscribed(set.id)} />
           ))}
-        </Section>
+        </div>
       )}
 
       {oxford5000.length > 0 && (
-        <Section title="Oxford 5000">
+        <div className="sets-page__section">
+          <h2 className="sets-page__section-title">Oxford 5000</h2>
           {oxford5000.map(set => (
             <SetCard key={set.id} set={set} subscribed={isSubscribed(set.id)} />
           ))}
-        </Section>
+        </div>
       )}
 
       {customSets.length > 0 && (
-        <Section title="My Sets">
+        <div className="sets-page__section">
+          <h2 className="sets-page__section-title">My Sets</h2>
           {customSets.map(set => (
             <SetCard key={set.id} set={set} />
           ))}
-        </Section>
+        </div>
       )}
-    </div>
-  )
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="flex flex-col gap-2.5">
-      <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--app-text-secondary)', fontFamily: "'Outfit', sans-serif" }}>
-        {title}
-      </h2>
-      {children}
     </div>
   )
 }

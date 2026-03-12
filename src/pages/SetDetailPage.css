@@ -1,0 +1,151 @@
+.set-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  padding-bottom: 24px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.set-detail__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.set-detail__level {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.set-detail__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.set-detail__meta {
+  font-size: 14px;
+  color: var(--app-text-secondary);
+}
+
+.set-detail__description {
+  font-size: 14px;
+  margin-top: 4px;
+  color: var(--app-text-secondary);
+}
+
+.set-detail__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.set-detail__btn {
+  padding: 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s ease;
+}
+
+.set-detail__btn:active {
+  transform: scale(0.97);
+}
+
+.set-detail__btn--primary {
+  flex: 1;
+  color: #ffffff;
+  background: var(--app-gradient);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
+}
+
+.set-detail__btn--danger {
+  padding: 12px 16px;
+  background: var(--app-error-bg);
+  color: var(--app-error);
+}
+
+.set-detail__add-link {
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.set-detail__add-link:active {
+  opacity: 0.6;
+}
+
+.set-detail__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.set-detail__cards-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--app-text-secondary);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: 4px;
+}
+
+.set-detail__card-item {
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+.set-detail__card-front {
+  font-weight: 500;
+  color: var(--app-text);
+}
+
+.set-detail__card-pos {
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 4px;
+  color: var(--app-text-secondary);
+}
+
+.set-detail__card-back {
+  font-size: 14px;
+  color: var(--app-text-secondary);
+}
+
+.set-detail__card-limit {
+  text-align: center;
+  font-size: 12px;
+  padding: 8px 0;
+  color: var(--app-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .set-detail {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 32px;
+    padding-bottom: 32px;
+  }
+}

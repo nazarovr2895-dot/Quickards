@@ -9,6 +9,7 @@ import { EmptyState } from '../components/EmptyState'
 import { useStudySession } from '../hooks/useStudySession'
 import { showBackButton } from '../lib/telegram'
 import type { Grade } from '../lib/fsrs'
+import './StudyPage.css'
 
 interface Props {
   userId: number | undefined
@@ -57,10 +58,10 @@ export function StudyPage({ userId }: Props) {
   }
 
   return (
-    <div className="flex flex-col h-full p-4 gap-4" style={{ animation: 'fadeIn 0.3s ease-out' }}>
+    <div className="study-page">
       <ProgressBar current={reviewed} total={totalCards} />
 
-      <div className="flex-1 flex items-center justify-center px-1">
+      <div className="study-page__card-area">
         <FlashCardReset
           card={currentCard}
           onReveal={() => setRevealed(true)}
@@ -68,20 +69,14 @@ export function StudyPage({ userId }: Props) {
         />
       </div>
 
-      <div className="pb-4">
+      <div className="study-page__actions">
         <RatingButtons
           intervals={intervals}
           onRate={handleRate}
           visible={revealed}
         />
         {!revealed && (
-          <p
-            className="text-center text-sm mt-4 font-medium"
-            style={{
-              color: 'var(--app-text-secondary)',
-              animation: 'pulse-subtle 2s ease-in-out infinite',
-            }}
-          >
+          <p className="study-page__hint">
             Tap the card to see the answer
           </p>
         )}

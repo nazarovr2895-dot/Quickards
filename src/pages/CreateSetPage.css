@@ -1,0 +1,56 @@
+.create-set {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.create-set__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--app-text-secondary);
+}
+
+.form-field__input {
+  border-radius: 16px;
+  padding: 14px 16px;
+  outline: none;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  color: var(--app-text);
+  box-shadow: var(--app-shadow);
+  font-family: inherit;
+  font-size: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field__input:focus {
+  border-color: var(--app-accent);
+  box-shadow: 0 0 0 2px var(--app-accent-muted);
+}
+
+.form-field__input--textarea {
+  resize: none;
+}
+
+@media (min-width: 768px) {
+  .create-set {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 32px;
+  }
+}

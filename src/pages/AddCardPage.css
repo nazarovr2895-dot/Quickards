@@ -1,0 +1,22 @@
+.add-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.add-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .add-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 32px;
+  }
+}

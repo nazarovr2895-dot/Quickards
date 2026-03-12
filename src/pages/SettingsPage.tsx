@@ -1,4 +1,5 @@
 import { useTheme } from '../hooks/useTheme'
+import './SettingsPage.css'
 
 const MoonIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -28,69 +29,52 @@ const StarIcon = () => (
 export function SettingsPage() {
   const { theme, toggleTheme } = useTheme()
 
-  const cardStyle = {
-    background: 'var(--app-bg-elevated)',
-    border: '1px solid var(--app-border)',
-    boxShadow: 'var(--app-shadow)',
-  }
-
   return (
-    <div className="flex flex-col gap-4 p-4 pb-4" style={{ animation: 'fadeInUp 0.4s ease-out' }}>
-      <h1 className="text-2xl font-bold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>Settings</h1>
+    <div className="settings">
+      <h1 className="settings__title">Settings</h1>
 
       {/* Theme toggle */}
-      <div className="rounded-2xl p-4 flex items-center gap-3" style={cardStyle}>
-        <div className="flex items-center justify-center w-9 h-9 rounded-xl" style={{ background: 'var(--app-accent-muted)', color: 'var(--app-accent)' }}>
-          <MoonIcon />
+      <div className="settings-card">
+        <div className="settings-card__header">
+          <div className="settings-card__icon-wrap">
+            <MoonIcon />
+          </div>
+          <div className="settings-card__info">
+            <h3 className="settings-card__title">Dark Mode</h3>
+            <p className="settings-card__subtitle">
+              {theme === 'dark' ? 'Dark theme is on' : 'Light theme is on'}
+            </p>
+          </div>
+          <button
+            onClick={toggleTheme}
+            className={`toggle-switch ${theme === 'dark' ? 'toggle-switch--on' : 'toggle-switch--off'}`}
+          >
+            <div className={`toggle-switch__knob ${theme === 'dark' ? 'toggle-switch__knob--on' : ''}`} />
+          </button>
         </div>
-        <div className="flex-1">
-          <h3 className="font-semibold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>Dark Mode</h3>
-          <p className="text-xs mt-0.5" style={{ color: 'var(--app-text-secondary)' }}>
-            {theme === 'dark' ? 'Dark theme is on' : 'Light theme is on'}
-          </p>
-        </div>
-        <button
-          onClick={toggleTheme}
-          className="relative w-[48px] h-[28px] rounded-full transition-all duration-300"
-          style={{
-            background: theme === 'dark' ? 'var(--app-gradient)' : 'var(--app-surface)',
-            border: theme === 'dark' ? 'none' : '1px solid var(--app-border)',
-          }}
-        >
-          <div
-            className="absolute top-[3px] left-[3px] w-[22px] h-[22px] rounded-full transition-transform duration-300"
-            style={{
-              background: '#ffffff',
-              transform: theme === 'dark' ? 'translateX(20px)' : 'translateX(0)',
-              boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
-            }}
-          />
-        </button>
       </div>
 
-      <div className="rounded-2xl p-4" style={cardStyle}>
-        <div className="flex items-center gap-3 mb-3">
-          <div className="flex items-center justify-center w-9 h-9 rounded-xl" style={{ background: 'var(--app-accent-muted)', color: 'var(--app-accent)' }}>
+      <div className="settings-card">
+        <div className="settings-card__header settings-card__header--with-body">
+          <div className="settings-card__icon-wrap">
             <InfoIcon />
           </div>
-          <h3 className="font-semibold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>About Quickards</h3>
+          <h3 className="settings-card__title">About Quickards</h3>
         </div>
-        <p className="text-sm" style={{ color: 'var(--app-text-secondary)' }}>
-          Flashcard app for learning English with spaced repetition (FSRS algorithm).
-        </p>
-        <p className="text-sm mt-2" style={{ color: 'var(--app-text-secondary)' }}>
-          The app uses scientifically-proven spaced repetition to schedule reviews at optimal intervals, helping you memorize words permanently.
-        </p>
+        <div className="settings-card__body">
+          <p>Flashcard app for learning English with spaced repetition (FSRS algorithm).</p>
+          <p>The app uses scientifically-proven spaced repetition to schedule reviews at optimal intervals, helping you memorize words permanently.</p>
+        </div>
       </div>
 
-      <div className="rounded-2xl p-4" style={cardStyle}>
-        <div className="flex items-center gap-3 mb-3">
-          <div className="flex items-center justify-center w-9 h-9 rounded-xl" style={{ background: 'var(--app-accent-muted)', color: 'var(--app-accent)' }}>
+      <div className="settings-card">
+        <div className="settings-card__header settings-card__header--with-body">
+          <div className="settings-card__icon-wrap">
             <LightbulbIcon />
           </div>
-          <h3 className="font-semibold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>How it works</h3>
+          <h3 className="settings-card__title">How it works</h3>
         </div>
-        <ul className="text-sm flex flex-col gap-1.5" style={{ color: 'var(--app-text-secondary)' }}>
+        <ul className="settings-card__list">
           <li>1. Pick a word set to study</li>
           <li>2. See a word, try to recall the translation</li>
           <li>3. Rate how well you remembered</li>
@@ -99,24 +83,22 @@ export function SettingsPage() {
         </ul>
       </div>
 
-      <div className="rounded-2xl p-4" style={cardStyle}>
-        <div className="flex items-center gap-3 mb-3">
-          <div className="flex items-center justify-center w-9 h-9 rounded-xl" style={{ background: 'var(--app-accent-muted)', color: 'var(--app-accent)' }}>
+      <div className="settings-card">
+        <div className="settings-card__header settings-card__header--with-body">
+          <div className="settings-card__icon-wrap">
             <StarIcon />
           </div>
-          <h3 className="font-semibold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>Rating guide</h3>
+          <h3 className="settings-card__title">Rating guide</h3>
         </div>
-        <ul className="text-sm flex flex-col gap-1.5" style={{ color: 'var(--app-text-secondary)' }}>
-          <li><span style={{ color: '#ef4444' }} className="font-semibold">Again</span> - Didn't remember at all</li>
-          <li><span style={{ color: '#f97316' }} className="font-semibold">Hard</span> - Remembered with difficulty</li>
-          <li><span style={{ color: '#22c55e' }} className="font-semibold">Good</span> - Remembered correctly</li>
-          <li><span style={{ color: '#3b82f6' }} className="font-semibold">Easy</span> - Remembered instantly</li>
+        <ul className="settings-card__list">
+          <li><span className="settings-card__list-highlight--again">Again</span> - Didn't remember at all</li>
+          <li><span className="settings-card__list-highlight--hard">Hard</span> - Remembered with difficulty</li>
+          <li><span className="settings-card__list-highlight--good">Good</span> - Remembered correctly</li>
+          <li><span className="settings-card__list-highlight--easy">Easy</span> - Remembered instantly</li>
         </ul>
       </div>
 
-      <p className="text-xs text-center py-2" style={{ color: 'var(--app-text-secondary)' }}>
-        v1.0.0 - Powered by FSRS
-      </p>
+      <p className="settings__version">v1.0.0 - Powered by FSRS</p>
     </div>
   )
 }

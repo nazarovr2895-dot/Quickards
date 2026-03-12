@@ -1,0 +1,124 @@
+.flash-card {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+  cursor: pointer;
+  perspective: 1000px;
+  min-height: 320px;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.flash-card__inner {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flash-card__inner--flipped {
+  transform: rotateY(180deg);
+}
+
+.flash-card__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 24px;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow-lg);
+  backface-visibility: hidden;
+}
+
+.flash-card__face--front {
+  border-top: 3px solid var(--app-accent);
+}
+
+.flash-card__face--back {
+  transform: rotateY(180deg);
+  border-top: 3px solid var(--app-accent-secondary);
+}
+
+.flash-card__word {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.flash-card__phonetics {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--app-text-secondary);
+}
+
+.flash-card__pos {
+  margin-top: 4px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--app-text-secondary);
+}
+
+.flash-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  color: #ffffff;
+  background: var(--app-gradient);
+}
+
+.flash-card__hint {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--app-text-secondary);
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.flash-card__back-word {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--app-text-secondary);
+}
+
+.flash-card__translation {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.flash-card__example {
+  margin-top: 16px;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  padding: 0 8px;
+  color: var(--app-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .flash-card {
+    min-height: 360px;
+  }
+  .flash-card__inner {
+    min-height: 360px;
+  }
+  .flash-card__word {
+    font-size: 2.25rem;
+  }
+  .flash-card__translation {
+    font-size: 1.875rem;
+  }
+}

@@ -1,5 +1,4 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { LiquidGlassCard } from './LiquidGlassCard';
 import { isTelegram } from '../lib/telegram';
 import './BottomNav.css';
 
@@ -42,7 +41,7 @@ export function BottomNav() {
       role="navigation"
       data-telegram={isTelegramEnv}
     >
-      <LiquidGlassCard className="bottom-nav__container">
+      <div className="bottom-nav__container">
         {tabs.map(({ path, label, Icon }) => {
           const isActive = path === '/'
             ? pathname === '/'
@@ -61,7 +60,7 @@ export function BottomNav() {
             </NavLink>
           );
         })}
-      </LiquidGlassCard>
+      </div>
     </nav>
   );
 }

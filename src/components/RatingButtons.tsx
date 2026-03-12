@@ -1,6 +1,7 @@
 import { Rating } from '../lib/fsrs'
 import type { Grade } from '../lib/fsrs'
 import { hapticFeedback } from '../lib/telegram'
+import './RatingButtons.css'
 
 interface Props {
   intervals: Record<number, string> | null
@@ -32,11 +33,11 @@ const StarIcon = () => (
   </svg>
 )
 
-const buttons: { rating: Grade; label: string; bg: string; text: string; Icon: React.FC }[] = [
-  { rating: Rating.Again, label: 'Again', bg: 'rgba(239,68,68,0.12)', text: '#ef4444', Icon: XIcon },
-  { rating: Rating.Hard, label: 'Hard', bg: 'rgba(249,115,22,0.12)', text: '#f97316', Icon: ThinkIcon },
-  { rating: Rating.Good, label: 'Good', bg: 'rgba(34,197,94,0.12)', text: '#22c55e', Icon: CheckIcon },
-  { rating: Rating.Easy, label: 'Easy', bg: 'rgba(59,130,246,0.12)', text: '#3b82f6', Icon: StarIcon },
+const buttons: { rating: Grade; label: string; modifier: string; Icon: React.FC }[] = [
+  { rating: Rating.Again, label: 'Again', modifier: 'again', Icon: XIcon },
+  { rating: Rating.Hard, label: 'Hard', modifier: 'hard', Icon: ThinkIcon },
+  { rating: Rating.Good, label: 'Good', modifier: 'good', Icon: CheckIcon },
+  { rating: Rating.Easy, label: 'Easy', modifier: 'easy', Icon: StarIcon },
 ]
 
 export function RatingButtons({ intervals, onRate, visible }: Props) {
@@ -48,21 +49,16 @@ export function RatingButtons({ intervals, onRate, visible }: Props) {
   }
 
   return (
-    <div className="grid grid-cols-4 gap-2.5 w-full mx-auto" style={{ animation: 'fadeInUp 0.3s ease-out' }}>
-      {buttons.map(({ rating, label, bg, text, Icon }) => (
+    <div className="rating-buttons">
+      {buttons.map(({ rating, label, modifier, Icon }) => (
         <button
           key={rating}
           onClick={() => handleRate(rating)}
-          className="flex flex-col items-center gap-1.5 py-4 px-2 rounded-2xl font-medium transition-all duration-200 active:scale-95"
-          style={{
-            background: bg,
-            color: text,
-            boxShadow: `0 2px 8px ${bg}`,
-          }}
+          className={`rating-button rating-button--${modifier}`}
         >
           <Icon />
-          <span className="text-sm font-semibold">{label}</span>
-          <span className="text-[10px] opacity-70">{intervals[rating]}</span>
+          <span className="rating-button__label">{label}</span>
+          <span className="rating-button__interval">{intervals[rating]}</span>
         </button>
       ))}
     </div>

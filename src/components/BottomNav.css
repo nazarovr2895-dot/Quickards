@@ -4,19 +4,17 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 8px 16px;
-  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
-  pointer-events: none;
+  background: var(--app-bg-elevated);
+  border-top: 1px solid var(--app-border);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .bottom-nav__container {
-  max-width: 100%;
-  padding: 6px 8px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 4px;
-  pointer-events: auto;
+  padding: 6px 8px;
 }
 
 .bottom-nav__item {
@@ -119,13 +117,9 @@
   height: 26px;
 }
 
-.bottom-nav--telegram,
-[data-telegram="true"] {
-  padding: 8px 16px;
-  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
-}
-
-.bottom-nav--telegram .bottom-nav__container,
-[data-telegram="true"] .bottom-nav__container {
-  padding: 6px;
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
 }

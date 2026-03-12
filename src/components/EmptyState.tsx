@@ -1,3 +1,5 @@
+import './EmptyState.css'
+
 interface Props {
   icon: string
   title: string
@@ -6,16 +8,13 @@ interface Props {
 
 export function EmptyState({ icon, title, description }: Props) {
   return (
-    <div className="flex flex-col items-center justify-center py-12 px-6 text-center" style={{ animation: 'fadeIn 0.4s ease-out' }}>
-      <div
-        className="flex items-center justify-center w-20 h-20 rounded-full mb-4"
-        style={{ background: 'var(--app-accent-muted)' }}
-      >
-        <span className="text-4xl">{icon}</span>
+    <div className="empty-state">
+      <div className="empty-state__icon">
+        <span className="empty-state__emoji">{icon}</span>
       </div>
-      <h3 className="text-lg font-semibold" style={{ color: 'var(--app-text)', fontFamily: "'Outfit', sans-serif" }}>{title}</h3>
+      <h3 className="empty-state__title">{title}</h3>
       {description && (
-        <p className="text-sm mt-1.5 max-w-[260px]" style={{ color: 'var(--app-text-secondary)' }}>{description}</p>
+        <p className="empty-state__description">{description}</p>
       )}
     </div>
   )
