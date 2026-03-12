@@ -1,22 +1,22 @@
 import { useCallback, useEffect, useState } from 'react'
-import { supabase } from '../lib/supabase'
-import type { DBSet, DBUserSet } from '../lib/types'
+import { apiGet, apiPost, apiDelete } from '../lib/api'
+import type { DBSet } from '../lib/types'
+
+interface UserSetRow {
+  user_id: number
+  set_id: string
+  added_at: string
+  sets: DBSet
+}
 
 export function useSystemSets() {
   const [sets, setSets] = useState<DBSet[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const load = async () => {
-      const { data } = await supabase
-        .from('sets')
-        .select('*')
-        .eq('is_system', true)
-        .order('cefr_level')
-      setSets(data || [])
-      setLoading(false)
-    }
-    load()
+    apiGet<DBSet[]>('/api/sets/system')
+      .then(data => setSets(data || []))
+      .finally(() => setLoading(false))
   }, [])
 
   return { sets, loading }
@@ -28,11 +28,7 @@ export function useUserSets(userId: number | undefined) {
 
   const load = useCallback(async () => {
     if (!userId) return
-    const { data } = await supabase
-      .from('sets')
-      .select('*')
-      .eq('owner_id', userId)
-      .order('created_at', { ascending: false })
+    const data = await apiGet<DBSet[]>('/api/sets/user')
     setSets(data || [])
     setLoading(false)
   }, [userId])
@@ -43,15 +39,12 @@ export function useUserSets(userId: number | undefined) {
 }
 
 export function useSubscribedSets(userId: number | undefined) {
-  const [userSets, setUserSets] = useState<DBUserSet[]>([])
+  const [userSets, setUserSets] = useState<UserSetRow[]>([])
   const [loading, setLoading] = useState(true)
 
   const load = useCallback(async () => {
     if (!userId) return
-    const { data } = await supabase
-      .from('user_sets')
-      .select('*, sets(*)')
-      .eq('user_id', userId)
+    const data = await apiGet<UserSetRow[]>('/api/user-sets')
     setUserSets(data || [])
     setLoading(false)
   }, [userId])
@@ -60,13 +53,13 @@ export function useSubscribedSets(userId: number | undefined) {
 
   const subscribe = async (setId: string) => {
     if (!userId) return
-    await supabase.from('user_sets').insert({ user_id: userId, set_id: setId })
+    await apiPost('/api/user-sets', { set_id: setId })
     await load()
   }
 
   const unsubscribe = async (setId: string) => {
     if (!userId) return
-    await supabase.from('user_sets').delete().match({ user_id: userId, set_id: setId })
+    await apiDelete(`/api/user-sets/${setId}`)
     await load()
   }
 

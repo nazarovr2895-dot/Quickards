@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../lib/supabase'
+import { apiPost } from '../lib/api'
 import type { TelegramUser } from '../lib/types'
 
 export function useUser(tgUser: TelegramUser | null) {
@@ -11,18 +11,12 @@ export function useUser(tgUser: TelegramUser | null) {
       return
     }
 
-    const upsert = async () => {
-      await supabase.from('users').upsert({
-        telegram_id: tgUser.id,
-        first_name: tgUser.first_name,
-        last_name: tgUser.last_name || null,
-        username: tgUser.username || null,
-        language_code: tgUser.language_code || 'ru',
-      })
-      setLoading(false)
-    }
-
-    upsert()
+    apiPost('/api/users', {
+      first_name: tgUser.first_name,
+      last_name: tgUser.last_name || null,
+      username: tgUser.username || null,
+      language_code: tgUser.language_code || 'ru',
+    }).finally(() => setLoading(false))
   }, [tgUser])
 
   return { loading }

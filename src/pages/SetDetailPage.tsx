@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { supabase } from '../lib/supabase'
+import { apiGet } from '../lib/api'
 import { cefrColor, pluralCards } from '../lib/utils'
 import { showBackButton } from '../lib/telegram'
 import { LoadingSpinner } from '../components/LoadingSpinner'
@@ -26,12 +26,12 @@ export function SetDetailPage({ userId }: Props) {
 
   const loadSet = useCallback(async () => {
     if (!setId) return
-    const [setRes, cardsRes] = await Promise.all([
-      supabase.from('sets').select('*').eq('id', setId).single(),
-      supabase.from('cards').select('*').eq('set_id', setId).order('front').limit(100),
+    const [setData, cardsData] = await Promise.all([
+      apiGet<DBSet>(`/api/sets/${setId}`),
+      apiGet<DBCard[]>(`/api/sets/${setId}/cards`),
     ])
-    setSet(setRes.data)
-    setCards(cardsRes.data || [])
+    setSet(setData)
+    setCards(cardsData || [])
     setLoading(false)
   }, [setId])
 

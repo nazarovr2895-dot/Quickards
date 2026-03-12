@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { supabase } from '../lib/supabase'
-import { endOfToday } from '../lib/utils'
+import { apiGet } from '../lib/api'
 import type { StudyStats } from '../lib/types'
 
 export function useStats(userId: number | undefined) {
@@ -14,27 +13,8 @@ export function useStats(userId: number | undefined) {
 
   const load = useCallback(async () => {
     if (!userId) return
-
-    const [dueRes, reviewedRes] = await Promise.all([
-      supabase
-        .from('user_cards')
-        .select('id', { count: 'exact', head: true })
-        .eq('user_id', userId)
-        .lte('due', endOfToday())
-        .gt('reps', 0),
-      supabase
-        .from('user_cards')
-        .select('id', { count: 'exact', head: true })
-        .eq('user_id', userId)
-        .gt('reps', 0),
-    ])
-
-    setStats({
-      dueToday: dueRes.count || 0,
-      newAvailable: 0,
-      totalReviewed: reviewedRes.count || 0,
-      streak: 0,
-    })
+    const data = await apiGet<StudyStats>('/api/study/stats')
+    setStats(data)
     setLoading(false)
   }, [userId])
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { supabase } from '../lib/supabase'
+import { apiPost } from '../lib/api'
 import { showBackButton, showMainButton, setMainButtonLoading } from '../lib/telegram'
 
 export function AddCardPage() {
@@ -18,17 +18,12 @@ export function AddCardPage() {
     const handleSave = async () => {
       if (!front.trim() || !back.trim() || !setId) return
       setMainButtonLoading(true)
-      await supabase.from('cards').insert({
+      await apiPost('/api/cards', {
         set_id: setId,
         front: front.trim(),
         back: back.trim(),
         part_of_speech: pos.trim() || null,
       })
-      const { count } = await supabase
-        .from('cards')
-        .select('id', { count: 'exact', head: true })
-        .eq('set_id', setId)
-      await supabase.from('sets').update({ card_count: count || 0 }).eq('id', setId)
       setMainButtonLoading(false)
       navigate(-1)
     }

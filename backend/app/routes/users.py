@@ -1,0 +1,33 @@
+from fastapi import APIRouter, Depends
+from pydantic import BaseModel
+
+from ..database import get_conn
+from ..telegram_auth import get_current_user_id
+
+router = APIRouter(tags=["users"])
+
+
+class UserBody(BaseModel):
+    first_name: str
+    last_name: str | None = None
+    username: str | None = None
+    language_code: str = "ru"
+
+
+@router.post("/users")
+async def upsert_user(
+    body: UserBody,
+    user_id: int = Depends(get_current_user_id),
+):
+    pool = await get_conn()
+    await pool.execute(
+        """
+        INSERT INTO users (telegram_id, first_name, last_name, username, language_code, updated_at)
+        VALUES ($1, $2, $3, $4, $5, now())
+        ON CONFLICT (telegram_id) DO UPDATE SET
+            first_name = $2, last_name = $3, username = $4,
+            language_code = $5, updated_at = now()
+        """,
+        user_id, body.first_name, body.last_name, body.username, body.language_code,
+    )
+    return {"ok": True}

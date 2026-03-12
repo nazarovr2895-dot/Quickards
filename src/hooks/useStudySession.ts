@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { supabase } from '../lib/supabase'
+import { apiGet, apiPost } from '../lib/api'
 import { f, Rating, Grades, dbCardToFSRS, newFSRSCard, formatInterval } from '../lib/fsrs'
 import type { FSRSCard, Grade } from '../lib/fsrs'
 import type { DBCard, DBUserCard, StudyCard } from '../lib/types'
@@ -50,71 +50,29 @@ export function useStudySession(userId: number | undefined, setId?: string) {
     if (!userId) return
     setLoading(true)
 
-    // 1. Get due cards (for review)
-    let dueQuery = supabase
-      .from('user_cards')
-      .select('*, card:cards(*)')
-      .eq('user_id', userId)
-      .lte('due', new Date().toISOString())
-      .order('due', { ascending: true })
-      .limit(50)
+    // 1. Get due cards
+    const dueUrl = setId
+      ? `/api/study/due?set_id=${setId}&limit=50`
+      : '/api/study/due?limit=50'
+    const dueCards = await apiGet<(DBUserCard & { card: DBCard })[]>(dueUrl)
 
-    if (setId) {
-      const { data: setCards } = await supabase
-        .from('cards')
-        .select('id')
-        .eq('set_id', setId)
-      if (setCards) {
-        dueQuery = dueQuery.in('card_id', setCards.map(c => c.id))
-      }
-    }
-
-    const { data: dueCards } = await dueQuery
-
-    const studyCards: StudyCard[] = (dueCards || []).map((uc: DBUserCard & { card: DBCard }) => ({
+    const studyCards: StudyCard[] = (dueCards || []).map(uc => ({
       userCard: uc,
       card: uc.card,
       fsrsCard: dbCardToFSRS(uc),
       isNew: false,
     }))
 
-    // 2. Get new cards (not yet studied)
-    const newCardsLimit = 10
-    let newCardsData: DBCard[] | null = null
-
+    // 2. Get new cards
+    let newCardsData: DBCard[] = []
     if (setId) {
-      const { data } = await supabase.rpc('get_new_cards', {
-        p_set_id: setId,
-        p_limit: newCardsLimit,
-      })
-      newCardsData = data
+      newCardsData = await apiGet<DBCard[]>(`/api/cards/new?set_id=${setId}&limit=10`)
     } else {
-      const { data: userSets } = await supabase
-        .from('user_sets')
-        .select('set_id')
-        .eq('user_id', userId)
-
+      // Get user's subscribed set IDs first
+      const userSets = await apiGet<{ set_id: string }[]>('/api/user-sets')
       if (userSets && userSets.length > 0) {
-        const setIds = userSets.map(us => us.set_id)
-        const { data: existingCardIds } = await supabase
-          .from('user_cards')
-          .select('card_id')
-          .eq('user_id', userId)
-
-        const excludeIds = (existingCardIds || []).map(e => e.card_id)
-
-        let q = supabase
-          .from('cards')
-          .select('*')
-          .in('set_id', setIds)
-          .limit(newCardsLimit)
-
-        if (excludeIds.length > 0) {
-          q = q.not('id', 'in', `(${excludeIds.join(',')})`)
-        }
-
-        const { data } = await q
-        newCardsData = data
+        const setIds = userSets.map(us => us.set_id).join(',')
+        newCardsData = await apiGet<DBCard[]>(`/api/cards/new?set_ids=${setIds}&limit=10`)
       }
     }
 
@@ -147,68 +105,36 @@ export function useStudySession(userId: number | undefined, setId?: string) {
     setLoading(false)
   }, [userId, setId])
 
-  // Flush write queue to database
+  // Flush write queue to backend
   const flush = useCallback(async () => {
     if (writeQueue.current.length === 0) return
     const batch = writeQueue.current.splice(0)
 
-    for (const r of batch) {
-      const card = r.fsrsCard
-
-      if (r.userCardId) {
-        await supabase.from('user_cards').update({
-          due: card.due.toISOString(),
-          stability: card.stability,
-          difficulty: card.difficulty,
-          elapsed_days: card.elapsed_days,
-          scheduled_days: card.scheduled_days,
-          reps: card.reps,
-          lapses: card.lapses,
-          learning_steps: card.learning_steps,
-          state: card.state,
-          last_review: card.last_review?.toISOString() || null,
-        }).eq('id', r.userCardId)
-
-        await supabase.from('review_logs').insert({
-          user_card_id: r.userCardId,
-          rating: r.rating,
-          state: r.prevState,
-          due: r.prevDue,
-          stability: r.prevStability,
-          difficulty: r.prevDifficulty,
-          elapsed_days: r.prevElapsedDays,
-          scheduled_days: r.prevScheduledDays,
-        })
-      } else {
-        const { data } = await supabase.from('user_cards').insert({
-          user_id: r.userId,
-          card_id: r.cardId,
-          due: card.due.toISOString(),
-          stability: card.stability,
-          difficulty: card.difficulty,
-          elapsed_days: card.elapsed_days,
-          scheduled_days: card.scheduled_days,
-          reps: card.reps,
-          lapses: card.lapses,
-          learning_steps: card.learning_steps,
-          state: card.state,
-          last_review: card.last_review?.toISOString() || null,
-        }).select('id').single()
-
-        if (data) {
-          await supabase.from('review_logs').insert({
-            user_card_id: data.id,
-            rating: r.rating,
-            state: r.prevState,
-            due: r.prevDue,
-            stability: r.prevStability,
-            difficulty: r.prevDifficulty,
-            elapsed_days: r.prevElapsedDays,
-            scheduled_days: r.prevScheduledDays,
-          })
-        }
-      }
-    }
+    await apiPost('/api/study/rate', {
+      reviews: batch.map(r => ({
+        user_card_id: r.userCardId,
+        card_id: r.cardId,
+        rating: r.rating,
+        card_state: {
+          due: r.fsrsCard.due.toISOString(),
+          stability: r.fsrsCard.stability,
+          difficulty: r.fsrsCard.difficulty,
+          elapsed_days: r.fsrsCard.elapsed_days,
+          scheduled_days: r.fsrsCard.scheduled_days,
+          reps: r.fsrsCard.reps,
+          lapses: r.fsrsCard.lapses,
+          learning_steps: r.fsrsCard.learning_steps,
+          state: r.fsrsCard.state,
+          last_review: r.fsrsCard.last_review?.toISOString() || null,
+        },
+        prev_state: r.prevState,
+        prev_due: r.prevDue,
+        prev_stability: r.prevStability,
+        prev_difficulty: r.prevDifficulty,
+        prev_elapsed_days: r.prevElapsedDays,
+        prev_scheduled_days: r.prevScheduledDays,
+      })),
+    })
   }, [])
 
   // Rate a card

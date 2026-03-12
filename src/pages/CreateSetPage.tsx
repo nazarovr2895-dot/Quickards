@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { supabase } from '../lib/supabase'
+import { apiPost } from '../lib/api'
 import { showBackButton, showMainButton, setMainButtonLoading } from '../lib/telegram'
 
 interface Props {
@@ -20,16 +20,12 @@ export function CreateSetPage({ userId }: Props) {
     const handleSave = async () => {
       if (!name.trim() || !userId) return
       setMainButtonLoading(true)
-      const { data } = await supabase.from('sets').insert({
-        owner_id: userId,
+      const data = await apiPost<{ id: string }>('/api/sets', {
         name: name.trim(),
         description: description.trim() || null,
-        source: 'user',
-        is_system: false,
-      }).select('id').single()
+      })
       setMainButtonLoading(false)
-      if (data) {
-        await supabase.from('user_sets').insert({ user_id: userId, set_id: data.id })
+      if (data?.id) {
         navigate(`/sets/${data.id}`, { replace: true })
       }
     }

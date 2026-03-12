@@ -7,7 +7,6 @@ export function isTelegram(): boolean {
 
 export function initTelegram() {
   WebApp.ready()
-  WebApp.expand()
 
   try {
     WebApp.setHeaderColor('secondary_bg_color')
@@ -15,24 +14,6 @@ export function initTelegram() {
 
   try {
     WebApp.disableVerticalSwipes()
-  } catch {}
-
-  try {
-    WebApp.requestFullscreen()
-    document.body.classList.add('tg-fullscreen')
-  } catch {}
-
-  applyTelegramSafeArea()
-}
-
-function applyTelegramSafeArea() {
-  try {
-    const top = (WebApp as any).safeAreaInset?.top ?? 0
-    const contentTop = (WebApp as any).contentSafeAreaInset?.top ?? 0
-    const offset = Math.max(top, contentTop)
-    if (offset > 0) {
-      document.documentElement.style.setProperty('--tg-header-offset', `${offset}px`)
-    }
   } catch {}
 }
 
