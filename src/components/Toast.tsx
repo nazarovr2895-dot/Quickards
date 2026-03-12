@@ -33,7 +33,7 @@ export function ToastProvider() {
       aria-live="polite"
       style={{
         position: 'fixed',
-        bottom: '80px',
+        bottom: '32px',
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 10000,

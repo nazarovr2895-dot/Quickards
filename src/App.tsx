@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { useTelegram } from './hooks/useTelegram'
 import { useUser } from './hooks/useUser'
-import { BottomNav } from './components/BottomNav'
+import { TopNav } from './components/TopNav'
 import { LoadingSpinner } from './components/LoadingSpinner'
 import { ToastProvider } from './components/Toast'
 import { DashboardPage } from './pages/DashboardPage'
@@ -22,8 +22,9 @@ export default function App() {
 
   return (
     <HashRouter>
-      <div className="flex flex-col h-full">
-        <div className="flex-1 overflow-y-auto">
+      <div className="app-layout">
+        <TopNav />
+        <main className="app-layout__content">
           <Routes>
             <Route path="/" element={<DashboardPage userId={userId} />} />
             <Route path="/study" element={<StudyPage userId={userId} />} />
@@ -34,8 +35,7 @@ export default function App() {
             <Route path="/sets/:setId/add" element={<AddCardPage />} />
             <Route path="/settings" element={<SettingsPage />} />
           </Routes>
-        </div>
-        <BottomNav />
+        </main>
         <ToastProvider />
       </div>
     </HashRouter>

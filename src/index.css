@@ -13,6 +13,7 @@
   --app-surface: rgba(0, 0, 0, 0.05);
   --app-error: #d32f2f;
   --app-error-bg: rgba(211, 47, 47, 0.1);
+  --app-loader-track: #e0e0e0;
 }
 
 /* ===== Dark theme ===== */
@@ -27,6 +28,7 @@
   --app-surface: rgba(255, 255, 255, 0.05);
   --app-error: #ff5252;
   --app-error-bg: rgba(255, 82, 82, 0.15);
+  --app-loader-track: #333333;
 }
 
 /* Telegram theme variables → mapped to app vars */
@@ -71,8 +73,45 @@ html {
 }
 
 html, body, #root {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* App layout */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(64px + env(safe-area-inset-top, 0));
+  background: var(--app-bg);
+}
+
+.app-layout__content {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Telegram fullscreen: frosted glass blur behind system status bar */
+body.tg-fullscreen::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: max(env(safe-area-inset-top, 0px), var(--tg-header-offset, 0px));
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  z-index: 10001;
+  pointer-events: none;
+}
+
+:root[data-theme="dark"] body.tg-fullscreen::before {
+  background: rgba(26, 26, 26, 0.6);
+}
+
+/* Telegram fullscreen layout: adjust for status bar + TG header */
+.tg-fullscreen .app-layout {
+  padding-top: calc(68px + max(env(safe-area-inset-top, 0px), var(--tg-header-offset, 0px)));
 }
 
 body {
