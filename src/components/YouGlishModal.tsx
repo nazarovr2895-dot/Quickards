@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './YouGlishModal.css'
 
 interface Props {
@@ -8,8 +8,10 @@ interface Props {
 }
 
 let scriptPromise: Promise<void> | null = null
+let scriptFailed = false
 
 function loadYouGlishScript(): Promise<void> {
+  if (scriptFailed) return Promise.reject(new Error('YouGlish blocked'))
   if (scriptPromise) return scriptPromise
   scriptPromise = new Promise((resolve, reject) => {
     ;(window as any).onYouglishAPIReady = () => resolve()
@@ -17,7 +19,11 @@ function loadYouGlishScript(): Promise<void> {
     script.src = 'https://youglish.com/public/emb/widget.js'
     script.async = true
     script.charset = 'utf-8'
-    script.onerror = () => reject(new Error('Failed to load YouGlish'))
+    script.onerror = () => {
+      scriptFailed = true
+      scriptPromise = null
+      reject(new Error('Failed to load YouGlish'))
+    }
     document.body.appendChild(script)
   })
   return scriptPromise
@@ -25,26 +31,37 @@ function loadYouGlishScript(): Promise<void> {
 
 export function YouGlishModal({ word, isOpen, onClose }: Props) {
   const widgetRef = useRef<any>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     if (!isOpen) return
 
     let cancelled = false
+    setError(null)
 
-    loadYouGlishScript().then(() => {
-      if (cancelled) return
-      const YG = (window as any).YG
-      widgetRef.current = new YG.Widget('yg-widget', {
-        width: '100%',
-        components: 6,
+    loadYouGlishScript()
+      .then(() => {
+        if (cancelled || !containerRef.current) return
+        const YG = (window as any).YG
+        widgetRef.current = new YG.Widget('yg-widget', {
+          width: '100%',
+          components: 6,
+        })
+        widgetRef.current.fetch(word, 'english')
       })
-      widgetRef.current.fetch(word, 'english')
-    })
+      .catch(() => {
+        if (!cancelled) setError('YouGlish unavailable. Try opening in browser.')
+      })
 
     return () => {
       cancelled = true
       if (widgetRef.current) {
-        widgetRef.current.close()
+        try {
+          widgetRef.current.close()
+        } catch {
+          // DOM already removed by React — safe to ignore
+        }
         widgetRef.current = null
       }
     }
@@ -59,7 +76,21 @@ export function YouGlishModal({ word, isOpen, onClose }: Props) {
           &times;
         </button>
         <div className="youglish-modal__word">{word}</div>
-        <div id="yg-widget" className="youglish-modal__widget" />
+        {error ? (
+          <div className="youglish-modal__error">
+            <p>{error}</p>
+            <a
+              href={`https://youglish.com/pronounce/${encodeURIComponent(word)}/english`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="youglish-modal__link"
+            >
+              Open YouGlish
+            </a>
+          </div>
+        ) : (
+          <div id="yg-widget" ref={containerRef} className="youglish-modal__widget" />
+        )}
       </div>
     </div>
   )

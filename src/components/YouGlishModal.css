@@ -56,6 +56,29 @@
   overflow: auto;
 }
 
+.youglish-modal__error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--app-text-secondary, #666);
+  font-size: 15px;
+  text-align: center;
+}
+
+.youglish-modal__link {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--app-accent, #6366f1);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 @keyframes youglish-fadeIn {
   from {
     opacity: 0;
