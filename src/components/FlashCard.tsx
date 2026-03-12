@@ -162,25 +162,8 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
           transition: 'transform 0.3s ease-out',
         }
 
-  const youglishBtn = (
-    <button
-      className="flash-card__youglish-btn"
-      onClick={handleYouGlish}
-      aria-label="Hear in context"
-    >
-      YouGlish
-    </button>
-  )
-
-  // Determine hint text based on state
-  const frontHint = flipCount === 0
-    ? 'Tap to flip'
-    : flipCount >= 2
-      ? 'Tap to flip'
-      : undefined
-  const backHint = flipCount === 1 && hasExample
-    ? 'Tap for context'
-    : 'Tap to flip'
+  // Map flipCount to visual state: 0 → 0, 1 → 1, 2+ even → 2, 3+ odd → 1
+  const state = flipCount === 0 ? 0 : flipCount % 2 === 1 ? 1 : 2
 
   return (
     <div
@@ -208,6 +191,20 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
         </div>
       )}
 
+      {/* YouGlish — outside inner to avoid rotation mirroring */}
+      <button
+        className="flash-card__youglish-btn"
+        onClick={handleYouGlish}
+        aria-label="Hear in context"
+      >
+        YouGlish
+      </button>
+
+      {/* NEW badge — outside inner */}
+      {card.isNew && flipCount === 0 && (
+        <span className="flash-card__badge">NEW</span>
+      )}
+
       <div
         className="flash-card__inner"
         style={{ transform: `rotateY(${flipCount * 180}deg)` }}
@@ -226,17 +223,11 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
               {card.card.part_of_speech && (
                 <span className="flash-card__pos">{card.card.part_of_speech}</span>
               )}
-              {/* ru-en: show example with blank on the question side */}
               {mode === 'ru-en' && hasExample && (
                 <p className="flash-card__example flash-card__example--blank">
                   {blankExample(card.card.example!, card.card.front)}
                 </p>
               )}
-              {card.isNew && (
-                <span className="flash-card__badge">NEW</span>
-              )}
-              {frontHint && <span className="flash-card__hint">{frontHint}</span>}
-              {youglishBtn}
             </>
           ) : (
             /* --- State 2: Enhanced context (filled example + translation) --- */
@@ -255,17 +246,12 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
                   {card.card.example_translation}
                 </p>
               )}
-              {youglishBtn}
             </>
           )}
         </div>
 
-        {/* Back face — state 1: answer */}
+        {/* Back face — state 1: answer (translation only, no redundant word) */}
         <div className="flash-card__face flash-card__face--back">
-          <span className="flash-card__back-word">
-            {mode === 'ru-en' ? card.card.back : card.card.front}
-            {mode === 'en-ru' && card.card.phonetics ? ` ${card.card.phonetics}` : ''}
-          </span>
           <span className="flash-card__translation">
             {mode === 'ru-en' ? card.card.front : card.card.back}
           </span>
@@ -275,15 +261,19 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
           {card.card.part_of_speech && (
             <span className="flash-card__pos">{card.card.part_of_speech}</span>
           )}
-          {/* en-ru: show example with blank on the answer side */}
-          {mode === 'en-ru' && hasExample && (
+          {hasExample && (
             <p className="flash-card__example flash-card__example--blank">
               {blankExample(card.card.example!, card.card.front)}
             </p>
           )}
-          {backHint && <span className="flash-card__hint">{backHint}</span>}
-          {youglishBtn}
         </div>
+      </div>
+
+      {/* State dots — outside inner to avoid rotation */}
+      <div className="flash-card__dots">
+        <span className={`flash-card__dot${state === 0 ? ' flash-card__dot--active' : ''}`} />
+        <span className={`flash-card__dot${state === 1 ? ' flash-card__dot--active' : ''}`} />
+        <span className={`flash-card__dot${state === 2 ? ' flash-card__dot--active' : ''}`} />
       </div>
     </div>
   )

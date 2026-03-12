@@ -79,18 +79,28 @@
   background: var(--app-gradient);
 }
 
-.flash-card__hint {
-  margin-top: 24px;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--app-text-secondary);
-  animation: pulse-subtle 2s ease-in-out infinite;
+/* State indicator dots */
+.flash-card__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
 }
 
-.flash-card__back-word {
-  font-size: 1rem;
-  margin-bottom: 8px;
-  color: var(--app-text-secondary);
+.flash-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--app-border);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.flash-card__dot--active {
+  background: var(--app-accent);
+  transform: scale(1.25);
 }
 
 .flash-card__translation {
