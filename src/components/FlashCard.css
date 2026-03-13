@@ -4,7 +4,6 @@
   max-width: 24rem;
   margin: 0 auto;
   cursor: pointer;
-  perspective: 1000px;
   min-height: 380px;
   animation: scaleIn 0.3s ease-out;
   user-select: none;
@@ -16,11 +15,18 @@
   position: relative;
   width: 100%;
   min-height: 380px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
 }
 
-/* rotation is now driven by inline style (flipCount * 180deg) */
+/* Half-flip animation for state transitions */
+.flash-card__inner--flipping {
+  animation: cardFlip 0.3s ease-in-out;
+}
+
+@keyframes cardFlip {
+  0%   { transform: perspective(800px) rotateY(0deg); }
+  50%  { transform: perspective(800px) rotateY(90deg); }
+  100% { transform: perspective(800px) rotateY(0deg); }
+}
 
 .flash-card__face {
   position: absolute;
@@ -33,17 +39,8 @@
   padding: 24px;
   background: var(--app-bg-elevated);
   border: 1px solid var(--app-border);
-  box-shadow: var(--app-shadow-lg);
-  backface-visibility: hidden;
-}
-
-.flash-card__face--front {
   border-top: 3px solid var(--app-accent);
-}
-
-.flash-card__face--back {
-  transform: rotateY(180deg);
-  border-top: 3px solid var(--app-accent-secondary);
+  box-shadow: var(--app-shadow-lg);
 }
 
 .flash-card__word {
@@ -77,6 +74,7 @@
   border-radius: 9999px;
   color: #ffffff;
   background: var(--app-gradient);
+  z-index: 5;
 }
 
 /* State indicator dots */

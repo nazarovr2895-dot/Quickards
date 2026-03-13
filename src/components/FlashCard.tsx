@@ -35,7 +35,9 @@ function highlightWord(example: string, word: string): React.ReactNode {
 }
 
 export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
-  const [flipCount, setFlipCount] = useState(0)
+  const [state, setState] = useState(0)
+  const [displayState, setDisplayState] = useState(0)
+  const [flipping, setFlipping] = useState(false)
   const [dragX, setDragX] = useState(0)
   const [swiping, setSwiping] = useState(false)
   const [exiting, setExiting] = useState<'left' | 'right' | null>(null)
@@ -49,10 +51,17 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   const hasExample = !!card.card.example
 
   const handleFlip = () => {
-    if (isDragging.current) return
-    setFlipCount(c => c + 1)
+    if (isDragging.current || flipping) return
+    const next = (state + 1) % 3
+    setState(next)
+    setFlipping(true)
     hapticFeedback('light')
-    if (flipCount === 0) onReveal()
+    if (state === 0) onReveal()
+
+    // Swap content at animation midpoint
+    setTimeout(() => setDisplayState(next), 150)
+    // Animation complete
+    setTimeout(() => setFlipping(false), 300)
   }
 
   const handleYouGlish = (e: React.MouseEvent) => {
@@ -74,7 +83,6 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
     const dx = clientX - startX.current
     const dy = clientY - startY.current
 
-    // On first significant movement, determine direction lock
     if (!isDragging.current && !isVertical.current) {
       if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 10) {
         isVertical.current = true
@@ -102,12 +110,10 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
       const direction = dragX > 0 ? 'right' : 'left'
       hapticFeedback('medium')
       setExiting(direction)
-      // Wait for fly-off animation, then fire callback
       setTimeout(() => {
         onSwipe(direction)
       }, 250)
     } else {
-      // Snap back
       setDragX(0)
     }
 
@@ -121,13 +127,13 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   }
   const handleTouchMove = (e: React.TouchEvent) => {
     if (isDragging.current) {
-      e.preventDefault() // prevent scroll while swiping horizontally
+      e.preventDefault()
     }
     onDragMove(e.touches[0].clientX, e.touches[0].clientY)
   }
   const handleTouchEnd = () => onDragEnd()
 
-  // Mouse handlers (for desktop testing)
+  // Mouse handlers
   const handleMouseDown = (e: React.MouseEvent) => {
     onDragStart(e.clientX, e.clientY)
   }
@@ -162,8 +168,10 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
           transition: 'transform 0.3s ease-out',
         }
 
-  // Map flipCount to visual state: 0 → 0, 1 → 1, 2+ even → 2, 3+ odd → 1
-  const state = flipCount === 0 ? 0 : flipCount % 2 === 1 ? 1 : 2
+  // Dynamic border color based on display state
+  const borderColor = displayState === 1
+    ? 'var(--app-accent-secondary)'
+    : 'var(--app-accent)'
 
   return (
     <div
@@ -191,7 +199,7 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
         </div>
       )}
 
-      {/* YouGlish — outside inner to avoid rotation mirroring */}
+      {/* YouGlish — outside inner */}
       <button
         className="flash-card__youglish-btn"
         onClick={handleYouGlish}
@@ -200,19 +208,16 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
         YouGlish
       </button>
 
-      {/* NEW badge — outside inner */}
-      {card.isNew && flipCount === 0 && (
+      {/* NEW badge */}
+      {card.isNew && displayState === 0 && (
         <span className="flash-card__badge">NEW</span>
       )}
 
-      <div
-        className="flash-card__inner"
-        style={{ transform: `rotateY(${flipCount * 180}deg)` }}
-      >
-        {/* Front face — state 0: question / state 2: enhanced context */}
-        <div className="flash-card__face flash-card__face--front">
-          {flipCount < 2 ? (
-            /* --- State 0: Initial question --- */
+      <div className={`flash-card__inner${flipping ? ' flash-card__inner--flipping' : ''}`}>
+        <div className="flash-card__face" style={{ borderTopColor: borderColor }}>
+
+          {/* State 0: Question */}
+          {displayState === 0 && (
             <>
               <span className="flash-card__word">
                 {mode === 'ru-en' ? card.card.back : card.card.front}
@@ -229,8 +234,30 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
                 </p>
               )}
             </>
-          ) : (
-            /* --- State 2: Enhanced context (filled example + translation) --- */
+          )}
+
+          {/* State 1: Answer */}
+          {displayState === 1 && (
+            <>
+              <span className="flash-card__translation">
+                {mode === 'ru-en' ? card.card.front : card.card.back}
+              </span>
+              {mode === 'ru-en' && card.card.phonetics && (
+                <span className="flash-card__phonetics">{card.card.phonetics}</span>
+              )}
+              {card.card.part_of_speech && (
+                <span className="flash-card__pos">{card.card.part_of_speech}</span>
+              )}
+              {hasExample && (
+                <p className="flash-card__example flash-card__example--blank">
+                  {blankExample(card.card.example!, card.card.front)}
+                </p>
+              )}
+            </>
+          )}
+
+          {/* State 2: Context */}
+          {displayState === 2 && (
             <>
               <span className="flash-card__word flash-card__word--small">
                 {mode === 'ru-en' ? card.card.back : card.card.front}
@@ -248,32 +275,15 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
               )}
             </>
           )}
-        </div>
 
-        {/* Back face — state 1: answer (translation only, no redundant word) */}
-        <div className="flash-card__face flash-card__face--back">
-          <span className="flash-card__translation">
-            {mode === 'ru-en' ? card.card.front : card.card.back}
-          </span>
-          {mode === 'ru-en' && card.card.phonetics && (
-            <span className="flash-card__phonetics">{card.card.phonetics}</span>
-          )}
-          {card.card.part_of_speech && (
-            <span className="flash-card__pos">{card.card.part_of_speech}</span>
-          )}
-          {hasExample && (
-            <p className="flash-card__example flash-card__example--blank">
-              {blankExample(card.card.example!, card.card.front)}
-            </p>
-          )}
         </div>
       </div>
 
-      {/* State dots — outside inner to avoid rotation */}
+      {/* State dots */}
       <div className="flash-card__dots">
-        <span className={`flash-card__dot${state === 0 ? ' flash-card__dot--active' : ''}`} />
-        <span className={`flash-card__dot${state === 1 ? ' flash-card__dot--active' : ''}`} />
-        <span className={`flash-card__dot${state === 2 ? ' flash-card__dot--active' : ''}`} />
+        <span className={`flash-card__dot${displayState === 0 ? ' flash-card__dot--active' : ''}`} />
+        <span className={`flash-card__dot${displayState === 1 ? ' flash-card__dot--active' : ''}`} />
+        <span className={`flash-card__dot${displayState === 2 ? ' flash-card__dot--active' : ''}`} />
       </div>
     </div>
   )
