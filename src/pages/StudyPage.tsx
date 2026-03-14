@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { FlashCardReset } from '../components/FlashCard'
+import { TypingCard } from '../components/TypingCard'
 import { RatingButtons } from '../components/RatingButtons'
 import { ProgressBar } from '../components/ProgressBar'
 import { StudyComplete } from '../components/StudyComplete'
@@ -16,12 +17,14 @@ interface Props {
   userId: number | undefined
 }
 
-type StudyMode = 'en-ru' | 'ru-en'
+type StudyMode = 'en-ru' | 'ru-en' | 'typing'
 
 export function StudyPage({ userId }: Props) {
   const { setId } = useParams()
   const navigate = useNavigate()
   const [studyMode, setStudyMode] = useState<StudyMode>('en-ru')
+  const [revealed, setRevealed] = useState(false)
+  const [hintUsed, setHintUsed] = useState(false)
 
   const {
     currentCard,
@@ -33,21 +36,57 @@ export function StudyPage({ userId }: Props) {
     finished,
     intervals,
     rate,
+    undo,
+    canUndo,
     accuracy,
   } = useStudySession(userId, setId)
+
+  // Reset revealed/hint state when card changes
+  useEffect(() => {
+    setRevealed(false)
+    setHintUsed(false)
+  }, [currentIndex])
 
   useEffect(() => {
     return showBackButton(() => navigate(-1))
   }, [navigate])
 
-  const handleRate = (rating: Grade) => {
-    rate(rating)
-  }
+  const handleReveal = useCallback(() => {
+    setRevealed(true)
+  }, [])
 
-  const handleSwipe = (direction: 'left' | 'right') => {
-    const rating = direction === 'right' ? Rating.Good : Rating.Again
+  const handleRate = useCallback((rating: Grade) => {
     rate(rating)
-  }
+  }, [rate])
+
+  const handleSwipe = useCallback((rating: Grade) => {
+    if (!revealed) return
+    rate(rating)
+  }, [revealed, rate])
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault()
+        if (!revealed) setRevealed(true)
+      }
+      if (revealed && !finished) {
+        if (e.key === '1') handleRate(Rating.Again)
+        else if (e.key === '2') handleRate(Rating.Hard)
+        else if (e.key === '3') handleRate(Rating.Good)
+        else if (e.key === '4') handleRate(Rating.Easy)
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && canUndo) {
+        e.preventDefault()
+        undo()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [revealed, finished, canUndo, handleRate, undo])
 
   if (loading) return <LoadingSpinner />
 
@@ -82,28 +121,56 @@ export function StudyPage({ userId }: Props) {
         >
           RU → EN
         </button>
+        <button
+          className={`study-page__mode-btn ${studyMode === 'typing' ? 'study-page__mode-btn--active' : ''}`}
+          onClick={() => setStudyMode('typing')}
+        >
+          Type
+        </button>
       </div>
 
-      <RatingButtons
-        intervals={intervals}
-        onRate={handleRate}
-        visible={true}
-      />
+      {studyMode !== 'typing' && (
+        <RatingButtons
+          intervals={intervals}
+          onRate={handleRate}
+          visible={revealed}
+          maxRating={hintUsed ? Rating.Hard : undefined}
+        />
+      )}
 
       <div className="study-page__card-area">
-        <FlashCardReset
-          card={currentCard}
-          onReveal={() => {}}
-          onSwipe={handleSwipe}
-          index={currentIndex}
-          mode={studyMode}
-        />
+        {studyMode === 'typing' ? (
+          <TypingCard
+            key={currentCard.card.id + '-' + currentIndex}
+            card={currentCard}
+            onRate={handleRate}
+          />
+        ) : (
+          <FlashCardReset
+            card={currentCard}
+            onReveal={handleReveal}
+            onSwipe={handleSwipe}
+            onHintUsed={() => setHintUsed(true)}
+            index={currentIndex}
+            mode={studyMode}
+          />
+        )}
       </div>
 
-      <p className="study-page__swipe-hint">
-        <span className="study-page__swipe-hint-left">&larr; Again</span>
-        <span className="study-page__swipe-hint-right">Know &rarr;</span>
-      </p>
+      {canUndo ? (
+        <button className="study-page__undo-btn" onClick={undo}>
+          Undo
+        </button>
+      ) : revealed ? (
+        <p className="study-page__swipe-hint">
+          <span className="study-page__swipe-hint-left">&larr; Again</span>
+          <span className="study-page__swipe-hint-right">Know &rarr;</span>
+        </p>
+      ) : (
+        <p className="study-page__swipe-hint study-page__swipe-hint--tap">
+          Tap card to reveal answer
+        </p>
+      )}
     </div>
   )
 }

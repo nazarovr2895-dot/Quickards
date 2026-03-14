@@ -14,6 +14,8 @@ async def init_pool():
         database=config.DB_NAME,
         min_size=2,
         max_size=10,
+        command_timeout=30,
+        max_inactive_connection_lifetime=300,
     )
 
 

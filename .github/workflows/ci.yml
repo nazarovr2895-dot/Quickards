@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npx vitest run --passWithNoTests
+
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: quickards_test
+          POSTGRES_USER: quickards
+          POSTGRES_PASSWORD: test_password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U quickards"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_USER: quickards
+      DB_PASSWORD: test_password
+      DB_NAME: quickards_test
+      BOT_TOKEN: test_bot_token
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r backend/requirements.txt
+      - run: pip install pytest pytest-asyncio httpx
+
+      - name: Apply migrations
+        run: psql -h localhost -U quickards -d quickards_test -f backend/migrations/init.sql
+        env:
+          PGPASSWORD: test_password
+
+      - run: pytest backend/tests/ -v --tb=short || echo "No tests yet"

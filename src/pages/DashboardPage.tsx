@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { StatsBar } from '../components/StatsBar'
 import { DailyGoal } from '../components/DailyGoal'
+import { ProgressOverview } from '../components/ProgressOverview'
+import { StreakCalendar } from '../components/StreakCalendar'
 import { SetCard } from '../components/SetCard'
 import { EmptyState } from '../components/EmptyState'
 import { LoadingSpinner } from '../components/LoadingSpinner'
@@ -32,6 +34,20 @@ export function DashboardPage({ userId, userName }: Props) {
       <DailyGoal reviewed={stats.reviewedToday} goal={stats.dailyGoal} />
 
       <StatsBar stats={stats} />
+
+      <ProgressOverview userId={userId} />
+
+      <StreakCalendar userId={userId} />
+
+      <button
+        onClick={() => navigate('/analytics')}
+        className="dashboard__analytics-btn"
+      >
+        View detailed stats
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
 
       <button
         onClick={() => navigate('/study')}

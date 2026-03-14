@@ -1,17 +1,22 @@
-import { Component, type ReactNode } from 'react'
+import { Component, type ReactNode, lazy, Suspense } from 'react'
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClient } from './lib/queryClient'
 import { useTelegram } from './hooks/useTelegram'
 import { useUser } from './hooks/useUser'
 import { BottomNav } from './components/BottomNav'
 import { LoadingSpinner } from './components/LoadingSpinner'
 import { ToastProvider } from './components/Toast'
 import { DashboardPage } from './pages/DashboardPage'
-import { StudyPage } from './pages/StudyPage'
-import { SetsPage } from './pages/SetsPage'
-import { SetDetailPage } from './pages/SetDetailPage'
-import { CreateSetPage } from './pages/CreateSetPage'
-import { ManageCardsPage } from './pages/ManageCardsPage'
-import { SettingsPage } from './pages/SettingsPage'
+
+// Lazy-loaded pages for code splitting
+const StudyPage = lazy(() => import('./pages/StudyPage').then(m => ({ default: m.StudyPage })))
+const SetsPage = lazy(() => import('./pages/SetsPage').then(m => ({ default: m.SetsPage })))
+const SetDetailPage = lazy(() => import('./pages/SetDetailPage').then(m => ({ default: m.SetDetailPage })))
+const CreateSetPage = lazy(() => import('./pages/CreateSetPage').then(m => ({ default: m.CreateSetPage })))
+const ManageCardsPage = lazy(() => import('./pages/ManageCardsPage').then(m => ({ default: m.ManageCardsPage })))
+const SettingsPage = lazy(() => import('./pages/SettingsPage').then(m => ({ default: m.SettingsPage })))
+const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage').then(m => ({ default: m.AnalyticsPage })))
 
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
   state: { error: Error | null } = { error: null }
@@ -40,9 +45,11 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      <HashRouter>
-        <AppLayout userId={user?.id} userName={user?.first_name} />
-      </HashRouter>
+      <QueryClientProvider client={queryClient}>
+        <HashRouter>
+          <AppLayout userId={user?.id} userName={user?.first_name} />
+        </HashRouter>
+      </QueryClientProvider>
     </ErrorBoundary>
   )
 }
@@ -54,6 +61,7 @@ function AppLayout({ userId, userName }: { userId?: number; userName?: string })
   return (
     <div className={`app-layout ${!showNav ? 'app-layout--no-nav' : ''}`}>
       <main className="app-layout__content">
+        <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           <Route path="/" element={<DashboardPage userId={userId} userName={userName} />} />
           <Route path="/study" element={<StudyPage userId={userId} />} />
@@ -63,7 +71,9 @@ function AppLayout({ userId, userName }: { userId?: number; userName?: string })
           <Route path="/sets/:setId" element={<SetDetailPage userId={userId} />} />
           <Route path="/sets/:setId/manage" element={<ManageCardsPage userId={userId} />} />
           <Route path="/settings" element={<SettingsPage userId={userId} />} />
+          <Route path="/analytics" element={<AnalyticsPage userId={userId} />} />
         </Routes>
+        </Suspense>
       </main>
       {showNav && <BottomNav />}
       <ToastProvider />

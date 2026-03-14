@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import { apiGet } from '../lib/api'
 import type { DBSet, CardWithProgress, SetCardsResponse, CardStatusFilter } from '../lib/types'
 
@@ -6,17 +7,11 @@ const PAGE_SIZE = 50
 const DEBOUNCE_MS = 300
 
 export function useSetDetail(userId: number | undefined, setId: string | undefined) {
-  const [set, setSet] = useState<DBSet | null>(null)
-  const [cards, setCards] = useState<CardWithProgress[]>([])
-  const [total, setTotal] = useState(0)
-  const [breakdown, setBreakdown] = useState({ new: 0, learning: 0, review: 0, mastered: 0 })
-  const [dueCount, setDueCount] = useState(0)
-  const [loading, setLoading] = useState(true)
-  const [loadingMore, setLoadingMore] = useState(false)
   const [search, setSearchRaw] = useState('')
   const [debouncedSearch, setDebouncedSearch] = useState('')
   const [statusFilter, setStatusFilter] = useState<CardStatusFilter>('all')
-  const abortRef = useRef<AbortController | null>(null)
+  const [offset, setOffset] = useState(0)
+  const [allCards, setAllCards] = useState<CardWithProgress[]>([])
 
   // Debounce search
   useEffect(() => {
@@ -24,74 +19,79 @@ export function useSetDetail(userId: number | undefined, setId: string | undefin
     return () => clearTimeout(timer)
   }, [search])
 
-  // Load set metadata
+  // Reset offset when search or filter changes
   useEffect(() => {
-    if (!setId) return
-    apiGet<DBSet>(`/api/sets/${setId}`).then(data => {
-      if (data) setSet(data)
+    setOffset(0)
+    setAllCards([])
+  }, [debouncedSearch, statusFilter])
+
+  // Set metadata query
+  const { data: set } = useQuery({
+    queryKey: ['set', setId],
+    queryFn: () => apiGet<DBSet>(`/api/sets/${setId}`),
+    enabled: !!setId,
+  })
+
+  // Cards query
+  const buildParams = useCallback(() => {
+    const params = new URLSearchParams({
+      offset: String(offset),
+      limit: String(PAGE_SIZE),
     })
-  }, [setId])
+    if (debouncedSearch) params.set('search', debouncedSearch)
+    if (statusFilter !== 'all') params.set('status', statusFilter)
+    return params.toString()
+  }, [offset, debouncedSearch, statusFilter])
 
-  // Load cards (resets on search/filter change)
-  const loadCards = useCallback(async (offset: number, append: boolean) => {
-    if (!setId || !userId) return
+  const {
+    data: cardsData,
+    isLoading,
+    isFetching,
+    refetch,
+  } = useQuery({
+    queryKey: ['set-cards', setId, debouncedSearch, statusFilter, offset],
+    queryFn: () =>
+      apiGet<SetCardsResponse>(
+        `/api/sets/${setId}/cards-with-progress?${buildParams()}`
+      ),
+    enabled: !!setId && !!userId,
+  })
 
-    abortRef.current?.abort()
-    const controller = new AbortController()
-    abortRef.current = controller
-
-    if (!append) setLoading(true)
-    else setLoadingMore(true)
-
-    try {
-      const params = new URLSearchParams({
-        offset: String(offset),
-        limit: String(PAGE_SIZE),
-      })
-      if (debouncedSearch) params.set('search', debouncedSearch)
-      if (statusFilter !== 'all') params.set('status', statusFilter)
-
-      const data = await apiGet<SetCardsResponse>(
-        `/api/sets/${setId}/cards-with-progress?${params}`
-      )
-
-      if (controller.signal.aborted) return
-
-      if (data) {
-        setCards(prev => append ? [...prev, ...data.cards] : data.cards)
-        setTotal(data.total)
-        setBreakdown(data.breakdown)
-        setDueCount(data.dueCount)
-      }
-    } finally {
-      if (!controller.signal.aborted) {
-        setLoading(false)
-        setLoadingMore(false)
-      }
-    }
-  }, [setId, userId, debouncedSearch, statusFilter])
-
-  // Reset and load on filter/search change
+  // Accumulate cards for "load more" pagination
   useEffect(() => {
-    loadCards(0, false)
-  }, [loadCards])
+    if (!cardsData) return
+    if (offset === 0) {
+      setAllCards(cardsData.cards)
+    } else {
+      setAllCards(prev => [...prev, ...cardsData.cards])
+    }
+  }, [cardsData, offset])
 
-  const loadMore = useCallback(() => {
-    loadCards(cards.length, true)
-  }, [loadCards, cards.length])
+  const cards = allCards
+  const total = cardsData?.total ?? 0
+  const breakdown = cardsData?.breakdown ?? { new: 0, learning: 0, review: 0, mastered: 0 }
+  const dueCount = cardsData?.dueCount ?? 0
+  const loading = isLoading
+  const loadingMore = offset > 0 && isFetching
 
   const hasMore = cards.length < total
+
+  const loadMore = useCallback(() => {
+    setOffset(cards.length)
+  }, [cards.length])
 
   const setSearch = useCallback((s: string) => {
     setSearchRaw(s)
   }, [])
 
   const reload = useCallback(() => {
-    loadCards(0, false)
-  }, [loadCards])
+    setOffset(0)
+    setAllCards([])
+    refetch()
+  }, [refetch])
 
   return {
-    set,
+    set: set ?? null,
     cards,
     total,
     breakdown,

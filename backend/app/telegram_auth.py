@@ -1,11 +1,15 @@
 import hashlib
 import hmac
 import json
+import time
 from urllib.parse import unquote, parse_qs
 
 from fastapi import Header, HTTPException
 
 from . import config
+
+# Maximum age of auth data (24 hours)
+AUTH_MAX_AGE_SECONDS = 86400
 
 
 def validate_init_data(init_data: str) -> int | None:
@@ -31,6 +35,16 @@ def validate_init_data(init_data: str) -> int | None:
 
     if computed_hash != provided_hash:
         return None
+
+    # Validate auth_date freshness
+    auth_date_str = parsed.get("auth_date", [None])[0]
+    if auth_date_str:
+        try:
+            auth_date = int(auth_date_str)
+            if time.time() - auth_date > AUTH_MAX_AGE_SECONDS:
+                return None
+        except (ValueError, TypeError):
+            return None
 
     # Extract user_id
     user_str = parsed.get("user", [None])[0]

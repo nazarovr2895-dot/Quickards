@@ -1,0 +1,116 @@
+.typing-card {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+  min-height: 380px;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.typing-card__face {
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 12px;
+}
+
+.typing-card__prompt {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--app-text);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.typing-card__pos {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--app-text-secondary);
+}
+
+.typing-card__input-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.typing-card__input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--app-border);
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: 18px;
+  font-family: inherit;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.typing-card__input:focus {
+  border-color: var(--app-accent);
+}
+
+.typing-card__submit {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: var(--app-gradient);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.typing-card__submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.typing-card__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.typing-card__result-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.typing-card__result--correct .typing-card__result-text {
+  color: #22c55e;
+}
+
+.typing-card__result--close .typing-card__result-text {
+  color: #f97316;
+}
+
+.typing-card__result--wrong .typing-card__result-text {
+  color: #ef4444;
+}
+
+.typing-card__answer {
+  font-size: 1.125rem;
+  color: var(--app-text-secondary);
+}
+
+.typing-card__your {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.typing-card__correct {
+  color: #22c55e;
+  font-weight: 600;
+}

@@ -1,16 +1,20 @@
 import { useState, useRef, useCallback } from 'react'
 import { hapticFeedback, openLink } from '../lib/telegram'
+import { Rating } from '../lib/fsrs'
+import type { Grade } from '../lib/fsrs'
 import type { StudyCard } from '../lib/types'
 import './FlashCard.css'
 
 interface Props {
   card: StudyCard
   onReveal: () => void
-  onSwipe?: (direction: 'left' | 'right') => void
+  onSwipe?: (rating: Grade) => void
+  onHintUsed?: () => void
   mode?: 'en-ru' | 'ru-en'
 }
 
 const SWIPE_THRESHOLD = 80
+const SWIPE_LONG_THRESHOLD = 150
 
 function youglishUrl(word: string) {
   return `https://youglish.com/pronounce/${encodeURIComponent(word)}/english`
@@ -34,13 +38,23 @@ function highlightWord(example: string, word: string): React.ReactNode {
   )
 }
 
-export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
+function speakWord(word: string) {
+  if (!('speechSynthesis' in window)) return
+  window.speechSynthesis.cancel()
+  const utterance = new SpeechSynthesisUtterance(word)
+  utterance.lang = 'en-US'
+  utterance.rate = 0.9
+  window.speechSynthesis.speak(utterance)
+}
+
+export function FlashCard({ card, onReveal, onSwipe, onHintUsed, mode = 'en-ru' }: Props) {
   const [state, setState] = useState(0)
   const [displayState, setDisplayState] = useState(0)
   const [flipping, setFlipping] = useState(false)
   const [dragX, setDragX] = useState(0)
   const [swiping, setSwiping] = useState(false)
   const [exiting, setExiting] = useState<'left' | 'right' | null>(null)
+  const [hintLevel, setHintLevel] = useState(0)
 
   const startX = useRef(0)
   const startY = useRef(0)
@@ -68,6 +82,24 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
     e.stopPropagation()
     openLink(youglishUrl(card.card.front))
   }
+
+  const handleSpeak = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    speakWord(card.card.front)
+  }
+
+  const handleHint = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (hintLevel < 2) setHintLevel(h => h + 1)
+    onHintUsed?.()
+    hapticFeedback('light')
+  }
+
+  // Generate hint text based on the answer word
+  const answerWord = mode === 'ru-en' ? card.card.front : card.card.back
+  const hintText = hintLevel >= 1
+    ? `${answerWord[0]}${'_'.repeat(answerWord.length - 1)} (${answerWord.length} letters)`
+    : null
 
   const onDragStart = useCallback((clientX: number, clientY: number) => {
     if (!onSwipe || exiting) return
@@ -107,11 +139,18 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
     }
 
     if (Math.abs(dragX) >= SWIPE_THRESHOLD && onSwipe) {
+      // 4-level rating: short right=Good, long right=Easy, short left=Hard, long left=Again
+      let rating: Grade
+      if (dragX > 0) {
+        rating = Math.abs(dragX) >= SWIPE_LONG_THRESHOLD ? Rating.Easy : Rating.Good
+      } else {
+        rating = Math.abs(dragX) >= SWIPE_LONG_THRESHOLD ? Rating.Again : Rating.Hard
+      }
       const direction = dragX > 0 ? 'right' : 'left'
       hapticFeedback('medium')
       setExiting(direction)
       setTimeout(() => {
-        onSwipe(direction)
+        onSwipe(rating)
       }, 250)
     } else {
       setDragX(0)
@@ -151,6 +190,7 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   const overlayOpacity = Math.min(Math.abs(dragX) / 150, 0.35)
   const showRight = dragX > 20
   const showLeft = dragX < -20
+  const isLongSwipe = Math.abs(dragX) >= SWIPE_LONG_THRESHOLD
 
   const cardStyle = exiting
     ? {
@@ -187,26 +227,56 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
       onMouseLeave={handleMouseLeave}
       style={cardStyle}
     >
-      {/* Swipe overlays */}
+      {/* Swipe overlays — 4-level */}
       {showRight && (
-        <div className="flash-card__swipe-overlay flash-card__swipe-overlay--right" style={{ opacity: overlayOpacity }}>
-          <span className="flash-card__swipe-label flash-card__swipe-label--right">KNOW</span>
+        <div className={`flash-card__swipe-overlay ${isLongSwipe ? 'flash-card__swipe-overlay--easy' : 'flash-card__swipe-overlay--right'}`} style={{ opacity: overlayOpacity }}>
+          <span className={`flash-card__swipe-label ${isLongSwipe ? 'flash-card__swipe-label--easy' : 'flash-card__swipe-label--right'}`}>
+            {isLongSwipe ? 'EASY' : 'GOOD'}
+          </span>
         </div>
       )}
       {showLeft && (
-        <div className="flash-card__swipe-overlay flash-card__swipe-overlay--left" style={{ opacity: overlayOpacity }}>
-          <span className="flash-card__swipe-label flash-card__swipe-label--left">AGAIN</span>
+        <div className={`flash-card__swipe-overlay ${isLongSwipe ? 'flash-card__swipe-overlay--left' : 'flash-card__swipe-overlay--hard'}`} style={{ opacity: overlayOpacity }}>
+          <span className={`flash-card__swipe-label ${isLongSwipe ? 'flash-card__swipe-label--left' : 'flash-card__swipe-label--hard'}`}>
+            {isLongSwipe ? 'AGAIN' : 'HARD'}
+          </span>
         </div>
       )}
 
-      {/* YouGlish — outside inner */}
-      <button
-        className="flash-card__youglish-btn"
-        onClick={handleYouGlish}
-        aria-label="Hear in context"
-      >
-        YouGlish
-      </button>
+      {/* Action buttons — outside inner */}
+      <div className="flash-card__top-actions">
+        {'speechSynthesis' in window && (
+          <button
+            className="flash-card__action-btn"
+            onClick={handleSpeak}
+            aria-label="Pronounce word"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 010 7.07" />
+              <path d="M19.07 4.93a10 10 0 010 14.14" />
+            </svg>
+          </button>
+        )}
+        <button
+          className="flash-card__action-btn"
+          onClick={handleYouGlish}
+          aria-label="Hear in context"
+        >
+          YouGlish
+        </button>
+      </div>
+
+      {/* Hint button — only on question state */}
+      {displayState === 0 && hintLevel < 2 && (
+        <button
+          className="flash-card__action-btn flash-card__hint-btn"
+          onClick={handleHint}
+          aria-label="Get a hint"
+        >
+          Hint
+        </button>
+      )}
 
       {/* NEW badge */}
       {card.isNew && displayState === 0 && (
@@ -225,8 +295,11 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
               {mode === 'en-ru' && card.card.phonetics && (
                 <span className="flash-card__phonetics">{card.card.phonetics}</span>
               )}
-              {card.card.part_of_speech && (
+              {card.card.part_of_speech && hintLevel >= 2 && (
                 <span className="flash-card__pos">{card.card.part_of_speech}</span>
+              )}
+              {hintText && (
+                <span className="flash-card__hint-text">{hintText}</span>
               )}
               {mode === 'ru-en' && hasExample && (
                 <p className="flash-card__example flash-card__example--blank">
@@ -289,6 +362,6 @@ export function FlashCard({ card, onReveal, onSwipe, mode = 'en-ru' }: Props) {
   )
 }
 
-export function FlashCardReset({ card, onReveal, onSwipe, index, mode }: Props & { index: number }) {
-  return <FlashCard key={card.card.id + '-' + index} card={card} onReveal={onReveal} onSwipe={onSwipe} mode={mode} />
+export function FlashCardReset({ card, onReveal, onSwipe, onHintUsed, index, mode }: Props & { index: number }) {
+  return <FlashCard key={card.card.id + '-' + index} card={card} onReveal={onReveal} onSwipe={onSwipe} onHintUsed={onHintUsed} mode={mode} />
 }

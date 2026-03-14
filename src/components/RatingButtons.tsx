@@ -7,6 +7,7 @@ interface Props {
   intervals: Record<number, string> | null
   onRate: (rating: Grade) => void
   visible: boolean
+  maxRating?: Grade
 }
 
 const XIcon = () => (
@@ -40,7 +41,7 @@ const buttons: { rating: Grade; label: string; modifier: string; Icon: React.FC 
   { rating: Rating.Easy, label: 'Easy', modifier: 'easy', Icon: StarIcon },
 ]
 
-export function RatingButtons({ intervals, onRate, visible }: Props) {
+export function RatingButtons({ intervals, onRate, visible, maxRating }: Props) {
   if (!visible || !intervals) return null
 
   const handleRate = (rating: Grade) => {
@@ -48,9 +49,13 @@ export function RatingButtons({ intervals, onRate, visible }: Props) {
     onRate(rating)
   }
 
+  const visibleButtons = maxRating !== undefined
+    ? buttons.filter(b => b.rating <= maxRating)
+    : buttons
+
   return (
     <div className="rating-buttons">
-      {buttons.map(({ rating, label, modifier, Icon }) => (
+      {visibleButtons.map(({ rating, label, modifier, Icon }) => (
         <button
           key={rating}
           onClick={() => handleRate(rating)}

@@ -1,33 +1,28 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import { apiGet } from '../lib/api'
 import type { StudyStats } from '../lib/types'
 
+const defaultStats: StudyStats = {
+  dueToday: 0,
+  newAvailable: 0,
+  totalReviewed: 0,
+  streak: 0,
+  dailyGoal: 20,
+  reviewedToday: 0,
+  streakFreezes: 1,
+}
+
 export function useStats(userId: number | undefined) {
-  const [stats, setStats] = useState<StudyStats>({
-    dueToday: 0,
-    newAvailable: 0,
-    totalReviewed: 0,
-    streak: 0,
-    dailyGoal: 20,
-    reviewedToday: 0,
-    streakFreezes: 1,
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ['stats', userId],
+    queryFn: () => apiGet<StudyStats>('/api/study/stats'),
+    enabled: !!userId,
+    staleTime: 30_000,
   })
-  const [loading, setLoading] = useState(true)
 
-  const load = useCallback(async () => {
-    if (!userId) {
-      setLoading(false)
-      return
-    }
-    try {
-      const data = await apiGet<StudyStats>('/api/study/stats')
-      if (data) setStats(data)
-    } finally {
-      setLoading(false)
-    }
-  }, [userId])
-
-  useEffect(() => { load() }, [load])
-
-  return { stats, loading, reload: load }
+  return {
+    stats: data ?? defaultStats,
+    loading: isLoading,
+    reload: refetch,
+  }
 }

@@ -1,0 +1,28 @@
+.bar-chart {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bar-chart svg {
+  display: block;
+}
+
+.bar-chart__axis-label {
+  font-size: 10px;
+  fill: var(--app-text-secondary);
+  font-family: inherit;
+}
+
+.bar-chart__avg-label {
+  font-size: 9px;
+  fill: var(--app-text-secondary);
+  font-family: inherit;
+  font-style: italic;
+}
+
+.bar-chart__bucket-label {
+  font-size: 10px;
+  fill: var(--app-text-secondary);
+  font-family: inherit;
+}

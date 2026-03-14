@@ -1,0 +1,19 @@
+.streak-calendar {
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+.streak-calendar__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--app-text);
+  margin-bottom: 12px;
+}
+
+.streak-calendar__svg {
+  width: 100%;
+  display: block;
+}

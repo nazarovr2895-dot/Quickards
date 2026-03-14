@@ -1,8 +1,12 @@
 import asyncio
 
 import httpx
-from fastapi import APIRouter, Depends, HTTPException, Query
-from pydantic import BaseModel
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
+from pydantic import BaseModel, Field
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+
+limiter = Limiter(key_func=get_remote_address)
 
 from ..database import get_conn
 from ..telegram_auth import get_current_user_id
@@ -25,16 +29,16 @@ async def verify_set_ownership(pool, set_id: str, user_id: int):
 
 class CreateCardBody(BaseModel):
     set_id: str
-    front: str
-    back: str
-    part_of_speech: str | None = None
-    phonetics: str | None = None
+    front: str = Field(max_length=500)
+    back: str = Field(max_length=1000)
+    part_of_speech: str | None = Field(None, max_length=50)
+    phonetics: str | None = Field(None, max_length=100)
 
 
 class BatchCardItem(BaseModel):
-    front: str
-    back: str
-    part_of_speech: str | None = None
+    front: str = Field(max_length=500)
+    back: str = Field(max_length=1000)
+    part_of_speech: str | None = Field(None, max_length=50)
 
 
 class BatchCreateBody(BaseModel):
@@ -43,13 +47,14 @@ class BatchCreateBody(BaseModel):
 
 
 class UpdateCardBody(BaseModel):
-    front: str | None = None
-    back: str | None = None
-    part_of_speech: str | None = None
+    front: str | None = Field(None, max_length=500)
+    back: str | None = Field(None, max_length=1000)
+    part_of_speech: str | None = Field(None, max_length=50)
 
 
 @router.get("/dictionary/lookup")
-async def dictionary_lookup(word: str = Query(..., min_length=1)):
+@limiter.limit("20/minute")
+async def dictionary_lookup(request: Request, word: str = Query(..., min_length=1)):
     word = word.strip().lower()
 
     async def fetch_dictionary():
@@ -140,7 +145,9 @@ async def create_card(
 
 
 @router.post("/cards/batch")
+@limiter.limit("10/minute")
 async def create_cards_batch(
+    request: Request,
     body: BatchCreateBody,
     user_id: int = Depends(get_current_user_id),
 ):
@@ -235,7 +242,7 @@ async def get_new_cards(
     pool = await get_conn()
 
     if set_id:
-        # Get new cards from specific set
+        # Get new cards from specific set (deterministic shuffle per user)
         rows = await pool.fetch(
             """
             SELECT c.* FROM cards c
@@ -244,13 +251,13 @@ async def get_new_cards(
                 SELECT 1 FROM user_cards uc
                 WHERE uc.card_id = c.id AND uc.user_id = $2
             )
-            ORDER BY c.created_at
+            ORDER BY md5(c.id::text || $2::text)
             LIMIT $3
             """,
             set_id, user_id, limit,
         )
     elif set_ids:
-        # Get new cards from multiple sets
+        # Get new cards from multiple sets (deterministic shuffle per user)
         ids = set_ids.split(",")
         rows = await pool.fetch(
             """
@@ -260,7 +267,7 @@ async def get_new_cards(
                 SELECT 1 FROM user_cards uc
                 WHERE uc.card_id = c.id AND uc.user_id = $2
             )
-            ORDER BY c.created_at
+            ORDER BY md5(c.id::text || $2::text)
             LIMIT $3
             """,
             ids, user_id, limit,

@@ -59,6 +59,33 @@
   color: #22c55e;
 }
 
+.study-page__swipe-hint--tap {
+  text-align: center;
+  color: var(--app-text-secondary);
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.study-page__undo-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  color: var(--app-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  animation: fadeIn 0.2s ease-out;
+  transition: all 0.2s;
+}
+
+.study-page__undo-btn:active {
+  background: var(--app-accent-muted);
+  color: var(--app-accent);
+}
+
 @media (min-width: 768px) {
   .study-page {
     max-width: 600px;

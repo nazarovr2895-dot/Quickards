@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from ..database import get_conn
 from ..telegram_auth import get_current_user_id
@@ -8,8 +8,8 @@ router = APIRouter(tags=["sets"])
 
 
 class CreateSetBody(BaseModel):
-    name: str
-    description: str | None = None
+    name: str = Field(max_length=100)
+    description: str | None = Field(None, max_length=500)
 
 
 @router.get("/sets/system")

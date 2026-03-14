@@ -60,6 +60,27 @@
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
 }
 
+.dashboard__analytics-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--app-border);
+  background: var(--app-bg-elevated);
+  color: var(--app-text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dashboard__analytics-btn:active {
+  background: var(--app-surface);
+}
+
 @media (min-width: 768px) {
   .dashboard {
     max-width: 680px;

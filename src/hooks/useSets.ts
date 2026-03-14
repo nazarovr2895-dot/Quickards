@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useQuery, useMutation } from '@tanstack/react-query'
 import { apiGet, apiPost, apiDelete } from '../lib/api'
+import { queryClient } from '../lib/queryClient'
 import type { DBSet } from '../lib/types'
 
 interface UserSetRow {
@@ -11,72 +12,61 @@ interface UserSetRow {
 }
 
 export function useSystemSets() {
-  const [sets, setSets] = useState<DBSet[]>([])
-  const [loading, setLoading] = useState(true)
+  const { data, isLoading } = useQuery({
+    queryKey: ['system-sets'],
+    queryFn: () => apiGet<DBSet[]>('/api/sets/system'),
+    staleTime: 5 * 60_000,
+  })
 
-  useEffect(() => {
-    apiGet<DBSet[]>('/api/sets/system')
-      .then(data => setSets(data || []))
-      .finally(() => setLoading(false))
-  }, [])
-
-  return { sets, loading }
+  return { sets: data ?? [], loading: isLoading }
 }
 
 export function useUserSets(userId: number | undefined) {
-  const [sets, setSets] = useState<DBSet[]>([])
-  const [loading, setLoading] = useState(true)
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ['user-sets', userId],
+    queryFn: () => apiGet<DBSet[]>('/api/sets/user'),
+    enabled: !!userId,
+  })
 
-  const load = useCallback(async () => {
-    if (!userId) {
-      setLoading(false)
-      return
-    }
-    try {
-      const data = await apiGet<DBSet[]>('/api/sets/user')
-      setSets(data || [])
-    } finally {
-      setLoading(false)
-    }
-  }, [userId])
-
-  useEffect(() => { load() }, [load])
-
-  return { sets, loading, reload: load }
+  return { sets: data ?? [], loading: isLoading, reload: refetch }
 }
 
 export function useSubscribedSets(userId: number | undefined) {
-  const [userSets, setUserSets] = useState<UserSetRow[]>([])
-  const [loading, setLoading] = useState(true)
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ['subscribed-sets', userId],
+    queryFn: () => apiGet<UserSetRow[]>('/api/user-sets'),
+    enabled: !!userId,
+  })
 
-  const load = useCallback(async () => {
-    if (!userId) {
-      setLoading(false)
-      return
-    }
-    try {
-      const data = await apiGet<UserSetRow[]>('/api/user-sets')
-      setUserSets(data || [])
-    } finally {
-      setLoading(false)
-    }
-  }, [userId])
+  const userSets = data ?? []
 
-  useEffect(() => { load() }, [load])
+  const subscribeMutation = useMutation({
+    mutationFn: (setId: string) => apiPost('/api/user-sets', { set_id: setId }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['subscribed-sets'] })
+      queryClient.invalidateQueries({ queryKey: ['stats'] })
+    },
+  })
+
+  const unsubscribeMutation = useMutation({
+    mutationFn: (setId: string) => apiDelete(`/api/user-sets/${setId}`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['subscribed-sets'] })
+      queryClient.invalidateQueries({ queryKey: ['stats'] })
+    },
+  })
 
   const subscribe = async (setId: string) => {
     if (!userId) return
-    await apiPost('/api/user-sets', { set_id: setId })
-    await load()
+    await subscribeMutation.mutateAsync(setId)
   }
 
   const unsubscribe = async (setId: string) => {
     if (!userId) return
-    await apiDelete(`/api/user-sets/${setId}`)
-    await load()
+    await unsubscribeMutation.mutateAsync(setId)
   }
 
   const isSubscribed = (setId: string) => userSets.some(us => us.set_id === setId)
 
-  return { userSets, loading, subscribe, unsubscribe, isSubscribed, reload: load }
+  return { userSets, loading: isLoading, subscribe, unsubscribe, isSubscribed, reload: refetch }
 }

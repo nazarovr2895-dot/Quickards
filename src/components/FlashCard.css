@@ -152,11 +152,17 @@
   margin-bottom: 8px;
 }
 
-/* YouGlish button */
-.flash-card__youglish-btn {
+/* Top action buttons (TTS + YouGlish) */
+.flash-card__top-actions {
   position: absolute;
   top: 16px;
   left: 16px;
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+
+.flash-card__action-btn {
   border: none;
   border-radius: 9999px;
   background: var(--app-surface, rgba(0, 0, 0, 0.06));
@@ -166,13 +172,32 @@
   font-weight: 600;
   font-family: inherit;
   padding: 4px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   transition: background 0.2s, color 0.2s;
+}
+
+.flash-card__action-btn:active {
+  background: var(--app-accent);
+  color: #fff;
+}
+
+/* Hint button & text */
+.flash-card__hint-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
   z-index: 5;
 }
 
-.flash-card__youglish-btn:active {
-  background: var(--app-accent, #6366f1);
-  color: #fff;
+.flash-card__hint-text {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: var(--app-accent);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.1em;
+  animation: fadeIn 0.3s ease-out;
 }
 
 /* Swipe overlays */
@@ -215,6 +240,28 @@
 .flash-card__swipe-label--left {
   color: #ef4444;
   border-color: #ef4444;
+  background: rgba(255, 255, 255, 0.9);
+  transform: rotate(12deg);
+}
+
+.flash-card__swipe-overlay--easy {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+.flash-card__swipe-label--easy {
+  color: #3b82f6;
+  border-color: #3b82f6;
+  background: rgba(255, 255, 255, 0.9);
+  transform: rotate(-12deg);
+}
+
+.flash-card__swipe-overlay--hard {
+  background: rgba(249, 115, 22, 0.5);
+}
+
+.flash-card__swipe-label--hard {
+  color: #f97316;
+  border-color: #f97316;
   background: rgba(255, 255, 255, 0.9);
   transform: rotate(12deg);
 }
