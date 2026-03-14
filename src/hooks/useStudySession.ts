@@ -171,6 +171,8 @@ export function useStudySession(userId: number | undefined, setId?: string) {
       apiPost('/api/study/check-unlock').catch(() => {})
       queryClient.invalidateQueries({ queryKey: ['stats'] })
       queryClient.invalidateQueries({ queryKey: ['progress'] })
+      queryClient.invalidateQueries({ queryKey: ['analytics'] })
+      queryClient.invalidateQueries({ queryKey: ['calendar'] })
     } catch (err) {
       console.error('Failed to flush reviews:', err)
       // Keep in queue for retry; persist to localStorage as backup
@@ -268,8 +270,7 @@ export function useStudySession(userId: number | undefined, setId?: string) {
     }
 
     if (currentIndex + 1 >= queue.length && rating !== Rating.Again) {
-      flush()
-      setFinished(true)
+      flush().then(() => setFinished(true))
     } else {
       setCurrentIndex(i => i + 1)
     }

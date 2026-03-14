@@ -209,11 +209,11 @@ async def get_analytics(
             FROM review_logs rl
             JOIN user_cards uc ON uc.id = rl.user_card_id
             WHERE uc.user_id = $1
-              AND rl.reviewed_at >= now()::date
-              AND rl.reviewed_at < now()::date + interval '1 day'
+              AND rl.reviewed_at >= (now() AT TIME ZONE 'UTC')::date
+              AND rl.reviewed_at < (now() AT TIME ZONE 'UTC')::date + interval '1 day'
             GROUP BY bucket ORDER BY bucket
         """
-        summary_filter = "AND rl.reviewed_at >= now()::date AND rl.reviewed_at < now()::date + interval '1 day'"
+        summary_filter = "AND rl.reviewed_at >= (now() AT TIME ZONE 'UTC')::date AND rl.reviewed_at < (now() AT TIME ZONE 'UTC')::date + interval '1 day'"
         days_in_period = 1
     elif period == "month":
         bucket_query = """
@@ -223,10 +223,10 @@ async def get_analytics(
             FROM review_logs rl
             JOIN user_cards uc ON uc.id = rl.user_card_id
             WHERE uc.user_id = $1
-              AND rl.reviewed_at >= now()::date - interval '29 days'
+              AND rl.reviewed_at >= (now() AT TIME ZONE 'UTC')::date - interval '29 days'
             GROUP BY bucket ORDER BY bucket
         """
-        summary_filter = "AND rl.reviewed_at >= now()::date - interval '29 days'"
+        summary_filter = "AND rl.reviewed_at >= (now() AT TIME ZONE 'UTC')::date - interval '29 days'"
         days_in_period = 30
     else:  # week
         bucket_query = """
@@ -236,10 +236,10 @@ async def get_analytics(
             FROM review_logs rl
             JOIN user_cards uc ON uc.id = rl.user_card_id
             WHERE uc.user_id = $1
-              AND rl.reviewed_at >= now()::date - interval '6 days'
+              AND rl.reviewed_at >= (now() AT TIME ZONE 'UTC')::date - interval '6 days'
             GROUP BY bucket ORDER BY bucket
         """
-        summary_filter = "AND rl.reviewed_at >= now()::date - interval '6 days'"
+        summary_filter = "AND rl.reviewed_at >= (now() AT TIME ZONE 'UTC')::date - interval '6 days'"
         days_in_period = 7
 
     bucket_rows = await pool.fetch(bucket_query, user_id)
@@ -335,7 +335,7 @@ async def get_stats(user_id: int = Depends(get_current_user_id)):
         """
         WITH user_card_stats AS (
             SELECT
-                count(*) FILTER (WHERE due <= now()::date + interval '1 day' AND reps > 0) AS due_today,
+                count(*) FILTER (WHERE due <= (now() AT TIME ZONE 'UTC')::date + interval '1 day' AND reps > 0) AS due_today,
                 count(*) FILTER (WHERE reps > 0) AS total_reviewed
             FROM user_cards WHERE user_id = $1
         ),
@@ -349,8 +349,8 @@ async def get_stats(user_id: int = Depends(get_current_user_id)):
             SELECT count(*) AS cnt FROM review_logs rl
             JOIN user_cards uc ON uc.id = rl.user_card_id
             WHERE uc.user_id = $1
-            AND rl.reviewed_at >= now()::date
-            AND rl.reviewed_at < now()::date + interval '1 day'
+            AND rl.reviewed_at >= (now() AT TIME ZONE 'UTC')::date
+            AND rl.reviewed_at < (now() AT TIME ZONE 'UTC')::date + interval '1 day'
         )
         SELECT ucs.due_today, ucs.total_reviewed,
                na.cnt AS new_available, rt.cnt AS reviewed_today
