@@ -1,5 +1,5 @@
 import json
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 
 from fastapi import APIRouter, Depends, Query, Request
 from pydantic import BaseModel
@@ -382,7 +382,7 @@ async def get_stats(user_id: int = Depends(get_current_user_id)):
     review_dates = {row["d"] for row in streak_days}
     streak = 0
     freezes_used = 0
-    today = date.today()
+    today = datetime.now(timezone.utc).date()
     check_date = today
     while True:
         if check_date in review_dates:

@@ -60,9 +60,8 @@ export function StudyPage({ userId }: Props) {
   }, [rate])
 
   const handleSwipe = useCallback((rating: Grade) => {
-    if (!revealed) return
     rate(rating)
-  }, [revealed, rate])
+  }, [rate])
 
   // Keyboard shortcuts
   useEffect(() => {

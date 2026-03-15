@@ -24,6 +24,10 @@ async def upsert_user(
     user_id: int = Depends(get_current_user_id),
 ):
     pool = await get_conn()
+    # Check if user already exists
+    existing = await pool.fetchval(
+        "SELECT telegram_id FROM users WHERE telegram_id = $1", user_id
+    )
     await pool.execute(
         """
         INSERT INTO users (telegram_id, first_name, last_name, username, language_code, updated_at)
@@ -34,6 +38,16 @@ async def upsert_user(
         """,
         user_id, body.first_name, body.last_name, body.username, body.language_code,
     )
+    # Auto-subscribe new users to all system sets
+    if existing is None:
+        await pool.execute(
+            """
+            INSERT INTO user_sets (user_id, set_id)
+            SELECT $1, id FROM sets WHERE is_system = true
+            ON CONFLICT DO NOTHING
+            """,
+            user_id,
+        )
     return {"ok": True}
 
 

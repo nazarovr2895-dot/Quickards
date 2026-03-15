@@ -74,6 +74,18 @@ export function useStudySession(userId: number | undefined, setId?: string) {
     }
     setLoading(true)
     try {
+      // 0. Flush any unsaved reviews from previous session FIRST
+      try {
+        const saved = localStorage.getItem(WRITE_QUEUE_KEY)
+        if (saved) {
+          const reviews = JSON.parse(saved)
+          if (Array.isArray(reviews) && reviews.length > 0) {
+            await apiPost('/api/study/rate', { reviews })
+            localStorage.removeItem(WRITE_QUEUE_KEY)
+          }
+        }
+      } catch { /* ignore parse/network errors */ }
+
       // 1. Get due cards
       const dueUrl = setId
         ? `/api/study/due?set_id=${setId}&limit=50`
@@ -172,7 +184,7 @@ export function useStudySession(userId: number | undefined, setId?: string) {
       queryClient.invalidateQueries({ queryKey: ['stats'] })
       queryClient.invalidateQueries({ queryKey: ['progress'] })
       queryClient.invalidateQueries({ queryKey: ['analytics'] })
-      queryClient.invalidateQueries({ queryKey: ['calendar'] })
+      queryClient.invalidateQueries({ queryKey: ['study-calendar'] })
     } catch (err) {
       console.error('Failed to flush reviews:', err)
       // Keep in queue for retry; persist to localStorage as backup
@@ -275,21 +287,6 @@ export function useStudySession(userId: number | undefined, setId?: string) {
       setCurrentIndex(i => i + 1)
     }
   }, [currentCard, currentIndex, queue, totalCards, reviewed, newLearned, userId, flush])
-
-  // Flush unsaved reviews from previous session on mount
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(WRITE_QUEUE_KEY)
-      if (saved) {
-        const reviews = JSON.parse(saved)
-        if (Array.isArray(reviews) && reviews.length > 0) {
-          apiPost('/api/study/rate', { reviews }).then(() => {
-            localStorage.removeItem(WRITE_QUEUE_KEY)
-          }).catch(() => { /* will retry on next flush */ })
-        }
-      }
-    } catch { /* ignore parse errors */ }
-  }, [])
 
   // Set up flush timer + beforeunload + visibilitychange
   useEffect(() => {
